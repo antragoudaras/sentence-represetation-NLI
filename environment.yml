@@ -12,7 +12,7 @@ dependencies:
   - pytorch=2.1.0
   - torchvision=0.16.0
   - torchaudio=2.1.0
-  - huggingface-hub=0.0.17
+  - huggingface_hub
   - pip:
     - pytorch-lightning==2.1.0
     - tensorboard==2.14.1
