@@ -1,7 +1,6 @@
 name: atcs-practical-gpu
 channels:
   - pytorch
-  - huggingface
   - nvidia
   - conda-forge
   - defaults
@@ -24,5 +23,5 @@ dependencies:
     - matplotlib>=3.4.3
     - seaborn>=0.11.2
     - ipywidgets>=7.6.5
-    - datasets==2.18.0 
     - nltk==3.8.1
+    - datasets==2.18.0
