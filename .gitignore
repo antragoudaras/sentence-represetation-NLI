@@ -1,3 +1,4 @@
 *.vscode/
-data/
+.data/
 .vector_cache/
+saved_vectors/
