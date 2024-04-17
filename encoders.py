@@ -16,7 +16,7 @@ class BaselineEnc(nn.Module):
         #average embeedings
         return sum_embeddings / lengths
 
-class UniDirLSTM(nn.modules): 
+class UniDirLSTM(nn.Module): 
     """Uni-directional LSTM encoder."""
 
     def __init__(self,  glove_embedding, input_dim=300, hid_dim=2048):

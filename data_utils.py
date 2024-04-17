@@ -30,7 +30,7 @@ class Tokenizer:
 
 
 class VocabularyBuilder:
-    def __init__(self, glove_version: str = '840B', word_embedding_dim: int = 300):
+    def __init__(self, glove_version = '840B', word_embedding_dim = 300):
         self.glove_version = glove_version
         self.word_embedding_dim = word_embedding_dim
 
@@ -49,27 +49,27 @@ class VocabularyBuilder:
             "hypothesis": [tokenizer.tokenize(text) for text in batch["hypothesis"]],
         }
 
-    def build_vocabulary(self) -> tuple[dict[str, int], torch.Tensor]:
+    def build_vocabulary(self):
         """Build the vocabulary of the SNLI corpus.
         Args:
             split (str): The split of the dataset options are 'train', 'validation', or 'test'
 
         Returns:
-            dataset (Dataset): The SNLI dataset
-            token_to_idx (dict): A dictionary mapping tokens to indices in the form of w2i
-            aligned_embeddings (torch.Tensor): A tensor of aligned embeddings
+            dataset (Dataset): SNLI dataset
+            w2i (dict): mapping tokens to indices in the form of w2i
+            aligned_embeddings (torch.Tensor): tensor of aligned embeddings
         """
         # skip the building process if the files already exist
         if (Path(f"./saved_vectors/w2i_{self.glove_version}_{self.word_embedding_dim}.pt").exists() and Path(f"./saved_vectors/w2i_{self.glove_version}_{self.word_embedding_dim}.pt").exists()):
             logging.info("Vocab already exists. Loading from disk...")
-            token_to_idx = torch.load(
+            w2i = torch.load(
                 f"./saved_vectors/w2i_{self.glove_version}_{self.word_embedding_dim}.pt"
             )
             aligned_embeddings = torch.load(
                 f"./saved_vectors/embeddings_{self.glove_version}_{self.word_embedding_dim}.pt"
             )
             dataset = self.get_dataset()
-            return dataset, token_to_idx, aligned_embeddings
+            return dataset, w2i, aligned_embeddings
 
         logging.info("Building vocabulary...")
 
@@ -80,7 +80,7 @@ class VocabularyBuilder:
         glove = GloVe(self.glove_version, dim=self.word_embedding_dim)
 
         # Create a dictionary mapping tokens to indices
-        token_to_idx = {"<UNK>": 0, "<PAD>": 1}
+        w2i = {"<UNK>": 0, "<PAD>": 1}
 
         #average the embeddings for the unknown token
         unk_embedding = glove.vectors.mean(dim=0)
@@ -88,20 +88,19 @@ class VocabularyBuilder:
         # Create a list of aligned embeddings
         aligned_embeddings = [unk_embedding, glove["<PAD>"]]
 
-        # Get unique tokens from the dataset
+        # Only use the train split to build the vocabulary
         unique_tokens = {
             token
-            for split in dataset.keys()
-            for item in dataset[split]
+            for item in dataset["train"]
             for token in item["premise"] + item["hypothesis"]
         }
 
-        # Sort the unique tokens so that the indices are aligned the same way every time
+        #Sorting helps with alignment
         sorted_unique_tokens = sorted(unique_tokens)
 
-        # Update the token_to_idx dictionary and aligned_embeddings list
+        # Update the w2i dictionary and embeddings list
         for token in sorted_unique_tokens:
-            token_to_idx[token] = len(token_to_idx)
+            w2i[token] = len(w2i)
             aligned_embeddings.append(glove[token])
 
         # Convert the list of aligned embeddings to a torch.Tensor
@@ -111,7 +110,7 @@ class VocabularyBuilder:
         #make sure that the saved_vectors directory exists
         Path("./saved_vectors").mkdir(exist_ok=True)
         torch.save(
-            token_to_idx,
+            w2i,
             f"./saved_vectors/w2i_{self.glove_version}_{self.word_embedding_dim}.pt",
         )
         torch.save(
@@ -119,7 +118,7 @@ class VocabularyBuilder:
             f"./saved_vectors/embeddings_{self.glove_version}_{self.word_embedding_dim}.pt",
         )
 
-        return dataset, token_to_idx, aligned_embeddings
+        return dataset, w2i, aligned_embeddings
 
     def get_dataset(self) -> Dataset:
         """Get the dataset and tokenize the premise and hypothesis.
@@ -135,38 +134,37 @@ class VocabularyBuilder:
         return dataset
 
 class DataLoaderBuilder:
-    def __init__(self, dataset, token_to_idx: dict[str, int], args: argparse.Namespace):
+    def __init__(self, dataset, w2i: dict[str, int], args: argparse.Namespace):
         self.dataset = dataset
-        self.token_to_idx = token_to_idx
+        self.w2i = w2i
         self.args = args
   
     
-    def tokens_to_indices(self, tokens: list[str], token_to_idx: dict[str, int]) -> list[int]:
+    def token_mapping(self, tokens: list[str]) -> list[int]:
         """Convert a list of tokens to a list of indices.
 
         Args:
             tokens (list[str]): A list of tokens
-            token_to_idx (dict[str, int]): A dictionary mapping tokens to indices
 
         Returns:
             list[int]: A list of indices
         """
-        return torch.tensor([token_to_idx.get(token, 0) for token in tokens])
+        return torch.tensor([self.w2i.get(token, 0) for token in tokens])
 
-    def collate_fn(self, token_to_idx, batch):
+    def collate_fn(self, batch):
         """Collate function for the SNLI dataset.
 
-        Args:
-            token_to_idx (dict): A dictionary mapping tokens to indices
-            batch (list[tuple[torch.Tensor, torch.Tensor, torch.Tensor]]): A batch
-                of data from the SNLI dataset (premise_indices, hypothesis_indices, label)
+        Inputs:
+            batch of data from the SNLI dataset (premise, hypothesis, label)
+        Returns:
+            tuple: padded_premises, padded_hypotheses, premise_lengths, hypothesis_lengths, labels
         """
         # Separate premises, hypotheses, and labels
         premises, hypotheses, labels = zip(*[(item["premise"], item["hypothesis"], item["label"]) for item in batch])
 
         # Convert tokens to indices
-        premises = [self.tokens_to_indices(premise, token_to_idx) for premise in premises]
-        hypotheses = [self.tokens_to_indices(hypothesis, token_to_idx) for hypothesis in hypotheses]
+        premises = [self.token_mapping(premise) for premise in premises]
+        hypotheses = [self.token_mapping(hypothesis) for hypothesis in hypotheses]
 
         # Compute lengths
         premise_lengths = torch.tensor([len(premise) for premise in premises])
@@ -201,8 +199,8 @@ class DataLoaderBuilder:
             self.dataset[split],
             batch_size=self.args.batch_size,
             shuffle=False,
-            collate_fn=partial(self.collate_fn, self.token_to_idx),
-            num_workers=self.args.num_workers,
+            collate_fn=self.collate_fn,
+            num_workers=self.args.num_workers
         )  
         
 
@@ -211,6 +209,6 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     args = argparse.Namespace(batch_size=32, num_workers=4)
     vocabulary_builder = VocabularyBuilder()
-    dataset, token_to_idx, aligned_embeddings = vocabulary_builder.build_vocabulary()
-    dataloader_builder = DataLoaderBuilder(dataset, token_to_idx, args)
+    dataset, w2i, embeddings = vocabulary_builder.build_vocabulary()
+    dataloader_builder = DataLoaderBuilder(dataset, w2i, args)
     train_dataloader = dataloader_builder.get_dataloader("train")

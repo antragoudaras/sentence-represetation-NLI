@@ -18,22 +18,22 @@ def set_seed(seed):
 
 
 def main(args):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     logging.info(f"Printing arguments : {args}")
     logging.info("Setting seed...")
     set_seed(args.seed)
     logging.info("Building/Loading the SNLI dataset...")
 
     vocabulary_builder = VocabularyBuilder()
-    dataset, token_to_idx, aligned_embeddings = vocabulary_builder.build_vocabulary()
+    dataset, w2i, embeddings_matrix = vocabulary_builder.build_vocabulary()
 
-    dataloader = DataLoaderBuilder(dataset, token_to_idx, args)
+    dataloader = DataLoaderBuilder(dataset, w2i, args)
 
     if args.encoder == "baseline":
-        encoder = BaselineEnc(aligned_embeddings)
+        encoder = BaselineEnc(embeddings_matrix)
         classifier_dim = 300
     elif args.encoder == "unilstm":
-        encoder = UniDirLSTM(aligned_embeddings)
+        encoder = UniDirLSTM(embeddings_matrix)
         classifier_dim = 2048
     else:
         raise ValueError("Invalid encoder type")
@@ -64,5 +64,5 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s: %(message)s",
                         datefmt="%m/%d %I:%M:%S %p")
-
-
+    
+    main(args)
