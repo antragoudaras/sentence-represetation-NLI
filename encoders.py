@@ -16,11 +16,11 @@ class BaselineEnc(nn.Module):
         #average embeedings
         return sum_embeddings / lengths
 
-class UniDirLSTM(nn.Module): 
+class UniLSTM(nn.Module): 
     """Uni-directional LSTM encoder."""
 
     def __init__(self,  glove_embedding, input_dim=300, hid_dim=2048):
-        super(UniDirLSTM, self).__init__()
+        super(UniLSTM, self).__init__()
         self.embeddings = nn.Embedding.from_pretrained(glove_embedding)
         self.embeddings.requires_grad = False
 
@@ -37,3 +37,6 @@ class UniDirLSTM(nn.Module):
 
         #return the last hidden state as the sentence representation
         return hidden_state[-1] #last batch element
+    
+class BiLSTM(nn.Module):
+    pass

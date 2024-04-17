@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from data_utils import VocabularyBuilder, DataLoaderBuilder
-from encoders import BaselineEnc, UniDirLSTM
+from encoders import BaselineEnc, UniLSTM
 from classifier import Clasiifier
 from model import Model
 from train_procedure import train, evaluate
@@ -44,7 +44,7 @@ def main(args):
         encoder = BaselineEnc(embeddings_matrix)
         classifier_dim = 300
     elif args.encoder == "unilstm":
-        encoder = UniDirLSTM(embeddings_matrix)
+        encoder = UniLSTM(embeddings_matrix)
         classifier_dim = 2048
     else:
         raise ValueError("Invalid encoder type")
@@ -78,9 +78,10 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train the model")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--batch_size", type=int, default=32, help="Batch size")
+    parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the DataLoader")
     parser.add_argument("--lr", type=float, default=0.1, help="Learning rate")
+    parser.add_argument("--lr_divisor", type=int, default=5, help="Learning rate divisor, when the dev accuracy increases")
     parser.add_argument("--num_epochs", type=int, default=25, help="Number of epochs")
     parser.add_argument("--encoder", type=str, default="baseline", help="Encoder type", choices=["baseline", "unilstm"])
 
