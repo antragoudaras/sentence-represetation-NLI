@@ -1,4 +1,4 @@
-name: acts-pr-gpu
+name: atcs-pr-gpu
 channels:
   - pytorch
   - nvidia
@@ -24,5 +24,5 @@ dependencies:
     - matplotlib>=3.4.3
     - seaborn>=0.11.2
     - ipywidgets>=7.6.5
-    - datasets
-    - spacy
+    - datasets==2.18.0
+    - spacy==3.7.4
