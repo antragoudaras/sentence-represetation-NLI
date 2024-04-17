@@ -89,16 +89,18 @@ class VocabularyBuilder:
         aligned_embeddings = [unk_embedding, glove["<PAD>"]]
 
         # Only use the train split to build the vocabulary
+        logging.info("Building unique tokens of vocab...")
         unique_tokens = {
             token
             for item in dataset["train"]
             for token in item["premise"] + item["hypothesis"]
         }
 
-        #Sorting helps with alignment
+        #Sorting ensures alignment
         sorted_unique_tokens = sorted(unique_tokens)
 
         # Update the w2i dictionary and embeddings list
+        logging.info("Building w2i and aligned embeddings...")
         for token in sorted_unique_tokens:
             w2i[token] = len(w2i)
             aligned_embeddings.append(glove[token])
@@ -109,6 +111,7 @@ class VocabularyBuilder:
         # Save the token_to_idx dictionary and aligned_embeddings tensor to disk
         #make sure that the saved_vectors directory exists
         Path("./saved_vectors").mkdir(exist_ok=True)
+        logging.info("Saving w2i and aligned embeddings to disk in folder saved_vectors...")
         torch.save(
             w2i,
             f"./saved_vectors/w2i_{self.glove_version}_{self.word_embedding_dim}.pt",

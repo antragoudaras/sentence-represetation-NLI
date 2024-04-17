@@ -2,3 +2,4 @@
 .data/
 .vector_cache/
 saved_vectors/
+**__pycache__*
