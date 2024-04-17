@@ -1,7 +1,7 @@
 import torch
 import logging
 from torch.utils.tensorboard.writer import SummaryWriter
-import tqdm
+from tqdm import tqdm
 import os
 
 def evaluate(model, criterion, loader, device):

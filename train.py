@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from data_utils import VocabularyBuilder, DataLoaderBuilder
-from encoders import BaselineEnc, UniLSTM
+from encoders import BaselineEnc, UniLSTM, BiLSTM
 from classifier import Clasiifier
 from model import Model
 from train_procedure import train, evaluate
@@ -46,6 +46,9 @@ def main(args):
     elif args.encoder == "unilstm":
         encoder = UniLSTM(embeddings_matrix)
         classifier_dim = 2048
+    elif args.encoder == "bilstm":
+        encoder = BiLSTM(embeddings_matrix)
+        classifier_dim = 4096
     else:
         raise ValueError("Invalid encoder type")
     
@@ -60,7 +63,7 @@ def main(args):
 
    
     logging.info("Training the model...")
-    best_val_loss, best_val_acc = train(model, optimizer, scheduler, criterion, train_loader, val_loader, device, args.num_epochs, log_dir, best_model_dir, args.encoder)
+    best_val_loss, best_val_acc = train(model, optimizer, scheduler, criterion, train_loader, val_loader, device, args.num_epochs, args.lr_divisor, log_dir, best_model_dir, args.encoder)
     logging.info(f"Best validation loss: {best_val_loss:.4f}, Best validation accuracy: {best_val_acc:.4f}")
 
     #Load the best model
@@ -83,7 +86,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=0.1, help="Learning rate")
     parser.add_argument("--lr_divisor", type=int, default=5, help="Learning rate divisor, when the dev accuracy increases")
     parser.add_argument("--num_epochs", type=int, default=25, help="Number of epochs")
-    parser.add_argument("--encoder", type=str, default="baseline", help="Encoder type", choices=["baseline", "unilstm"])
+    parser.add_argument("--encoder", type=str, default="bilstm", help="Encoder type", choices=["baseline", "unilstm"])
 
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO,
