@@ -33,10 +33,11 @@ class UniLSTM(nn.Module):
         orig_emdgs = self.embeddings(indices).transpose(0, 1) # (seq_len, batch, input_size)
 
         #sort by lengts
-        sent_len, idx_sort = np.sort(sent_len)[::-1], np.argsort(-sent_len)
+        idx_sort = np.argsort(-lengths.cpu())
         idx_unsort = np.argsort(idx_sort)
+        sent_len_sorted = -np.sort(-lengths.cpu())
 
-        emdgs = orig_emdgs.index_select(1, Variable(idx_sort))
+        emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
         
         sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
 
@@ -46,7 +47,7 @@ class UniLSTM(nn.Module):
         (hidden_state, _) = self.lstm(packed_emdgs)[1]
         hidden_state = hidden_state.squeeze(0)
 
-        final = hidden_state.index_select(0, Variable(idx_unsort))
+        final = hidden_state.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
 
         #return the last hidden state as the sentence representation
         return final

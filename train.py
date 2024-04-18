@@ -26,7 +26,7 @@ def main(args):
     set_seed(args.seed)
     logging.info("Building/Loading the SNLI dataset...")
     if args.checkpoint is None:
-        log_dir = "tensorboard_log_dir"
+        log_dir = f"{args.encoder}_tensorboard_log_dir"
         if not os.path.exists(log_dir):
             os.makedirs(log_dir, exist_ok=True)
 
