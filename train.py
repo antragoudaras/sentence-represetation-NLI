@@ -47,7 +47,11 @@ def main(args):
         encoder = UniLSTM(embeddings_matrix)
         classifier_dim = 2048
     elif args.encoder == "bilstm":
-        encoder = BiLSTM(embeddings_matrix)
+        encoder = BiLSTM(embeddings_matrix, max_pool=False)
+        classifier_dim = 4096
+    
+    elif args.encoder == "bilstm-max":
+        encoder = BiLSTM(embeddings_matrix, max_pool=True)
         classifier_dim = 4096
     else:
         raise ValueError("Invalid encoder type")
@@ -86,7 +90,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=0.1, help="Learning rate")
     parser.add_argument("--lr_divisor", type=int, default=5, help="Learning rate divisor, when the dev accuracy increases")
     parser.add_argument("--num_epochs", type=int, default=25, help="Number of epochs")
-    parser.add_argument("--encoder", type=str, default="bilstm", help="Encoder type", choices=["baseline", "unilstm"])
+    parser.add_argument("--encoder", type=str, default="bilstm", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
 
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO,
