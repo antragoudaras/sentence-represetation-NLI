@@ -102,16 +102,16 @@ def train(model, optmizer, scheduler, criterion, train_loader, val_loader, devic
         if val_acc > best_val_acc:
             logging.info(f'Best model found with val acc.: {100*val_acc:.4f}')
             best_val_acc = val_acc
-            #devide the learning rate by the lr_divisor
+            model_pth = os.path.join(best_model_dir, f'{encoder_name}_best.pth')
+            torch.save(model.state_dict(), model_pth)
+        else:
+            #divide the learning rate by the lr_divisor
             optmizer.param_groups[0]['lr'] /= lr_divisor
-            
+            logging.info(f'Learning rate decreased to: {optmizer.param_groups[0]["lr"]:.4f}')
             #stop training if the learning rate goes smaller than 10^-5
             if optmizer.param_groups[0]['lr'] < float(1e-5):
                 logging.info('Learning rate is smaller than 10^-5, stopping the training...')
                 break
-            
-            model_pth = os.path.join(best_model_dir, f'{encoder_name}_best.pth')
-            torch.save(model.state_dict(), model_pth)
 
     logging.info(f'Best val loss: {best_val_loss:.4f}')
     logging.info(f'Best val acc: {100*best_val_acc:.4f}')

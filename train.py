@@ -58,7 +58,7 @@ def main(args):
     logging.info(f"Total number of parameters: {sum(p.numel() for p in model.parameters())}")
 
     optimizer = optim.SGD(model.parameters(), lr=args.lr)
-    scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.9, verbose=True)
+    scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)
     criterion = nn.CrossEntropyLoss()
 
    

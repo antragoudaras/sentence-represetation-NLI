@@ -12,7 +12,7 @@ class Clasiifier(nn.Module):
 
         self.MLP = nn.Sequential(
             nn.Linear(4*self.input_dim, self.hidden_dim),
-            nn.Linear(self.hidden_dim, self.hidden_dim),
+            # nn.Linear(self.hidden_dim, self.hidden_dim),
             nn.Linear(self.hidden_dim, self.num_classes)
         )
     
