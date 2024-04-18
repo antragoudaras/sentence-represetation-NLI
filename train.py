@@ -25,7 +25,7 @@ def main(args):
     logging.info("Setting seed...")
     set_seed(args.seed)
     logging.info("Building/Loading the SNLI dataset...")
-    if args.checkpoint:
+    if args.checkpoint is None:
         log_dir = "tensorboard_log_dir"
         if not os.path.exists(log_dir):
             os.makedirs(log_dir, exist_ok=True)
@@ -38,22 +38,25 @@ def main(args):
     dataset, w2i, embeddings_matrix = vocabulary_builder.build_vocabulary()
 
     dataloader = DataLoaderBuilder(dataset, w2i, args)
-    if args.checkpoint:
+    if args.checkpoint is None:
         train_loader, val_loader = dataloader.get_dataloader("train"), dataloader.get_dataloader("validation")
     
     if args.encoder == "baseline":
         encoder = BaselineEnc(embeddings_matrix)
         classifier_dim = 300
+    
     elif args.encoder == "unilstm":
         encoder = UniLSTM(embeddings_matrix)
         classifier_dim = 2048
+    
     elif args.encoder == "bilstm":
-        encoder = BiLSTM(embeddings_matrix, max_pool=False)
+        encoder = BiLSTM(embeddings_matrix, max_pooling=False)
         classifier_dim = 4096
     
     elif args.encoder == "bilstm-max":
-        encoder = BiLSTM(embeddings_matrix, max_pool=True)
+        encoder = BiLSTM(embeddings_matrix, max_pooling=True)
         classifier_dim = 4096
+    
     else:
         raise ValueError("Invalid encoder type")
     
@@ -61,7 +64,7 @@ def main(args):
 
     model = Model(encoder, classifier).to(device)
     logging.info(f"Total number of parameters: {sum(p.numel() for p in model.parameters())}")
-    if args.checkpoint:
+    if args.checkpoint is None:
         optimizer = optim.SGD(model.parameters(), lr=args.lr)
         scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)
         criterion = nn.CrossEntropyLoss()
@@ -99,7 +102,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=0.1, help="Learning rate")
     parser.add_argument("--lr_divisor", type=int, default=5, help="Learning rate divisor, when the dev accuracy increases")
     parser.add_argument("--num_epochs", type=int, default=25, help="Number of epochs")
-    parser.add_argument("--encoder", type=str, default="bilstm", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
+    parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
     parser.add_argument("--checkpoint", type=str, default=None, help="Checkpoint file")
 
     args = parser.parse_args()
