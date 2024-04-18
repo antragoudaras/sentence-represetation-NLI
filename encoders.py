@@ -66,11 +66,11 @@ class BiLSTM(nn.Module):
         orig_emdgs = self.embeddings(indices).transpose(0, 1) # (seq_len, batch, input_size)
 
         #sort by lengts
-        idx_sort = np.argsort(-lengths)
+        idx_sort = np.argsort(-lengths.cpu())
         idx_unsort = np.argsort(idx_sort)
-        sent_len_sorted = -np.sort(-lengths)
+        sent_len_sorted = -np.sort(-lengths.cpu())
 
-        emdgs = orig_emdgs.index_select(1, Variable(idx_sort))
+        emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
         
         sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
 
@@ -82,7 +82,7 @@ class BiLSTM(nn.Module):
             lstm_out = pad_packed_sequence(packed_output, batch_first=True)[0]
 
             #unsort by length 
-            lstm_out = lstm_out.index_select(0, Variable(idx_unsort)) #(batch_size, seq_len, hid_dim*2)
+            lstm_out = lstm_out.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort)) #(batch_size, seq_len, hid_dim*2)
 
      
             #remove zero padding for max pooling
@@ -92,7 +92,7 @@ class BiLSTM(nn.Module):
         else:
             concat_hidden_dir = torch.cat((hidden_states[0], hidden_states[1]), dim=1)
             #unsort by length
-            final = concat_hidden_dir.index_select(0, Variable(idx_unsort))
+            final = concat_hidden_dir.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
             
         return final
     

@@ -56,7 +56,7 @@ def train_step(model, opt, criterion, batch_data, device):
 
     opt.step()
 
-    return loss.item()
+    return loss
 
 
 def train(model, optmizer, scheduler, criterion, train_loader, val_loader, device, epochs, lr_divisor, log_dir, best_model_dir, encoder_name):
@@ -83,7 +83,7 @@ def train(model, optmizer, scheduler, criterion, train_loader, val_loader, devic
             train_loss += loss.item()
             train_loss_per_batch[batch_idx] = loss.item()
 
-            if batch % 10==0 and batch != 0:
+            if batch_idx % 500 == 0 and batch_idx != 0:
                 logging.info(f'Epoch: {epoch+1}/{epochs}, Batch: {batch_idx+1}/{len(train_loader)}, Train Loss: {train_loss_per_batch[batch_idx]:.4f}')
 
         train_loss = train_loss /  len(train_loader)
