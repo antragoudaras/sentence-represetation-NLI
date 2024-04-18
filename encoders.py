@@ -86,9 +86,14 @@ class BiLSTM(nn.Module):
 
      
             #remove zero padding for max pooling
-            tensor_unpadded = [x[:l] for x, l in zip(lstm_out, lengths)] #list of length batch_size, each element is a tensor of shape (seq_len, hid_dim*2)
-            max = [torch.max(x, 0)[0] for x in tensor_unpadded] #list of length batch_size, each element is a tensor of shape (hid_dim*2,)
-            final = torch.stack(max)
+            # tensor_unpadded = [x[:l] for x, l in zip(lstm_out, lengths)] #list of length batch_size, each element is a tensor of shape (seq_len, hid_dim*2)
+            # max = [torch.max(x, 0)[0] for x in tensor_unpadded] #list of length batch_size, each element is a tensor of shape (hid_dim*2,)
+            # final = torch.stack(max)
+
+            mask = lstm_out != 0
+            masked_out = lstm_out.masked_fill(~mask, float('-inf'))
+            final = torch.max(masked_out, dim=1)[0]
+           
         else:
             concat_hidden_dir = torch.cat((hidden_states[0], hidden_states[1]), dim=1)
             #unsort by length
