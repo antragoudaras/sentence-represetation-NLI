@@ -25,21 +25,22 @@ def main(args):
     logging.info("Setting seed...")
     set_seed(args.seed)
     logging.info("Building/Loading the SNLI dataset...")
+    if args.checkpoint:
+        log_dir = "tensorboard_log_dir"
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
 
-    log_dir = "tensorboard_log_dir"
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir, exist_ok=True)
-
-    best_model_dir = "best_model_dir"
-    if not os.path.exists(best_model_dir):
-        os.makedirs(best_model_dir, exist_ok=True)
+        best_model_dir = "best_model_dir"
+        if not os.path.exists(best_model_dir):
+            os.makedirs(best_model_dir, exist_ok=True)
 
     vocabulary_builder = VocabularyBuilder()
     dataset, w2i, embeddings_matrix = vocabulary_builder.build_vocabulary()
 
     dataloader = DataLoaderBuilder(dataset, w2i, args)
-    train_loader, val_loader = dataloader.get_dataloader("train"), dataloader.get_dataloader("validation")
-    test_loader = dataloader.get_dataloader("test")
+    if args.checkpoint:
+        train_loader, val_loader = dataloader.get_dataloader("train"), dataloader.get_dataloader("validation")
+    
     if args.encoder == "baseline":
         encoder = BaselineEnc(embeddings_matrix)
         classifier_dim = 300
@@ -60,23 +61,31 @@ def main(args):
 
     model = Model(encoder, classifier).to(device)
     logging.info(f"Total number of parameters: {sum(p.numel() for p in model.parameters())}")
+    if args.checkpoint:
+        optimizer = optim.SGD(model.parameters(), lr=args.lr)
+        scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)
+        criterion = nn.CrossEntropyLoss()
+    
+    test_loader = dataloader.get_dataloader("test")
+    
+    if args.checkpoint:
+        logging.info(f"Loading the pretrained model from {args.checkpoint}")
+        model.load_state_dict(torch.load(args.checkpoint))
+        test_loss, test_acc = evaluate(model, criterion, test_loader, device)
+        logging.info(f"Test loss: {test_loss:.4f}, Test accuracy: {100*test_acc:.4f}")
+    else:
+        logging.info("Training the model...")
+        best_val_loss, best_val_acc = train(model, optimizer, scheduler, criterion, train_loader, val_loader, device, args.num_epochs, args.lr_divisor, log_dir, best_model_dir, args.encoder)
+        logging.info(f"Best validation loss: {best_val_loss:.4f}, Best validation accuracy: {best_val_acc:.4f}")
 
-    optimizer = optim.SGD(model.parameters(), lr=args.lr)
-    scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)
-    criterion = nn.CrossEntropyLoss()
+        #Load the best model
+        logging.info("Loading the best model...")
+        model.load_state_dict(torch.load(os.path.join(best_model_dir, f"{args.encoder}_best.pth")))
 
-   
-    logging.info("Training the model...")
-    best_val_loss, best_val_acc = train(model, optimizer, scheduler, criterion, train_loader, val_loader, device, args.num_epochs, args.lr_divisor, log_dir, best_model_dir, args.encoder)
-    logging.info(f"Best validation loss: {best_val_loss:.4f}, Best validation accuracy: {best_val_acc:.4f}")
+        test_loss, test_acc = evaluate(model, criterion, test_loader, device)
 
-    #Load the best model
-    logging.info("Loading the best model...")
-    model.load_state_dict(torch.load(os.path.join(best_model_dir, f"{args.encoder}_best.pth")))
+        logging.info(f"Test loss: {test_loss:.4f}, Test accuracy: {100*test_acc:.4f}")
 
-    test_loss, test_acc = evaluate(model, criterion, test_loader, device)
-
-    logging.info(f"Test loss: {test_loss:.4f}, Test accuracy: {100*test_acc:.4f}")
     logging.info("Done!")
 
 
@@ -91,6 +100,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr_divisor", type=int, default=5, help="Learning rate divisor, when the dev accuracy increases")
     parser.add_argument("--num_epochs", type=int, default=25, help="Number of epochs")
     parser.add_argument("--encoder", type=str, default="bilstm", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
+    parser.add_argument("--checkpoint", type=str, default=None, help="Checkpoint file")
 
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO,
