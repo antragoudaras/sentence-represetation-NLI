@@ -5,9 +5,12 @@
 #SBATCH --job-name=InstallEnvironment
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
-#SBATCH --time=00:30:00
+#SBATCH --time=00:30:00``
 #SBATCH --output=install_environment_mamba_%A.out
 
+
 module purge
+
+source ~/miniconda3/etc/profile.d/conda.sh
 
 mamba env create -f environment_gpu.yml
