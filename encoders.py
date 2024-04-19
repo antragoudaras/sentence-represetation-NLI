@@ -5,7 +5,7 @@ import numpy as np
 from torch.autograd import Variable
 
 class BaselineEnc(nn.Module):
-    """Average word embeddings to obtain sentence representations."""
+    """Average word embeddings to obtain sentence representations. Take different lengths intop account."""
     def __init__(self, glove_embeddings):
         super(BaselineEnc, self).__init__()
         self.embeddings = nn.Embedding.from_pretrained(glove_embeddings)
