@@ -99,6 +99,9 @@ def train(model, optmizer, scheduler, criterion, train_loader, val_loader, devic
 
         scheduler.step()
 
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+
         if val_acc > best_val_acc:
             logging.info(f'Best model found with val acc.: {100*val_acc:.4f}')
             best_val_acc = val_acc
