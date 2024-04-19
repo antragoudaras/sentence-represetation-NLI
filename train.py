@@ -64,10 +64,10 @@ def main(args):
 
     model = Model(encoder, classifier).to(device)
     logging.info(f"Total number of parameters: {sum(p.numel() for p in model.parameters())}")
+    criterion = nn.CrossEntropyLoss()
     if args.checkpoint is None:
         optimizer = optim.SGD(model.parameters(), lr=args.lr)
-        scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)
-        criterion = nn.CrossEntropyLoss()
+        scheduler = optim.lr_scheduler.MultiplicativeLR(optimizer, lr_lambda= lambda epoch: 0.99, verbose=True)    
     
     test_loader = dataloader.get_dataloader("test")
     
