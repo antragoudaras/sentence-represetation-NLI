@@ -12,12 +12,15 @@ class BaselineEnc(nn.Module):
         self.embeddings.requires_grad = False
 
     def forward(self, indices, lengths):
-        embeddings = self.embeddings(indices)
-        #sum alonmg the sequence dimension
-        sum_embeddings = embeddings.sum(dim=1).view(-1,1).to(torch.float32)
-        #average embeedings
-        avg = sum_embeddings / lengths
-        return avg
+         
+         embeddings = self.embeddings(indices)
+         # Sum the embeddings along the sequence dimension (dim=1)
+         sum_embeddings = torch.sum(embeddings, dim=1)
+         # Compute the average by dividing the sum by the sequence lengths
+         lengths = lengths.view(-1, 1).to(torch.float32)  # Ensure lengths have the same dtype as sum_embeddings
+         avg_embeddings = sum_embeddings / lengths
+         
+         return avg_embeddings
 
 class UniLSTM(nn.Module): 
     """Uni-directional LSTM encoder."""
