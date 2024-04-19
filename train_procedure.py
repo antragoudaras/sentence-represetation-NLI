@@ -12,6 +12,7 @@ def evaluate(model, criterion, loader, device):
 
     with torch.no_grad():
         valiter = iter(loader)
+        val_loss_per_batch = {}
         for batch_idx in range(len(loader)):
             batch_data = next(valiter)
             premises_tensors, hypotheses_tensors, premises_lengths, hypotheses_lengths, labels = batch_data
@@ -25,6 +26,7 @@ def evaluate(model, criterion, loader, device):
             loss = criterion(output_loggits, labels)
 
             val_loss += loss.item()
+            val_loss_per_batch[batch_idx] = loss.item()
 
             correct_pred += (output_loggits.argmax(dim=1) == labels).sum().item()
 
@@ -32,7 +34,7 @@ def evaluate(model, criterion, loader, device):
 
 
             if batch_idx % 10 == 0:
-                logging.info(f'Batch: {batch_idx+1}/{len(loader)}, Loss: {val_loss:.4f}, Acc: {100*batch_acc:.4f}')
+                logging.info(f'Batch: {batch_idx+1}/{len(loader)}, Loss: {val_loss_per_batch[batch_idx]:.4f}, Acc: {100*batch_acc:.4f}')
         
         val_loss = val_loss/len(loader)
         val_acc = correct_pred/len(loader.dataset)
