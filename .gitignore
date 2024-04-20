@@ -3,3 +3,5 @@
 .vector_cache/
 saved_vectors/
 **__pycache__*
+SentEval/
+downstream/
