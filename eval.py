@@ -13,6 +13,8 @@ from encoders import BaselineEnc, UniLSTM, BiLSTM
 from classifier import Clasiifier
 from model import Model
 from train_procedure import evaluate
+from data_utils_senteval import SentEvalVocabularyBuilder
+
 
 # import SentEval
 senteval_path = './SentEval'
@@ -42,15 +44,22 @@ def token_mapping(w2i: dict[str, int], tokens: list[str]) -> list[int]:
 def batcher(params, batch):
     """Batcher of SentEval"""
     batch = [sent if sent != [] else ['.'] for sent in batch]
-    encoder = params.model.encoder
-    w2i = params.w2i
+    
+    if params.senteval_vocab:
+        vocab_builder = SentEvalVocabularyBuilder(tokenize=False)
+        sentences, w2i, aligned_embeddings = vocab_builder.build_vocabulary(batch)
+        encoder = params.model.encoder(aligned_embeddings)
 
-    #Tokenize the batch
-    tokinzer_obj = Tokenizer()
-    tokenized_sentences = [tokinzer_obj.tokenize(' '.join(sentence)) for sentence in batch]
+    else:
+        w2i = params.w2i
+        encoder = params.model.encoder
+
+        # #Tokenize the batch
+        tokinzer_obj = Tokenizer()
+        sentences = [tokinzer_obj.tokenize(' '.join(sentence)) for sentence in batch]
 
     #get indices of the tokens
-    sentence_tokens = [token_mapping(w2i, tokens) for tokens in tokenized_sentences]
+    sentence_tokens = [token_mapping(w2i, tokens) for tokens in sentences]
 
     #pad the sequences
     padded_sentences = pad_sequence(sentence_tokens, batch_first=True, padding_value=1)
@@ -128,7 +137,7 @@ def main(args):
     #Evaluate the model on SentEval tasks if the flag is set
     if args.senteval:
         logging.info("Evaluating the model on SentEval tasks")
-        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path}
+        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'build_vocab': args.senteval_vocab}
 
         se = senteval.engine.SE(params, batcher, None)
         transfer_tasks = ['MR', 'CR', 'MPQA', 'SUBJ', 'SST2', 'TREC',
@@ -146,6 +155,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the model either on SNLI and/or the SentEval tasks")
     parser.add_argument("checkpoint", type=str, help="Path to the model checkpoint")
+    parser.add_argument("--senteval-vocab", action="store_true", default=True, help="Build Vocab vbased on SentEval")
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
     parser.add_argument("--snli", action="store_true", default=True, help="Evaluate on SNLI dataset")
     parser.add_argument("--senteval", action="store_true", default=True, help="Evaluate on SentEval tasks")
