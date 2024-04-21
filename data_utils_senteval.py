@@ -26,7 +26,8 @@ class Tokenizer:
 
 
 class SentEvalVocabularyBuilder:
-    def __init__(self, glove_version = '840B', word_embedding_dim = 300, tokenize=False):
+    def __init__(self, task, glove_version = '840B', word_embedding_dim = 300, tokenize=False):
+        self.task = task
         self.glove_version = glove_version
         self.word_embedding_dim = word_embedding_dim
         self.tokenize = tokenize
@@ -66,7 +67,7 @@ class SentEvalVocabularyBuilder:
         #     dataset = self.get_dataset()
         #     return dataset, w2i, aligned_embeddings
 
-        logging.info("Building vocabulary...")
+        logging.info(f"Building vocabulary for task {self.task}...")
 
         if self.tokenize:
             logging.info("Tokenizing the batch...")
@@ -86,18 +87,18 @@ class SentEvalVocabularyBuilder:
         aligned_embeddings = [unk_embedding, glove["<PAD>"]]
 
         # Only use the train split to build the vocabulary
-        logging.info("Building unique tokens of vocab...")
+        logging.info(f"Building unique tokens of vocab based on {self.task}..")
         unique_tokens = {
             token
-            for item in batch
-            for token in item
+            for sentence in batch
+            for token in sentence
         }
 
         #Sorting ensures alignment
         sorted_unique_tokens = sorted(unique_tokens)
 
         # Update the w2i dictionary and embeddings list
-        logging.info("Building w2i and aligned embeddings...")
+        logging.info(f"Building w2i and aligned embeddings for task {self.task}")
         for token in sorted_unique_tokens:
             w2i[token] = len(w2i)
             aligned_embeddings.append(glove[token])

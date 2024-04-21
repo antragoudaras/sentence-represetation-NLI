@@ -46,9 +46,12 @@ def batcher(params, batch):
     batch = [sent if sent != [] else ['.'] for sent in batch]
     
     if params.senteval_vocab:
-        vocab_builder = SentEvalVocabularyBuilder(tokenize=False)
+        vocab_builder = SentEvalVocabularyBuilder(params.current_task, tokenize=False)
         sentences, w2i, aligned_embeddings = vocab_builder.build_vocabulary(batch)
-        encoder = params.model.encoder(aligned_embeddings)
+        encoder = params.model.encoder
+        aligned_embeddings = aligned_embeddings.to(params.device)
+        encoder.embeddings = nn.Embedding.from_pretrained(aligned_embeddings)
+        encoder.embeddings.requires_grad = False
 
     else:
         w2i = params.w2i
@@ -137,7 +140,7 @@ def main(args):
     #Evaluate the model on SentEval tasks if the flag is set
     if args.senteval:
         logging.info("Evaluating the model on SentEval tasks")
-        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'build_vocab': args.senteval_vocab}
+        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'senteval_vocab': args.senteval_vocab}
 
         se = senteval.engine.SE(params, batcher, None)
         transfer_tasks = ['MR', 'CR', 'MPQA', 'SUBJ', 'SST2', 'TREC',
@@ -146,9 +149,15 @@ def main(args):
         logging.info(f"Results on SentEval tasks: {results}")
 
         macro_acc, micro_score = calc_macro_micro_acc(transfer_tasks, results)
+        logging.info("--------------------------------")
+        if args.senteval_vocab:
+            logging.info("Results with building new Vocab. based on SentEval")
+        else:
+            logging.info("Results using the Vocab of SNLI")
 
         logging.info(f"Macro accuracy: {macro_acc:.4f}")
         logging.info(f"Micro score: {micro_score:.4f}")
+        logging.info("--------------------------------")
 
 
 
