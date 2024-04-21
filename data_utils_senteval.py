@@ -119,4 +119,4 @@ class SentEvalVocabularyBuilder:
         #     f"./saved_vectors/embeddings_{self.glove_version}_{self.word_embedding_dim}.pt",
         # )
 
-        return batch, w2i, aligned_embeddings
+        return w2i, aligned_embeddings

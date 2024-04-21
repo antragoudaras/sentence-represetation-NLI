@@ -41,25 +41,29 @@ def token_mapping(w2i: dict[str, int], tokens: list[str]) -> list[int]:
     """
     return torch.tensor([w2i.get(token, 0) for token in tokens])
 
+def prepare(params, samples):
+    if params.senteval_vocab:
+        vocab_builder = SentEvalVocabularyBuilder(params.current_task, tokenize=params.tokenize)
+        w2i, aligned_embeddings = vocab_builder.build_vocabulary(samples)
+        aligned_embeddings = aligned_embeddings.to(params.device)
+        
+        params.model.encoder.embeddings = nn.Embedding.from_pretrained(aligned_embeddings)
+        params.model.encoder.embeddings.requires_grad = False
+        params.w2i = w2i
+    return
+
 def batcher(params, batch):
     """Batcher of SentEval"""
-    batch = [sent if sent != [] else ['.'] for sent in batch]
+    sentences = [sent if sent != [] else ['.'] for sent in batch]
     
-    if params.senteval_vocab:
-        vocab_builder = SentEvalVocabularyBuilder(params.current_task, tokenize=False)
-        sentences, w2i, aligned_embeddings = vocab_builder.build_vocabulary(batch)
-        encoder = params.model.encoder
-        aligned_embeddings = aligned_embeddings.to(params.device)
-        encoder.embeddings = nn.Embedding.from_pretrained(aligned_embeddings)
-        encoder.embeddings.requires_grad = False
+    
+    w2i = params.w2i
+    encoder = params.model.encoder
 
-    else:
-        w2i = params.w2i
-        encoder = params.model.encoder
-
-        # #Tokenize the batch
+    # #Tokenize the batch
+    if params.tokenize:
         tokinzer_obj = Tokenizer()
-        sentences = [tokinzer_obj.tokenize(' '.join(sentence)) for sentence in batch]
+        sentences = [tokinzer_obj.tokenize(' '.join(sentence)) for sentence in sentences]
 
     #get indices of the tokens
     sentence_tokens = [token_mapping(w2i, tokens) for tokens in sentences]
@@ -140,9 +144,9 @@ def main(args):
     #Evaluate the model on SentEval tasks if the flag is set
     if args.senteval:
         logging.info("Evaluating the model on SentEval tasks")
-        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'senteval_vocab': args.senteval_vocab}
+        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'senteval_vocab': args.senteval_vocab, 'tokenize': args.tokenize}
 
-        se = senteval.engine.SE(params, batcher, None)
+        se = senteval.engine.SE(params, batcher, prepare)
         transfer_tasks = ['MR', 'CR', 'MPQA', 'SUBJ', 'SST2', 'TREC',
                       'MRPC', 'SICKEntailment', 'STS14']
         results = se.eval(transfer_tasks)
@@ -150,6 +154,7 @@ def main(args):
 
         macro_acc, micro_score = calc_macro_micro_acc(transfer_tasks, results)
         logging.info("--------------------------------")
+        logging.info(f"Results with tokenization: {args.tokenize} on SenteEval")
         if args.senteval_vocab:
             logging.info("Results with building new Vocab. based on SentEval")
         else:
@@ -164,7 +169,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the model either on SNLI and/or the SentEval tasks")
     parser.add_argument("checkpoint", type=str, help="Path to the model checkpoint")
-    parser.add_argument("--senteval-vocab", action="store_true", default=True, help="Build Vocab vbased on SentEval")
+    parser.add_argument("--senteval-vocab", action="store_true", default=True, help="Build Vocab based on SentEval")
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
     parser.add_argument("--snli", action="store_true", default=True, help="Evaluate on SNLI dataset")
     parser.add_argument("--senteval", action="store_true", default=True, help="Evaluate on SentEval tasks")
@@ -172,7 +177,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--sent_eval_path", type=str, default="./SentEval/data", help="Path to the SentEval data")
-
+    parser.add_argument("--tokenize", action="store_true", default=False, help="Tokenize or not")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO,
