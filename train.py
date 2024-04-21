@@ -26,11 +26,11 @@ def main(args):
     set_seed(args.seed)
     logging.info("Building/Loading the SNLI dataset...")
     if args.checkpoint is None:
-        log_dir = f"{args.encoder}_tensorboard_log_dir"
+        log_dir = f"{args.encoder}_tensorboard_log_dir_{args.seed}"
         if not os.path.exists(log_dir):
             os.makedirs(log_dir, exist_ok=True)
 
-        best_model_dir = "best_model_dir"
+        best_model_dir = f"best_model_dir_{args.seed}"
         if not os.path.exists(best_model_dir):
             os.makedirs(best_model_dir, exist_ok=True)
 
@@ -96,7 +96,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train the model")
-    parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--seed", type=int, default=1234, help="Random seed")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the DataLoader")
     parser.add_argument("--lr", type=float, default=0.1, help="Learning rate")
