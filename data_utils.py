@@ -131,6 +131,7 @@ class VocabularyBuilder:
         """
     
         dataset = load_dataset("snli", cache_dir="./.data")
+        # dataset = Dataset.from_file("./.data/snli/")
         dataset = dataset.filter(lambda example: example["label"] != -1)
         dataset = dataset.map(self.tokenize_batch, batched=True, batch_size=1024)
 

@@ -141,6 +141,8 @@ def main(args):
         
         logging.info(f"Validation loss: {val_loss:.4f}, Validation accuracy: {100*val_acc:.4f}")
         logging.info(f"Test loss: {test_loss:.4f}, Test accuracy: {100*test_acc:.4f}")
+        if not args.senteval:
+            return val_acc, test_acc
     #Evaluate the model on SentEval tasks if the flag is set
     if args.senteval:
         logging.info("Evaluating the model on SentEval tasks")
@@ -177,10 +179,10 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the model either on SNLI and/or the SentEval tasks")
     parser.add_argument("checkpoint", type=str, help="Path to the model checkpoint")
-    parser.add_argument("--senteval-vocab", action="store_true", default=True, help="Build Vocab based on SentEval")
+    parser.add_argument("--senteval-vocab", action="store_true", default=False, help="Build Vocab based on SentEval")
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
-    parser.add_argument("--snli", action="store_true", default=True, help="Evaluate on SNLI dataset")
-    parser.add_argument("--senteval", action="store_true", default=True, help="Evaluate on SentEval tasks")
+    parser.add_argument("--snli", action="store_true", default=False, help="Evaluate on SNLI dataset")
+    parser.add_argument("--senteval", action="store_true", default=False, help="Evaluate on SentEval tasks")
     parser.add_argument("--seed", type=int, default=1111, help="Random seed")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
