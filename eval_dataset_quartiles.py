@@ -106,7 +106,16 @@ def main(args):
     logging.info(f"Middle dataset size: {len(quantiled_dataset[1])}")
     logging.info(f"Longest dataset size: {len(quantiled_dataset[2])}")
 
-    logging.info("Evaluating the model on SNLI dataset")
+    logging.info("average sentence length (sum of premise + hypothesis) of the dataset")
+    for i, subset in enumerate(quantiled_dataset):
+        avg_len = sum(len(sample["premise"]) + len(sample["hypothesis"]) for sample in subset) / len(subset)
+        logging.info(f"Quartile {quariles_list[i]}: {avg_len:.2f}")
+
+    logging.info("Evaluating the model on each quartile dataset")
+    q_dataset_dict = {"small": quantiled_dataset[0], "medium": quantiled_dataset[1], "large": quantiled_dataset[2]}
+    for key, value in q_dataset_dict.items():
+        test_loader = quantiled_dataset[key]
+        test_loss, test_acc = evaluate(model, criterion, test_loader, device)
 
     
 
