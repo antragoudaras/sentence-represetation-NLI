@@ -176,7 +176,7 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=1234, help="Random seed")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
-    parser.add_argument("--quartile_list", type=list, default=[0.33, 0.66], help="Quartile list")
+    parser.add_argument("--quartile_list", type=list, default=[0.1, 0.9], help="Quartile list")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO,
