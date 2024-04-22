@@ -153,8 +153,9 @@ def main(args):
     for key, value in q_dataset_dict.items():
         test_dataset = q_dataset_dict[key]
         test_loader = DataLoader(test_dataset, batch_size=args.batch_size, num_workers=args.num_workers, collate_fn=partial(collate_fn, w2i))
+        logging.info(f"Running evaluation on {key} dataset")
         test_loss, test_acc = evaluate(model, criterion, test_loader, device)
-    
+        logging.info(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the model either on SNLI and/or the SentEval tasks")
