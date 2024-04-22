@@ -1,0 +1,511 @@
+04/19 06:18:55 PM: Printing arguments : Namespace(seed=42, batch_size=64, num_workers=4, lr=0.1, lr_divisor=5, num_epochs=40, encoder='unilstm', checkpoint=None)
+04/19 06:18:55 PM: Setting seed...
+04/19 06:18:55 PM: Building/Loading the SNLI dataset...
+04/19 06:18:55 PM: Vocab already exists. Loading from disk...
+04/19 06:19:05 PM: Total number of parameters: 33538355
+04/19 06:19:06 PM: Training the model...
+  0%|          | 0/40 [00:00<?, ?it/s]04/19 06:19:06 PM: Epoch: 1/40
+04/19 06:19:13 PM: Epoch: 1/40, Batch: 501/8584, Train Loss: 1.0666
+04/19 06:19:20 PM: Epoch: 1/40, Batch: 1001/8584, Train Loss: 0.9107
+04/19 06:19:27 PM: Epoch: 1/40, Batch: 1501/8584, Train Loss: 0.7485
+04/19 06:19:34 PM: Epoch: 1/40, Batch: 2001/8584, Train Loss: 0.9378
+04/19 06:19:41 PM: Epoch: 1/40, Batch: 2501/8584, Train Loss: 0.7856
+04/19 06:19:48 PM: Epoch: 1/40, Batch: 3001/8584, Train Loss: 0.7304
+04/19 06:19:55 PM: Epoch: 1/40, Batch: 3501/8584, Train Loss: 0.8991
+04/19 06:20:02 PM: Epoch: 1/40, Batch: 4001/8584, Train Loss: 0.8398
+04/19 06:20:09 PM: Epoch: 1/40, Batch: 4501/8584, Train Loss: 0.8982
+04/19 06:20:16 PM: Epoch: 1/40, Batch: 5001/8584, Train Loss: 0.7704
+04/19 06:20:23 PM: Epoch: 1/40, Batch: 5501/8584, Train Loss: 0.7555
+04/19 06:20:30 PM: Epoch: 1/40, Batch: 6001/8584, Train Loss: 0.6045
+04/19 06:20:37 PM: Epoch: 1/40, Batch: 6501/8584, Train Loss: 0.8224
+04/19 06:20:44 PM: Epoch: 1/40, Batch: 7001/8584, Train Loss: 0.8536
+04/19 06:20:51 PM: Epoch: 1/40, Batch: 7501/8584, Train Loss: 0.7280
+04/19 06:20:58 PM: Epoch: 1/40, Batch: 8001/8584, Train Loss: 0.6681
+04/19 06:21:05 PM: Epoch: 1/40, Batch: 8501/8584, Train Loss: 0.7222
+04/19 06:21:07 PM: Epoch: 1/40, Train Loss: 0.7945
+04/19 06:21:07 PM: Batch: 1/154, Loss: 0.6886, Acc: 70.3125
+04/19 06:21:07 PM: Batch: 11/154, Loss: 0.6423, Acc: 71.8750
+04/19 06:21:07 PM: Batch: 21/154, Loss: 0.8433, Acc: 62.5000
+04/19 06:21:07 PM: Batch: 31/154, Loss: 0.5125, Acc: 84.3750
+04/19 06:21:07 PM: Batch: 41/154, Loss: 0.5621, Acc: 82.8125
+04/19 06:21:07 PM: Batch: 51/154, Loss: 0.8442, Acc: 67.1875
+04/19 06:21:07 PM: Batch: 61/154, Loss: 0.6930, Acc: 68.7500
+04/19 06:21:07 PM: Batch: 71/154, Loss: 0.8216, Acc: 65.6250
+04/19 06:21:07 PM: Batch: 81/154, Loss: 0.6758, Acc: 78.1250
+04/19 06:21:07 PM: Batch: 91/154, Loss: 0.7549, Acc: 68.7500
+04/19 06:21:07 PM: Batch: 101/154, Loss: 0.7123, Acc: 64.0625
+04/19 06:21:08 PM: Batch: 111/154, Loss: 0.5781, Acc: 76.5625
+04/19 06:21:08 PM: Batch: 121/154, Loss: 0.6979, Acc: 68.7500
+04/19 06:21:08 PM: Batch: 131/154, Loss: 0.7140, Acc: 73.4375
+04/19 06:21:08 PM: Batch: 141/154, Loss: 0.6788, Acc: 75.0000
+04/19 06:21:08 PM: Batch: 151/154, Loss: 0.7273, Acc: 67.1875
+04/19 06:21:08 PM: Epoch: 1/40, Val Loss: 0.6840, Val Acc: 71.5911
+04/19 06:21:08 PM: Best model found with val acc.: 71.5911
+  2%|▎         | 1/40 [02:02<1:19:32, 122.37s/it]04/19 06:21:08 PM: Epoch: 2/40
+04/19 06:21:15 PM: Epoch: 2/40, Batch: 501/8584, Train Loss: 0.6730
+04/19 06:21:22 PM: Epoch: 2/40, Batch: 1001/8584, Train Loss: 0.6382
+04/19 06:21:29 PM: Epoch: 2/40, Batch: 1501/8584, Train Loss: 0.5384
+04/19 06:21:36 PM: Epoch: 2/40, Batch: 2001/8584, Train Loss: 0.7195
+04/19 06:21:43 PM: Epoch: 2/40, Batch: 2501/8584, Train Loss: 0.4892
+04/19 06:21:50 PM: Epoch: 2/40, Batch: 3001/8584, Train Loss: 0.5534
+04/19 06:21:57 PM: Epoch: 2/40, Batch: 3501/8584, Train Loss: 0.8153
+04/19 06:22:04 PM: Epoch: 2/40, Batch: 4001/8584, Train Loss: 0.6820
+04/19 06:22:11 PM: Epoch: 2/40, Batch: 4501/8584, Train Loss: 0.7710
+04/19 06:22:18 PM: Epoch: 2/40, Batch: 5001/8584, Train Loss: 0.6158
+04/19 06:22:25 PM: Epoch: 2/40, Batch: 5501/8584, Train Loss: 0.5721
+04/19 06:22:32 PM: Epoch: 2/40, Batch: 6001/8584, Train Loss: 0.4783
+04/19 06:22:39 PM: Epoch: 2/40, Batch: 6501/8584, Train Loss: 0.7316
+04/19 06:22:46 PM: Epoch: 2/40, Batch: 7001/8584, Train Loss: 0.7094
+04/19 06:22:53 PM: Epoch: 2/40, Batch: 7501/8584, Train Loss: 0.5442
+04/19 06:23:00 PM: Epoch: 2/40, Batch: 8001/8584, Train Loss: 0.5872
+04/19 06:23:07 PM: Epoch: 2/40, Batch: 8501/8584, Train Loss: 0.6563
+04/19 06:23:08 PM: Epoch: 2/40, Train Loss: 0.6386
+04/19 06:23:08 PM: Batch: 1/154, Loss: 0.5335, Acc: 82.8125
+04/19 06:23:09 PM: Batch: 11/154, Loss: 0.5792, Acc: 73.4375
+04/19 06:23:09 PM: Batch: 21/154, Loss: 0.6677, Acc: 67.1875
+04/19 06:23:09 PM: Batch: 31/154, Loss: 0.4513, Acc: 84.3750
+04/19 06:23:09 PM: Batch: 41/154, Loss: 0.5168, Acc: 84.3750
+04/19 06:23:09 PM: Batch: 51/154, Loss: 0.6748, Acc: 65.6250
+04/19 06:23:09 PM: Batch: 61/154, Loss: 0.6077, Acc: 71.8750
+04/19 06:23:09 PM: Batch: 71/154, Loss: 0.7471, Acc: 67.1875
+04/19 06:23:09 PM: Batch: 81/154, Loss: 0.6156, Acc: 76.5625
+04/19 06:23:09 PM: Batch: 91/154, Loss: 0.6586, Acc: 71.8750
+04/19 06:23:09 PM: Batch: 101/154, Loss: 0.6306, Acc: 76.5625
+04/19 06:23:09 PM: Batch: 111/154, Loss: 0.5185, Acc: 79.6875
+04/19 06:23:09 PM: Batch: 121/154, Loss: 0.5683, Acc: 76.5625
+04/19 06:23:09 PM: Batch: 131/154, Loss: 0.5744, Acc: 76.5625
+04/19 06:23:09 PM: Batch: 141/154, Loss: 0.5823, Acc: 79.6875
+04/19 06:23:10 PM: Batch: 151/154, Loss: 0.6935, Acc: 73.4375
+04/19 06:23:10 PM: Epoch: 2/40, Val Loss: 0.5992, Val Acc: 75.2896
+04/19 06:23:10 PM: Best model found with val acc.: 75.2896
+  5%|▌         | 2/40 [04:04<1:17:14, 121.97s/it]04/19 06:23:10 PM: Epoch: 3/40
+04/19 06:23:17 PM: Epoch: 3/40, Batch: 501/8584, Train Loss: 0.5710
+04/19 06:23:24 PM: Epoch: 3/40, Batch: 1001/8584, Train Loss: 0.5436
+04/19 06:23:31 PM: Epoch: 3/40, Batch: 1501/8584, Train Loss: 0.4252
+04/19 06:23:38 PM: Epoch: 3/40, Batch: 2001/8584, Train Loss: 0.6245
+04/19 06:23:45 PM: Epoch: 3/40, Batch: 2501/8584, Train Loss: 0.3901
+04/19 06:23:52 PM: Epoch: 3/40, Batch: 3001/8584, Train Loss: 0.4577
+04/19 06:23:59 PM: Epoch: 3/40, Batch: 3501/8584, Train Loss: 0.7759
+04/19 06:24:06 PM: Epoch: 3/40, Batch: 4001/8584, Train Loss: 0.6131
+04/19 06:24:13 PM: Epoch: 3/40, Batch: 4501/8584, Train Loss: 0.6931
+04/19 06:24:20 PM: Epoch: 3/40, Batch: 5001/8584, Train Loss: 0.5509
+04/19 06:24:27 PM: Epoch: 3/40, Batch: 5501/8584, Train Loss: 0.4555
+04/19 06:24:34 PM: Epoch: 3/40, Batch: 6001/8584, Train Loss: 0.4389
+04/19 06:24:41 PM: Epoch: 3/40, Batch: 6501/8584, Train Loss: 0.6806
+04/19 06:24:48 PM: Epoch: 3/40, Batch: 7001/8584, Train Loss: 0.5829
+04/19 06:24:55 PM: Epoch: 3/40, Batch: 7501/8584, Train Loss: 0.4848
+04/19 06:25:02 PM: Epoch: 3/40, Batch: 8001/8584, Train Loss: 0.5714
+04/19 06:25:09 PM: Epoch: 3/40, Batch: 8501/8584, Train Loss: 0.5620
+04/19 06:25:10 PM: Epoch: 3/40, Train Loss: 0.5742
+04/19 06:25:10 PM: Batch: 1/154, Loss: 0.5273, Acc: 84.3750
+04/19 06:25:10 PM: Batch: 11/154, Loss: 0.5185, Acc: 76.5625
+04/19 06:25:11 PM: Batch: 21/154, Loss: 0.6089, Acc: 70.3125
+04/19 06:25:11 PM: Batch: 31/154, Loss: 0.4586, Acc: 81.2500
+04/19 06:25:11 PM: Batch: 41/154, Loss: 0.4990, Acc: 82.8125
+04/19 06:25:11 PM: Batch: 51/154, Loss: 0.5755, Acc: 70.3125
+04/19 06:25:11 PM: Batch: 61/154, Loss: 0.5879, Acc: 73.4375
+04/19 06:25:11 PM: Batch: 71/154, Loss: 0.7503, Acc: 62.5000
+04/19 06:25:11 PM: Batch: 81/154, Loss: 0.6120, Acc: 78.1250
+04/19 06:25:11 PM: Batch: 91/154, Loss: 0.6436, Acc: 76.5625
+04/19 06:25:11 PM: Batch: 101/154, Loss: 0.5404, Acc: 78.1250
+04/19 06:25:11 PM: Batch: 111/154, Loss: 0.4672, Acc: 87.5000
+04/19 06:25:11 PM: Batch: 121/154, Loss: 0.5661, Acc: 73.4375
+04/19 06:25:11 PM: Batch: 131/154, Loss: 0.5037, Acc: 81.2500
+04/19 06:25:11 PM: Batch: 141/154, Loss: 0.5262, Acc: 81.2500
+04/19 06:25:11 PM: Batch: 151/154, Loss: 0.6777, Acc: 73.4375
+04/19 06:25:11 PM: Epoch: 3/40, Val Loss: 0.5548, Val Acc: 77.7383
+04/19 06:25:11 PM: Best model found with val acc.: 77.7383
+  8%|▊         | 3/40 [06:05<1:15:11, 121.93s/it]04/19 06:25:12 PM: Epoch: 4/40
+04/19 06:25:19 PM: Epoch: 4/40, Batch: 501/8584, Train Loss: 0.4965
+04/19 06:25:26 PM: Epoch: 4/40, Batch: 1001/8584, Train Loss: 0.4761
+04/19 06:25:33 PM: Epoch: 4/40, Batch: 1501/8584, Train Loss: 0.3758
+04/19 06:25:40 PM: Epoch: 4/40, Batch: 2001/8584, Train Loss: 0.5387
+04/19 06:25:47 PM: Epoch: 4/40, Batch: 2501/8584, Train Loss: 0.3385
+04/19 06:25:54 PM: Epoch: 4/40, Batch: 3001/8584, Train Loss: 0.3880
+04/19 06:26:01 PM: Epoch: 4/40, Batch: 3501/8584, Train Loss: 0.6600
+04/19 06:26:08 PM: Epoch: 4/40, Batch: 4001/8584, Train Loss: 0.5619
+04/19 06:26:15 PM: Epoch: 4/40, Batch: 4501/8584, Train Loss: 0.7126
+04/19 06:26:22 PM: Epoch: 4/40, Batch: 5001/8584, Train Loss: 0.4713
+04/19 06:26:29 PM: Epoch: 4/40, Batch: 5501/8584, Train Loss: 0.3735
+04/19 06:26:36 PM: Epoch: 4/40, Batch: 6001/8584, Train Loss: 0.4253
+04/19 06:26:43 PM: Epoch: 4/40, Batch: 6501/8584, Train Loss: 0.6205
+04/19 06:26:50 PM: Epoch: 4/40, Batch: 7001/8584, Train Loss: 0.5269
+04/19 06:26:57 PM: Epoch: 4/40, Batch: 7501/8584, Train Loss: 0.4611
+04/19 06:27:04 PM: Epoch: 4/40, Batch: 8001/8584, Train Loss: 0.5749
+04/19 06:27:11 PM: Epoch: 4/40, Batch: 8501/8584, Train Loss: 0.4992
+04/19 06:27:12 PM: Epoch: 4/40, Train Loss: 0.5294
+04/19 06:27:12 PM: Batch: 1/154, Loss: 0.5050, Acc: 81.2500
+04/19 06:27:12 PM: Batch: 11/154, Loss: 0.5191, Acc: 79.6875
+04/19 06:27:12 PM: Batch: 21/154, Loss: 0.6040, Acc: 71.8750
+04/19 06:27:12 PM: Batch: 31/154, Loss: 0.4473, Acc: 79.6875
+04/19 06:27:12 PM: Batch: 41/154, Loss: 0.5006, Acc: 81.2500
+04/19 06:27:12 PM: Batch: 51/154, Loss: 0.5250, Acc: 78.1250
+04/19 06:27:12 PM: Batch: 61/154, Loss: 0.5761, Acc: 71.8750
+04/19 06:27:12 PM: Batch: 71/154, Loss: 0.7500, Acc: 65.6250
+04/19 06:27:13 PM: Batch: 81/154, Loss: 0.6132, Acc: 75.0000
+04/19 06:27:13 PM: Batch: 91/154, Loss: 0.5986, Acc: 81.2500
+04/19 06:27:13 PM: Batch: 101/154, Loss: 0.5186, Acc: 82.8125
+04/19 06:27:13 PM: Batch: 111/154, Loss: 0.4467, Acc: 85.9375
+04/19 06:27:13 PM: Batch: 121/154, Loss: 0.5514, Acc: 73.4375
+04/19 06:27:13 PM: Batch: 131/154, Loss: 0.4305, Acc: 84.3750
+04/19 06:27:13 PM: Batch: 141/154, Loss: 0.4790, Acc: 81.2500
+04/19 06:27:13 PM: Batch: 151/154, Loss: 0.6650, Acc: 73.4375
+04/19 06:27:13 PM: Epoch: 4/40, Val Loss: 0.5346, Val Acc: 78.8458
+04/19 06:27:13 PM: Best model found with val acc.: 78.8458
+ 10%|█         | 4/40 [08:07<1:13:04, 121.80s/it]04/19 06:27:13 PM: Epoch: 5/40
+04/19 06:27:20 PM: Epoch: 5/40, Batch: 501/8584, Train Loss: 0.4838
+04/19 06:27:27 PM: Epoch: 5/40, Batch: 1001/8584, Train Loss: 0.4382
+04/19 06:27:34 PM: Epoch: 5/40, Batch: 1501/8584, Train Loss: 0.3442
+04/19 06:27:41 PM: Epoch: 5/40, Batch: 2001/8584, Train Loss: 0.5100
+04/19 06:27:48 PM: Epoch: 5/40, Batch: 2501/8584, Train Loss: 0.3093
+04/19 06:27:55 PM: Epoch: 5/40, Batch: 3001/8584, Train Loss: 0.3530
+04/19 06:28:02 PM: Epoch: 5/40, Batch: 3501/8584, Train Loss: 0.6200
+04/19 06:28:09 PM: Epoch: 5/40, Batch: 4001/8584, Train Loss: 0.5024
+04/19 06:28:16 PM: Epoch: 5/40, Batch: 4501/8584, Train Loss: 0.6686
+04/19 06:28:23 PM: Epoch: 5/40, Batch: 5001/8584, Train Loss: 0.4382
+04/19 06:28:30 PM: Epoch: 5/40, Batch: 5501/8584, Train Loss: 0.3019
+04/19 06:28:37 PM: Epoch: 5/40, Batch: 6001/8584, Train Loss: 0.4058
+04/19 06:28:44 PM: Epoch: 5/40, Batch: 6501/8584, Train Loss: 0.5598
+04/19 06:28:51 PM: Epoch: 5/40, Batch: 7001/8584, Train Loss: 0.4866
+04/19 06:28:58 PM: Epoch: 5/40, Batch: 7501/8584, Train Loss: 0.4515
+04/19 06:29:05 PM: Epoch: 5/40, Batch: 8001/8584, Train Loss: 0.6014
+04/19 06:29:12 PM: Epoch: 5/40, Batch: 8501/8584, Train Loss: 0.4510
+04/19 06:29:14 PM: Epoch: 5/40, Train Loss: 0.4938
+04/19 06:29:14 PM: Batch: 1/154, Loss: 0.4774, Acc: 82.8125
+04/19 06:29:14 PM: Batch: 11/154, Loss: 0.5179, Acc: 78.1250
+04/19 06:29:14 PM: Batch: 21/154, Loss: 0.6249, Acc: 68.7500
+04/19 06:29:14 PM: Batch: 31/154, Loss: 0.4376, Acc: 82.8125
+04/19 06:29:14 PM: Batch: 41/154, Loss: 0.4998, Acc: 84.3750
+04/19 06:29:14 PM: Batch: 51/154, Loss: 0.4883, Acc: 81.2500
+04/19 06:29:14 PM: Batch: 61/154, Loss: 0.5802, Acc: 70.3125
+04/19 06:29:14 PM: Batch: 71/154, Loss: 0.7587, Acc: 64.0625
+04/19 06:29:14 PM: Batch: 81/154, Loss: 0.6007, Acc: 73.4375
+04/19 06:29:14 PM: Batch: 91/154, Loss: 0.6023, Acc: 79.6875
+04/19 06:29:14 PM: Batch: 101/154, Loss: 0.5187, Acc: 82.8125
+04/19 06:29:15 PM: Batch: 111/154, Loss: 0.4464, Acc: 85.9375
+04/19 06:29:15 PM: Batch: 121/154, Loss: 0.5417, Acc: 73.4375
+04/19 06:29:15 PM: Batch: 131/154, Loss: 0.3909, Acc: 85.9375
+04/19 06:29:15 PM: Batch: 141/154, Loss: 0.4512, Acc: 82.8125
+04/19 06:29:15 PM: Batch: 151/154, Loss: 0.6543, Acc: 79.6875
+04/19 06:29:15 PM: Epoch: 5/40, Val Loss: 0.5227, Val Acc: 79.3335
+04/19 06:29:15 PM: Best model found with val acc.: 79.3335
+ 12%|█▎        | 5/40 [10:09<1:11:02, 121.79s/it]04/19 06:29:15 PM: Epoch: 6/40
+04/19 06:29:22 PM: Epoch: 6/40, Batch: 501/8584, Train Loss: 0.4393
+04/19 06:29:29 PM: Epoch: 6/40, Batch: 1001/8584, Train Loss: 0.3931
+04/19 06:29:36 PM: Epoch: 6/40, Batch: 1501/8584, Train Loss: 0.3082
+04/19 06:29:43 PM: Epoch: 6/40, Batch: 2001/8584, Train Loss: 0.4542
+04/19 06:29:50 PM: Epoch: 6/40, Batch: 2501/8584, Train Loss: 0.2832
+04/19 06:29:57 PM: Epoch: 6/40, Batch: 3001/8584, Train Loss: 0.3224
+04/19 06:30:04 PM: Epoch: 6/40, Batch: 3501/8584, Train Loss: 0.5810
+04/19 06:30:11 PM: Epoch: 6/40, Batch: 4001/8584, Train Loss: 0.4756
+04/19 06:30:18 PM: Epoch: 6/40, Batch: 4501/8584, Train Loss: 0.6290
+04/19 06:30:25 PM: Epoch: 6/40, Batch: 5001/8584, Train Loss: 0.4006
+04/19 06:30:32 PM: Epoch: 6/40, Batch: 5501/8584, Train Loss: 0.2560
+04/19 06:30:39 PM: Epoch: 6/40, Batch: 6001/8584, Train Loss: 0.3907
+04/19 06:30:46 PM: Epoch: 6/40, Batch: 6501/8584, Train Loss: 0.4954
+04/19 06:30:53 PM: Epoch: 6/40, Batch: 7001/8584, Train Loss: 0.4472
+04/19 06:31:00 PM: Epoch: 6/40, Batch: 7501/8584, Train Loss: 0.4244
+04/19 06:31:07 PM: Epoch: 6/40, Batch: 8001/8584, Train Loss: 0.5831
+04/19 06:31:14 PM: Epoch: 6/40, Batch: 8501/8584, Train Loss: 0.4294
+04/19 06:31:16 PM: Epoch: 6/40, Train Loss: 0.4624
+04/19 06:31:16 PM: Batch: 1/154, Loss: 0.4679, Acc: 82.8125
+04/19 06:31:16 PM: Batch: 11/154, Loss: 0.5138, Acc: 81.2500
+04/19 06:31:16 PM: Batch: 21/154, Loss: 0.6415, Acc: 75.0000
+04/19 06:31:16 PM: Batch: 31/154, Loss: 0.4316, Acc: 81.2500
+04/19 06:31:16 PM: Batch: 41/154, Loss: 0.4996, Acc: 84.3750
+04/19 06:31:16 PM: Batch: 51/154, Loss: 0.4815, Acc: 79.6875
+04/19 06:31:16 PM: Batch: 61/154, Loss: 0.5965, Acc: 73.4375
+04/19 06:31:16 PM: Batch: 71/154, Loss: 0.7994, Acc: 68.7500
+04/19 06:31:16 PM: Batch: 81/154, Loss: 0.5987, Acc: 76.5625
+04/19 06:31:16 PM: Batch: 91/154, Loss: 0.6137, Acc: 81.2500
+04/19 06:31:16 PM: Batch: 101/154, Loss: 0.5330, Acc: 82.8125
+04/19 06:31:17 PM: Batch: 111/154, Loss: 0.4353, Acc: 87.5000
+04/19 06:31:17 PM: Batch: 121/154, Loss: 0.5575, Acc: 73.4375
+04/19 06:31:17 PM: Batch: 131/154, Loss: 0.3660, Acc: 87.5000
+04/19 06:31:17 PM: Batch: 141/154, Loss: 0.4163, Acc: 82.8125
+04/19 06:31:17 PM: Batch: 151/154, Loss: 0.6686, Acc: 76.5625
+04/19 06:31:17 PM: Epoch: 6/40, Val Loss: 0.5225, Val Acc: 79.6891
+04/19 06:31:17 PM: Best model found with val acc.: 79.6891
+ 15%|█▌        | 6/40 [12:11<1:09:03, 121.86s/it]04/19 06:31:17 PM: Epoch: 7/40
+04/19 06:31:24 PM: Epoch: 7/40, Batch: 501/8584, Train Loss: 0.3884
+04/19 06:31:31 PM: Epoch: 7/40, Batch: 1001/8584, Train Loss: 0.3639
+04/19 06:31:38 PM: Epoch: 7/40, Batch: 1501/8584, Train Loss: 0.2984
+04/19 06:31:45 PM: Epoch: 7/40, Batch: 2001/8584, Train Loss: 0.4234
+04/19 06:31:52 PM: Epoch: 7/40, Batch: 2501/8584, Train Loss: 0.2414
+04/19 06:31:59 PM: Epoch: 7/40, Batch: 3001/8584, Train Loss: 0.2963
+04/19 06:32:06 PM: Epoch: 7/40, Batch: 3501/8584, Train Loss: 0.5824
+04/19 06:32:13 PM: Epoch: 7/40, Batch: 4001/8584, Train Loss: 0.4404
+04/19 06:32:20 PM: Epoch: 7/40, Batch: 4501/8584, Train Loss: 0.5998
+04/19 06:32:27 PM: Epoch: 7/40, Batch: 5001/8584, Train Loss: 0.3619
+04/19 06:32:34 PM: Epoch: 7/40, Batch: 5501/8584, Train Loss: 0.2245
+04/19 06:32:41 PM: Epoch: 7/40, Batch: 6001/8584, Train Loss: 0.3768
+04/19 06:32:48 PM: Epoch: 7/40, Batch: 6501/8584, Train Loss: 0.4329
+04/19 06:32:55 PM: Epoch: 7/40, Batch: 7001/8584, Train Loss: 0.4510
+04/19 06:33:02 PM: Epoch: 7/40, Batch: 7501/8584, Train Loss: 0.3979
+04/19 06:33:09 PM: Epoch: 7/40, Batch: 8001/8584, Train Loss: 0.5890
+04/19 06:33:16 PM: Epoch: 7/40, Batch: 8501/8584, Train Loss: 0.3927
+04/19 06:33:17 PM: Epoch: 7/40, Train Loss: 0.4329
+04/19 06:33:18 PM: Batch: 1/154, Loss: 0.4825, Acc: 82.8125
+04/19 06:33:18 PM: Batch: 11/154, Loss: 0.5099, Acc: 78.1250
+04/19 06:33:18 PM: Batch: 21/154, Loss: 0.6497, Acc: 71.8750
+04/19 06:33:18 PM: Batch: 31/154, Loss: 0.4138, Acc: 78.1250
+04/19 06:33:18 PM: Batch: 41/154, Loss: 0.5532, Acc: 84.3750
+04/19 06:33:18 PM: Batch: 51/154, Loss: 0.4837, Acc: 76.5625
+04/19 06:33:18 PM: Batch: 61/154, Loss: 0.6150, Acc: 75.0000
+04/19 06:33:18 PM: Batch: 71/154, Loss: 0.8364, Acc: 68.7500
+04/19 06:33:18 PM: Batch: 81/154, Loss: 0.6074, Acc: 76.5625
+04/19 06:33:18 PM: Batch: 91/154, Loss: 0.6068, Acc: 79.6875
+04/19 06:33:18 PM: Batch: 101/154, Loss: 0.5253, Acc: 81.2500
+04/19 06:33:18 PM: Batch: 111/154, Loss: 0.4539, Acc: 82.8125
+04/19 06:33:18 PM: Batch: 121/154, Loss: 0.5714, Acc: 76.5625
+04/19 06:33:19 PM: Batch: 131/154, Loss: 0.3434, Acc: 85.9375
+04/19 06:33:19 PM: Batch: 141/154, Loss: 0.4230, Acc: 84.3750
+04/19 06:33:19 PM: Batch: 151/154, Loss: 0.6483, Acc: 76.5625
+04/19 06:33:19 PM: Epoch: 7/40, Val Loss: 0.5313, Val Acc: 79.5367
+04/19 06:33:19 PM: Learning rate decreased to: 0.0186
+ 18%|█▊        | 7/40 [14:13<1:06:59, 121.81s/it]04/19 06:33:19 PM: Epoch: 8/40
+04/19 06:33:26 PM: Epoch: 8/40, Batch: 501/8584, Train Loss: 0.3304
+04/19 06:33:33 PM: Epoch: 8/40, Batch: 1001/8584, Train Loss: 0.3188
+04/19 06:33:40 PM: Epoch: 8/40, Batch: 1501/8584, Train Loss: 0.2910
+04/19 06:33:47 PM: Epoch: 8/40, Batch: 2001/8584, Train Loss: 0.3746
+04/19 06:33:54 PM: Epoch: 8/40, Batch: 2501/8584, Train Loss: 0.2327
+04/19 06:34:01 PM: Epoch: 8/40, Batch: 3001/8584, Train Loss: 0.2256
+04/19 06:34:08 PM: Epoch: 8/40, Batch: 3501/8584, Train Loss: 0.4879
+04/19 06:34:15 PM: Epoch: 8/40, Batch: 4001/8584, Train Loss: 0.3752
+04/19 06:34:22 PM: Epoch: 8/40, Batch: 4501/8584, Train Loss: 0.5442
+04/19 06:34:29 PM: Epoch: 8/40, Batch: 5001/8584, Train Loss: 0.3129
+04/19 06:34:36 PM: Epoch: 8/40, Batch: 5501/8584, Train Loss: 0.2084
+04/19 06:34:43 PM: Epoch: 8/40, Batch: 6001/8584, Train Loss: 0.2872
+04/19 06:34:50 PM: Epoch: 8/40, Batch: 6501/8584, Train Loss: 0.2914
+04/19 06:34:57 PM: Epoch: 8/40, Batch: 7001/8584, Train Loss: 0.3140
+04/19 06:35:04 PM: Epoch: 8/40, Batch: 7501/8584, Train Loss: 0.2949
+04/19 06:35:11 PM: Epoch: 8/40, Batch: 8001/8584, Train Loss: 0.5223
+04/19 06:35:18 PM: Epoch: 8/40, Batch: 8501/8584, Train Loss: 0.2535
+04/19 06:35:19 PM: Epoch: 8/40, Train Loss: 0.3543
+04/19 06:35:19 PM: Batch: 1/154, Loss: 0.5189, Acc: 82.8125
+04/19 06:35:20 PM: Batch: 11/154, Loss: 0.4518, Acc: 78.1250
+04/19 06:35:20 PM: Batch: 21/154, Loss: 0.7662, Acc: 71.8750
+04/19 06:35:20 PM: Batch: 31/154, Loss: 0.3817, Acc: 82.8125
+04/19 06:35:20 PM: Batch: 41/154, Loss: 0.5441, Acc: 85.9375
+04/19 06:35:20 PM: Batch: 51/154, Loss: 0.4727, Acc: 82.8125
+04/19 06:35:20 PM: Batch: 61/154, Loss: 0.6509, Acc: 78.1250
+04/19 06:35:20 PM: Batch: 71/154, Loss: 0.9225, Acc: 70.3125
+04/19 06:35:20 PM: Batch: 81/154, Loss: 0.6596, Acc: 76.5625
+04/19 06:35:20 PM: Batch: 91/154, Loss: 0.6495, Acc: 79.6875
+04/19 06:35:20 PM: Batch: 101/154, Loss: 0.5704, Acc: 79.6875
+04/19 06:35:20 PM: Batch: 111/154, Loss: 0.4692, Acc: 81.2500
+04/19 06:35:20 PM: Batch: 121/154, Loss: 0.5936, Acc: 76.5625
+04/19 06:35:20 PM: Batch: 131/154, Loss: 0.3629, Acc: 82.8125
+04/19 06:35:20 PM: Batch: 141/154, Loss: 0.3981, Acc: 84.3750
+04/19 06:35:20 PM: Batch: 151/154, Loss: 0.7116, Acc: 79.6875
+04/19 06:35:21 PM: Epoch: 8/40, Val Loss: 0.5669, Val Acc: 80.2479
+04/19 06:35:21 PM: Best model found with val acc.: 80.2479
+ 20%|██        | 8/40 [16:14<1:04:59, 121.85s/it]04/19 06:35:21 PM: Epoch: 9/40
+04/19 06:35:28 PM: Epoch: 9/40, Batch: 501/8584, Train Loss: 0.2252
+04/19 06:35:35 PM: Epoch: 9/40, Batch: 1001/8584, Train Loss: 0.2821
+04/19 06:35:42 PM: Epoch: 9/40, Batch: 1501/8584, Train Loss: 0.2686
+04/19 06:35:49 PM: Epoch: 9/40, Batch: 2001/8584, Train Loss: 0.3319
+04/19 06:35:56 PM: Epoch: 9/40, Batch: 2501/8584, Train Loss: 0.1995
+04/19 06:36:03 PM: Epoch: 9/40, Batch: 3001/8584, Train Loss: 0.2046
+04/19 06:36:10 PM: Epoch: 9/40, Batch: 3501/8584, Train Loss: 0.4479
+04/19 06:36:17 PM: Epoch: 9/40, Batch: 4001/8584, Train Loss: 0.3318
+04/19 06:36:24 PM: Epoch: 9/40, Batch: 4501/8584, Train Loss: 0.5005
+04/19 06:36:31 PM: Epoch: 9/40, Batch: 5001/8584, Train Loss: 0.2832
+04/19 06:36:38 PM: Epoch: 9/40, Batch: 5501/8584, Train Loss: 0.1806
+04/19 06:36:45 PM: Epoch: 9/40, Batch: 6001/8584, Train Loss: 0.2551
+04/19 06:36:52 PM: Epoch: 9/40, Batch: 6501/8584, Train Loss: 0.2358
+04/19 06:36:59 PM: Epoch: 9/40, Batch: 7001/8584, Train Loss: 0.3013
+04/19 06:37:06 PM: Epoch: 9/40, Batch: 7501/8584, Train Loss: 0.2743
+04/19 06:37:13 PM: Epoch: 9/40, Batch: 8001/8584, Train Loss: 0.5181
+04/19 06:37:20 PM: Epoch: 9/40, Batch: 8501/8584, Train Loss: 0.2318
+04/19 06:37:21 PM: Epoch: 9/40, Train Loss: 0.3219
+04/19 06:37:21 PM: Batch: 1/154, Loss: 0.5650, Acc: 78.1250
+04/19 06:37:21 PM: Batch: 11/154, Loss: 0.4771, Acc: 79.6875
+04/19 06:37:21 PM: Batch: 21/154, Loss: 0.8292, Acc: 71.8750
+04/19 06:37:21 PM: Batch: 31/154, Loss: 0.3980, Acc: 84.3750
+04/19 06:37:21 PM: Batch: 41/154, Loss: 0.6052, Acc: 85.9375
+04/19 06:37:22 PM: Batch: 51/154, Loss: 0.4721, Acc: 81.2500
+04/19 06:37:22 PM: Batch: 61/154, Loss: 0.6988, Acc: 79.6875
+04/19 06:37:22 PM: Batch: 71/154, Loss: 0.9629, Acc: 68.7500
+04/19 06:37:22 PM: Batch: 81/154, Loss: 0.6994, Acc: 79.6875
+04/19 06:37:22 PM: Batch: 91/154, Loss: 0.6603, Acc: 81.2500
+04/19 06:37:22 PM: Batch: 101/154, Loss: 0.5883, Acc: 82.8125
+04/19 06:37:22 PM: Batch: 111/154, Loss: 0.5098, Acc: 84.3750
+04/19 06:37:22 PM: Batch: 121/154, Loss: 0.6408, Acc: 78.1250
+04/19 06:37:22 PM: Batch: 131/154, Loss: 0.3720, Acc: 81.2500
+04/19 06:37:22 PM: Batch: 141/154, Loss: 0.4175, Acc: 84.3750
+04/19 06:37:22 PM: Batch: 151/154, Loss: 0.7125, Acc: 79.6875
+04/19 06:37:22 PM: Epoch: 9/40, Val Loss: 0.5977, Val Acc: 80.1463
+04/19 06:37:22 PM: Learning rate decreased to: 0.0037
+ 22%|██▎       | 9/40 [18:16<1:02:54, 121.77s/it]04/19 06:37:22 PM: Epoch: 10/40
+04/19 06:37:29 PM: Epoch: 10/40, Batch: 501/8584, Train Loss: 0.2046
+04/19 06:37:36 PM: Epoch: 10/40, Batch: 1001/8584, Train Loss: 0.3010
+04/19 06:37:43 PM: Epoch: 10/40, Batch: 1501/8584, Train Loss: 0.2384
+04/19 06:37:50 PM: Epoch: 10/40, Batch: 2001/8584, Train Loss: 0.2971
+04/19 06:37:57 PM: Epoch: 10/40, Batch: 2501/8584, Train Loss: 0.1737
+04/19 06:38:04 PM: Epoch: 10/40, Batch: 3001/8584, Train Loss: 0.1803
+04/19 06:38:11 PM: Epoch: 10/40, Batch: 3501/8584, Train Loss: 0.4061
+04/19 06:38:18 PM: Epoch: 10/40, Batch: 4001/8584, Train Loss: 0.3029
+04/19 06:38:25 PM: Epoch: 10/40, Batch: 4501/8584, Train Loss: 0.4353
+04/19 06:38:32 PM: Epoch: 10/40, Batch: 5001/8584, Train Loss: 0.2567
+04/19 06:38:39 PM: Epoch: 10/40, Batch: 5501/8584, Train Loss: 0.1661
+04/19 06:38:46 PM: Epoch: 10/40, Batch: 6001/8584, Train Loss: 0.2420
+04/19 06:38:53 PM: Epoch: 10/40, Batch: 6501/8584, Train Loss: 0.1795
+04/19 06:39:00 PM: Epoch: 10/40, Batch: 7001/8584, Train Loss: 0.1956
+04/19 06:39:07 PM: Epoch: 10/40, Batch: 7501/8584, Train Loss: 0.2458
+04/19 06:39:14 PM: Epoch: 10/40, Batch: 8001/8584, Train Loss: 0.4362
+04/19 06:39:21 PM: Epoch: 10/40, Batch: 8501/8584, Train Loss: 0.2027
+04/19 06:39:22 PM: Epoch: 10/40, Train Loss: 0.2848
+04/19 06:39:22 PM: Batch: 1/154, Loss: 0.5541, Acc: 79.6875
+04/19 06:39:23 PM: Batch: 11/154, Loss: 0.4778, Acc: 81.2500
+04/19 06:39:23 PM: Batch: 21/154, Loss: 0.9029, Acc: 71.8750
+04/19 06:39:23 PM: Batch: 31/154, Loss: 0.3963, Acc: 84.3750
+04/19 06:39:23 PM: Batch: 41/154, Loss: 0.5585, Acc: 85.9375
+04/19 06:39:23 PM: Batch: 51/154, Loss: 0.4759, Acc: 82.8125
+04/19 06:39:23 PM: Batch: 61/154, Loss: 0.6869, Acc: 79.6875
+04/19 06:39:23 PM: Batch: 71/154, Loss: 0.9152, Acc: 73.4375
+04/19 06:39:23 PM: Batch: 81/154, Loss: 0.7149, Acc: 79.6875
+04/19 06:39:23 PM: Batch: 91/154, Loss: 0.6581, Acc: 76.5625
+04/19 06:39:23 PM: Batch: 101/154, Loss: 0.5784, Acc: 78.1250
+04/19 06:39:23 PM: Batch: 111/154, Loss: 0.4811, Acc: 84.3750
+04/19 06:39:23 PM: Batch: 121/154, Loss: 0.6056, Acc: 76.5625
+04/19 06:39:23 PM: Batch: 131/154, Loss: 0.3859, Acc: 82.8125
+04/19 06:39:24 PM: Batch: 141/154, Loss: 0.4098, Acc: 82.8125
+04/19 06:39:24 PM: Batch: 151/154, Loss: 0.6924, Acc: 78.1250
+04/19 06:39:24 PM: Epoch: 10/40, Val Loss: 0.5954, Val Acc: 80.0549
+04/19 06:39:24 PM: Learning rate decreased to: 0.0007
+ 25%|██▌       | 10/40 [20:18<1:00:50, 121.67s/it]04/19 06:39:24 PM: Epoch: 11/40
+04/19 06:39:31 PM: Epoch: 11/40, Batch: 501/8584, Train Loss: 0.1946
+04/19 06:39:38 PM: Epoch: 11/40, Batch: 1001/8584, Train Loss: 0.2727
+04/19 06:39:45 PM: Epoch: 11/40, Batch: 1501/8584, Train Loss: 0.2277
+04/19 06:39:52 PM: Epoch: 11/40, Batch: 2001/8584, Train Loss: 0.2937
+04/19 06:39:59 PM: Epoch: 11/40, Batch: 2501/8584, Train Loss: 0.1601
+04/19 06:40:06 PM: Epoch: 11/40, Batch: 3001/8584, Train Loss: 0.1646
+04/19 06:40:13 PM: Epoch: 11/40, Batch: 3501/8584, Train Loss: 0.3962
+04/19 06:40:20 PM: Epoch: 11/40, Batch: 4001/8584, Train Loss: 0.2951
+04/19 06:40:27 PM: Epoch: 11/40, Batch: 4501/8584, Train Loss: 0.4194
+04/19 06:40:34 PM: Epoch: 11/40, Batch: 5001/8584, Train Loss: 0.2320
+04/19 06:40:41 PM: Epoch: 11/40, Batch: 5501/8584, Train Loss: 0.1519
+04/19 06:40:48 PM: Epoch: 11/40, Batch: 6001/8584, Train Loss: 0.2252
+04/19 06:40:55 PM: Epoch: 11/40, Batch: 6501/8584, Train Loss: 0.1627
+04/19 06:41:02 PM: Epoch: 11/40, Batch: 7001/8584, Train Loss: 0.1659
+04/19 06:41:09 PM: Epoch: 11/40, Batch: 7501/8584, Train Loss: 0.2300
+04/19 06:41:16 PM: Epoch: 11/40, Batch: 8001/8584, Train Loss: 0.4235
+04/19 06:41:23 PM: Epoch: 11/40, Batch: 8501/8584, Train Loss: 0.1966
+04/19 06:41:24 PM: Epoch: 11/40, Train Loss: 0.2698
+04/19 06:41:24 PM: Batch: 1/154, Loss: 0.5445, Acc: 81.2500
+04/19 06:41:24 PM: Batch: 11/154, Loss: 0.4660, Acc: 81.2500
+04/19 06:41:24 PM: Batch: 21/154, Loss: 0.9061, Acc: 71.8750
+04/19 06:41:25 PM: Batch: 31/154, Loss: 0.3945, Acc: 84.3750
+04/19 06:41:25 PM: Batch: 41/154, Loss: 0.5642, Acc: 85.9375
+04/19 06:41:25 PM: Batch: 51/154, Loss: 0.4727, Acc: 81.2500
+04/19 06:41:25 PM: Batch: 61/154, Loss: 0.6954, Acc: 79.6875
+04/19 06:41:25 PM: Batch: 71/154, Loss: 0.9273, Acc: 75.0000
+04/19 06:41:25 PM: Batch: 81/154, Loss: 0.6981, Acc: 79.6875
+04/19 06:41:25 PM: Batch: 91/154, Loss: 0.6282, Acc: 78.1250
+04/19 06:41:25 PM: Batch: 101/154, Loss: 0.5885, Acc: 78.1250
+04/19 06:41:25 PM: Batch: 111/154, Loss: 0.4787, Acc: 85.9375
+04/19 06:41:25 PM: Batch: 121/154, Loss: 0.5984, Acc: 76.5625
+04/19 06:41:25 PM: Batch: 131/154, Loss: 0.3907, Acc: 82.8125
+04/19 06:41:25 PM: Batch: 141/154, Loss: 0.4091, Acc: 82.8125
+04/19 06:41:25 PM: Batch: 151/154, Loss: 0.6765, Acc: 78.1250
+04/19 06:41:25 PM: Epoch: 11/40, Val Loss: 0.5912, Val Acc: 80.1666
+04/19 06:41:25 PM: Learning rate decreased to: 0.0001
+ 28%|██▊       | 11/40 [22:19<58:48, 121.67s/it]  04/19 06:41:25 PM: Epoch: 12/40
+04/19 06:41:33 PM: Epoch: 12/40, Batch: 501/8584, Train Loss: 0.1868
+04/19 06:41:40 PM: Epoch: 12/40, Batch: 1001/8584, Train Loss: 0.2670
+04/19 06:41:47 PM: Epoch: 12/40, Batch: 1501/8584, Train Loss: 0.2233
+04/19 06:41:54 PM: Epoch: 12/40, Batch: 2001/8584, Train Loss: 0.2824
+04/19 06:42:01 PM: Epoch: 12/40, Batch: 2501/8584, Train Loss: 0.1593
+04/19 06:42:08 PM: Epoch: 12/40, Batch: 3001/8584, Train Loss: 0.1616
+04/19 06:42:15 PM: Epoch: 12/40, Batch: 3501/8584, Train Loss: 0.3913
+04/19 06:42:22 PM: Epoch: 12/40, Batch: 4001/8584, Train Loss: 0.2953
+04/19 06:42:29 PM: Epoch: 12/40, Batch: 4501/8584, Train Loss: 0.4170
+04/19 06:42:36 PM: Epoch: 12/40, Batch: 5001/8584, Train Loss: 0.2270
+04/19 06:42:43 PM: Epoch: 12/40, Batch: 5501/8584, Train Loss: 0.1493
+04/19 06:42:50 PM: Epoch: 12/40, Batch: 6001/8584, Train Loss: 0.2196
+04/19 06:42:57 PM: Epoch: 12/40, Batch: 6501/8584, Train Loss: 0.1591
+04/19 06:43:04 PM: Epoch: 12/40, Batch: 7001/8584, Train Loss: 0.1656
+04/19 06:43:11 PM: Epoch: 12/40, Batch: 7501/8584, Train Loss: 0.2251
+04/19 06:43:18 PM: Epoch: 12/40, Batch: 8001/8584, Train Loss: 0.4166
+04/19 06:43:25 PM: Epoch: 12/40, Batch: 8501/8584, Train Loss: 0.1964
+04/19 06:43:26 PM: Epoch: 12/40, Train Loss: 0.2657
+04/19 06:43:26 PM: Batch: 1/154, Loss: 0.5415, Acc: 81.2500
+04/19 06:43:26 PM: Batch: 11/154, Loss: 0.4627, Acc: 81.2500
+04/19 06:43:27 PM: Batch: 21/154, Loss: 0.9011, Acc: 70.3125
+04/19 06:43:27 PM: Batch: 31/154, Loss: 0.3925, Acc: 85.9375
+04/19 06:43:27 PM: Batch: 41/154, Loss: 0.5629, Acc: 85.9375
+04/19 06:43:27 PM: Batch: 51/154, Loss: 0.4784, Acc: 81.2500
+04/19 06:43:27 PM: Batch: 61/154, Loss: 0.6898, Acc: 79.6875
+04/19 06:43:27 PM: Batch: 71/154, Loss: 0.9216, Acc: 75.0000
+04/19 06:43:27 PM: Batch: 81/154, Loss: 0.6918, Acc: 81.2500
+04/19 06:43:27 PM: Batch: 91/154, Loss: 0.6241, Acc: 79.6875
+04/19 06:43:27 PM: Batch: 101/154, Loss: 0.5893, Acc: 78.1250
+04/19 06:43:27 PM: Batch: 111/154, Loss: 0.4774, Acc: 85.9375
+04/19 06:43:27 PM: Batch: 121/154, Loss: 0.6136, Acc: 75.0000
+04/19 06:43:27 PM: Batch: 131/154, Loss: 0.3871, Acc: 82.8125
+04/19 06:43:27 PM: Batch: 141/154, Loss: 0.4094, Acc: 82.8125
+04/19 06:43:27 PM: Batch: 151/154, Loss: 0.6741, Acc: 78.1250
+04/19 06:43:27 PM: Epoch: 12/40, Val Loss: 0.5886, Val Acc: 80.1158
+04/19 06:43:27 PM: Learning rate decreased to: 0.0000
+ 30%|███       | 12/40 [24:21<56:50, 121.79s/it]04/19 06:43:27 PM: Epoch: 13/40
+04/19 06:43:35 PM: Epoch: 13/40, Batch: 501/8584, Train Loss: 0.1835
+04/19 06:43:42 PM: Epoch: 13/40, Batch: 1001/8584, Train Loss: 0.2678
+04/19 06:43:49 PM: Epoch: 13/40, Batch: 1501/8584, Train Loss: 0.2181
+04/19 06:43:56 PM: Epoch: 13/40, Batch: 2001/8584, Train Loss: 0.2818
+04/19 06:44:03 PM: Epoch: 13/40, Batch: 2501/8584, Train Loss: 0.1587
+04/19 06:44:09 PM: Epoch: 13/40, Batch: 3001/8584, Train Loss: 0.1601
+04/19 06:44:17 PM: Epoch: 13/40, Batch: 3501/8584, Train Loss: 0.3901
+04/19 06:44:23 PM: Epoch: 13/40, Batch: 4001/8584, Train Loss: 0.2963
+04/19 06:44:31 PM: Epoch: 13/40, Batch: 4501/8584, Train Loss: 0.4165
+04/19 06:44:38 PM: Epoch: 13/40, Batch: 5001/8584, Train Loss: 0.2267
+04/19 06:44:45 PM: Epoch: 13/40, Batch: 5501/8584, Train Loss: 0.1487
+04/19 06:44:52 PM: Epoch: 13/40, Batch: 6001/8584, Train Loss: 0.2180
+04/19 06:44:59 PM: Epoch: 13/40, Batch: 6501/8584, Train Loss: 0.1593
+04/19 06:45:05 PM: Epoch: 13/40, Batch: 7001/8584, Train Loss: 0.1649
+04/19 06:45:12 PM: Epoch: 13/40, Batch: 7501/8584, Train Loss: 0.2248
+04/19 06:45:20 PM: Epoch: 13/40, Batch: 8001/8584, Train Loss: 0.4148
+04/19 06:45:27 PM: Epoch: 13/40, Batch: 8501/8584, Train Loss: 0.1965
+04/19 06:45:28 PM: Epoch: 13/40, Train Loss: 0.2646
+04/19 06:45:28 PM: Batch: 1/154, Loss: 0.5400, Acc: 81.2500
+04/19 06:45:28 PM: Batch: 11/154, Loss: 0.4623, Acc: 81.2500
+04/19 06:45:28 PM: Batch: 21/154, Loss: 0.9001, Acc: 70.3125
+04/19 06:45:28 PM: Batch: 31/154, Loss: 0.3913, Acc: 84.3750
+04/19 06:45:28 PM: Batch: 41/154, Loss: 0.5615, Acc: 85.9375
+04/19 06:45:28 PM: Batch: 51/154, Loss: 0.4804, Acc: 81.2500
+04/19 06:45:28 PM: Batch: 61/154, Loss: 0.6873, Acc: 79.6875
+04/19 06:45:29 PM: Batch: 71/154, Loss: 0.9192, Acc: 75.0000
+04/19 06:45:29 PM: Batch: 81/154, Loss: 0.6912, Acc: 81.2500
+04/19 06:45:29 PM: Batch: 91/154, Loss: 0.6243, Acc: 79.6875
+04/19 06:45:29 PM: Batch: 101/154, Loss: 0.5893, Acc: 78.1250
+04/19 06:45:29 PM: Batch: 111/154, Loss: 0.4769, Acc: 85.9375
+04/19 06:45:29 PM: Batch: 121/154, Loss: 0.6168, Acc: 75.0000
+04/19 06:45:29 PM: Batch: 131/154, Loss: 0.3858, Acc: 82.8125
+04/19 06:45:29 PM: Batch: 141/154, Loss: 0.4082, Acc: 82.8125
+04/19 06:45:29 PM: Batch: 151/154, Loss: 0.6731, Acc: 78.1250
+04/19 06:45:29 PM: Epoch: 13/40, Val Loss: 0.5880, Val Acc: 80.0345
+04/19 06:45:29 PM: Learning rate decreased to: 0.0000
+04/19 06:45:29 PM: Learning rate is smaller than 10^-5, stopping the training...
+ 30%|███       | 12/40 [26:23<1:01:34, 131.95s/it]
+04/19 06:45:29 PM: Best val loss: 0.5225
+04/19 06:45:29 PM: Best val acc: 80.2479
+04/19 06:45:29 PM: Best validation loss: 0.5225, Best validation accuracy: 0.8025
+04/19 06:45:29 PM: Loading the best model...
+04/19 06:45:30 PM: Batch: 1/154, Loss: 0.5146, Acc: 82.8125
+04/19 06:45:30 PM: Batch: 11/154, Loss: 0.5636, Acc: 82.8125
+04/19 06:45:30 PM: Batch: 21/154, Loss: 0.3395, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 31/154, Loss: 0.4246, Acc: 89.0625
+04/19 06:45:30 PM: Batch: 41/154, Loss: 0.5983, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 51/154, Loss: 0.7956, Acc: 78.1250
+04/19 06:45:30 PM: Batch: 61/154, Loss: 0.6626, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 71/154, Loss: 0.6835, Acc: 76.5625
+04/19 06:45:30 PM: Batch: 81/154, Loss: 0.7633, Acc: 75.0000
+04/19 06:45:30 PM: Batch: 91/154, Loss: 0.6046, Acc: 78.1250
+04/19 06:45:30 PM: Batch: 101/154, Loss: 0.7526, Acc: 75.0000
+04/19 06:45:30 PM: Batch: 111/154, Loss: 0.3639, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 121/154, Loss: 0.4647, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 131/154, Loss: 0.4947, Acc: 84.3750
+04/19 06:45:30 PM: Batch: 141/154, Loss: 0.5838, Acc: 76.5625
+04/19 06:45:31 PM: Batch: 151/154, Loss: 0.5119, Acc: 81.2500
+04/19 06:45:31 PM: Test loss: 0.5666, Test accuracy: 80.0896
+04/19 06:45:31 PM: Done!

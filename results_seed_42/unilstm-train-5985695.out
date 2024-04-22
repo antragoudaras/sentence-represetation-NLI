@@ -1,0 +1,29 @@
+Adjusting learning rate of group 0 to 1.0000e-01.
+Adjusting learning rate of group 0 to 9.9000e-02.
+Adjusting learning rate of group 0 to 9.8010e-02.
+Adjusting learning rate of group 0 to 9.7030e-02.
+Adjusting learning rate of group 0 to 9.6060e-02.
+Adjusting learning rate of group 0 to 9.5099e-02.
+Adjusting learning rate of group 0 to 9.4148e-02.
+Adjusting learning rate of group 0 to 9.3207e-02.
+Adjusting learning rate of group 0 to 1.8455e-02.
+Adjusting learning rate of group 0 to 1.8270e-02.
+Adjusting learning rate of group 0 to 3.6175e-03.
+Adjusting learning rate of group 0 to 7.1627e-04.
+Adjusting learning rate of group 0 to 1.4182e-04.
+Adjusting learning rate of group 0 to 2.8081e-05.
+
+JOB STATISTICS
+==============
+Job ID: 5985695
+Cluster: snellius
+User/Group: scur1398/scur1398
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 08:03:18 core-walltime
+Job Wall-clock time: 00:26:51
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

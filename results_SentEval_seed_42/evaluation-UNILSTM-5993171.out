@@ -1,0 +1,131 @@
+04/21 05:27:57 AM: Printing arguments : Namespace(checkpoint='best_model_dir/unilstm_best.pth', encoder='unilstm', snli=True, senteval=True, seed=42, num_workers=4, batch_size=64, sent_eval_path='./SentEval/data')
+04/21 05:27:57 AM: Setting seed...
+04/21 05:27:57 AM: Vocab already exists. Loading from disk...
+04/21 05:28:05 AM: Loading the model checkpoint from best_model_dir/unilstm_best.pth
+04/21 05:28:06 AM: Loading the model checkpoint trained in SNLI dataset
+04/21 05:28:06 AM: Evaluating the model on SNLI dataset
+04/21 05:28:06 AM: Batch: 1/154, Loss: 0.5189, Acc: 82.8125
+04/21 05:28:06 AM: Batch: 11/154, Loss: 0.4518, Acc: 78.1250
+04/21 05:28:07 AM: Batch: 21/154, Loss: 0.7662, Acc: 71.8750
+04/21 05:28:07 AM: Batch: 31/154, Loss: 0.3817, Acc: 82.8125
+04/21 05:28:07 AM: Batch: 41/154, Loss: 0.5441, Acc: 85.9375
+04/21 05:28:07 AM: Batch: 51/154, Loss: 0.4727, Acc: 82.8125
+04/21 05:28:07 AM: Batch: 61/154, Loss: 0.6509, Acc: 78.1250
+04/21 05:28:07 AM: Batch: 71/154, Loss: 0.9225, Acc: 70.3125
+04/21 05:28:07 AM: Batch: 81/154, Loss: 0.6596, Acc: 76.5625
+04/21 05:28:07 AM: Batch: 91/154, Loss: 0.6495, Acc: 79.6875
+04/21 05:28:07 AM: Batch: 101/154, Loss: 0.5704, Acc: 79.6875
+04/21 05:28:07 AM: Batch: 111/154, Loss: 0.4692, Acc: 81.2500
+04/21 05:28:07 AM: Batch: 121/154, Loss: 0.5936, Acc: 76.5625
+04/21 05:28:07 AM: Batch: 131/154, Loss: 0.3629, Acc: 82.8125
+04/21 05:28:07 AM: Batch: 141/154, Loss: 0.3981, Acc: 84.3750
+04/21 05:28:07 AM: Batch: 151/154, Loss: 0.7116, Acc: 79.6875
+04/21 05:28:08 AM: Batch: 1/154, Loss: 0.5146, Acc: 82.8125
+04/21 05:28:08 AM: Batch: 11/154, Loss: 0.5636, Acc: 82.8125
+04/21 05:28:08 AM: Batch: 21/154, Loss: 0.3395, Acc: 84.3750
+04/21 05:28:08 AM: Batch: 31/154, Loss: 0.4246, Acc: 89.0625
+04/21 05:28:08 AM: Batch: 41/154, Loss: 0.5983, Acc: 84.3750
+04/21 05:28:08 AM: Batch: 51/154, Loss: 0.7956, Acc: 78.1250
+04/21 05:28:08 AM: Batch: 61/154, Loss: 0.6626, Acc: 84.3750
+04/21 05:28:08 AM: Batch: 71/154, Loss: 0.6835, Acc: 76.5625
+04/21 05:28:08 AM: Batch: 81/154, Loss: 0.7633, Acc: 75.0000
+04/21 05:28:08 AM: Batch: 91/154, Loss: 0.6046, Acc: 78.1250
+04/21 05:28:08 AM: Batch: 101/154, Loss: 0.7526, Acc: 75.0000
+04/21 05:28:08 AM: Batch: 111/154, Loss: 0.3639, Acc: 84.3750
+04/21 05:28:09 AM: Batch: 121/154, Loss: 0.4647, Acc: 84.3750
+04/21 05:28:09 AM: Batch: 131/154, Loss: 0.4947, Acc: 84.3750
+04/21 05:28:09 AM: Batch: 141/154, Loss: 0.5838, Acc: 76.5625
+04/21 05:28:09 AM: Batch: 151/154, Loss: 0.5119, Acc: 81.2500
+04/21 05:28:09 AM: Validation loss: 0.5669, Validation accuracy: 80.2479
+04/21 05:28:09 AM: Test loss: 0.5666, Test accuracy: 80.0896
+04/21 05:28:09 AM: Evaluating the model on SentEval tasks
+04/21 05:28:09 AM: Generating sentence embeddings
+04/21 05:28:22 AM: Generated sentence embeddings
+04/21 05:28:22 AM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/21 05:29:15 AM: Best param found at split 1: l2reg = 0.001                 with score 71.73
+04/21 05:30:14 AM: Best param found at split 2: l2reg = 0.0001                 with score 71.86
+04/21 05:31:15 AM: Best param found at split 3: l2reg = 0.0001                 with score 72.12
+04/21 05:32:14 AM: Best param found at split 4: l2reg = 0.001                 with score 71.03
+04/21 05:33:20 AM: Best param found at split 5: l2reg = 1e-05                 with score 71.82
+04/21 05:33:24 AM: Generating sentence embeddings
+04/21 05:33:28 AM: Generated sentence embeddings
+04/21 05:33:28 AM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/21 05:33:50 AM: Best param found at split 1: l2reg = 0.0001                 with score 77.15
+04/21 05:34:13 AM: Best param found at split 2: l2reg = 1e-05                 with score 77.58
+04/21 05:34:37 AM: Best param found at split 3: l2reg = 0.001                 with score 77.25
+04/21 05:35:00 AM: Best param found at split 4: l2reg = 1e-05                 with score 76.79
+04/21 05:35:21 AM: Best param found at split 5: l2reg = 1e-05                 with score 76.49
+04/21 05:35:22 AM: Generating sentence embeddings
+04/21 05:35:33 AM: Generated sentence embeddings
+04/21 05:35:33 AM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/21 05:36:28 AM: Best param found at split 1: l2reg = 1e-05                 with score 85.03
+04/21 05:37:30 AM: Best param found at split 2: l2reg = 0.0001                 with score 84.67
+04/21 05:38:34 AM: Best param found at split 3: l2reg = 1e-05                 with score 84.88
+04/21 05:39:38 AM: Best param found at split 4: l2reg = 0.0001                 with score 85.08
+04/21 05:40:42 AM: Best param found at split 5: l2reg = 1e-05                 with score 84.97
+04/21 05:40:46 AM: Generating sentence embeddings
+04/21 05:40:58 AM: Generated sentence embeddings
+04/21 05:40:58 AM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/21 05:42:03 AM: Best param found at split 1: l2reg = 1e-05                 with score 85.5
+04/21 05:43:12 AM: Best param found at split 2: l2reg = 1e-05                 with score 85.31
+04/21 05:44:21 AM: Best param found at split 3: l2reg = 1e-05                 with score 85.14
+04/21 05:45:31 AM: Best param found at split 4: l2reg = 0.0001                 with score 85.35
+04/21 05:46:35 AM: Best param found at split 5: l2reg = 1e-05                 with score 85.22
+04/21 05:46:38 AM: Computing embedding for train
+04/21 05:47:51 AM: Computed train embeddings
+04/21 05:47:51 AM: Computing embedding for dev
+04/21 05:47:53 AM: Computed dev embeddings
+04/21 05:47:53 AM: Computing embedding for test
+04/21 05:47:55 AM: Computed test embeddings
+04/21 05:47:55 AM: Training pytorch-MLP-nhid0-adam-bs64 with standard validation..
+04/21 05:49:29 AM: [('reg:1e-05', 77.41), ('reg:0.0001', 77.52), ('reg:0.001', 77.41), ('reg:0.01', 76.38)]
+04/21 05:49:29 AM: Validation : best param found is reg = 0.0001 with score             77.52
+04/21 05:49:29 AM: Evaluating...
+04/21 05:49:52 AM: ***** Transfer task : TREC *****
+
+
+04/21 05:49:58 AM: Computed train embeddings
+04/21 05:49:58 AM: Computed test embeddings
+04/21 05:49:58 AM: Training pytorch-MLP-nhid0-adam-bs64 with 5-fold cross-validation
+04/21 05:50:49 AM: [('reg:1e-05', 65.06), ('reg:0.0001', 64.99), ('reg:0.001', 63.98), ('reg:0.01', 59.08)]
+04/21 05:50:49 AM: Cross-validation : best param found is reg = 1e-05             with score 65.06
+04/21 05:50:49 AM: Evaluating...
+04/21 05:50:52 AM: ***** Transfer task : MRPC *****
+
+
+04/21 05:50:52 AM: Computing embedding for train
+04/21 05:51:03 AM: Computed train embeddings
+04/21 05:51:03 AM: Computing embedding for test
+04/21 05:51:07 AM: Computed test embeddings
+04/21 05:51:07 AM: Training pytorch-MLP-nhid0-adam-bs64 with 5-fold cross-validation
+04/21 05:51:40 AM: [('reg:1e-05', 73.43), ('reg:0.0001', 73.41), ('reg:0.001', 73.16), ('reg:0.01', 71.86)]
+04/21 05:51:40 AM: Cross-validation : best param found is reg = 1e-05             with score 73.43
+04/21 05:51:40 AM: Evaluating...
+04/21 05:51:42 AM: Computing embedding for train
+04/21 05:51:51 AM: Computed train embeddings
+04/21 05:51:51 AM: Computing embedding for dev
+04/21 05:51:52 AM: Computed dev embeddings
+04/21 05:51:52 AM: Computing embedding for test
+04/21 05:52:02 AM: Computed test embeddings
+04/21 05:52:02 AM: Training pytorch-MLP-nhid0-adam-bs64 with standard validation..
+04/21 05:52:09 AM: [('reg:1e-05', 83.6), ('reg:0.0001', 83.6), ('reg:0.001', 83.2), ('reg:0.01', 82.8)]
+04/21 05:52:09 AM: Validation : best param found is reg = 1e-05 with score             83.6
+04/21 05:52:09 AM: Evaluating...
+04/21 05:52:20 AM: Results on SentEval tasks: {'MR': {'devacc': 71.71, 'acc': 71.59, 'ndev': 10662, 'ntest': 10662}, 'CR': {'devacc': 77.05, 'acc': 76.45, 'ndev': 3775, 'ntest': 3775}, 'MPQA': {'devacc': 84.93, 'acc': 84.6, 'ndev': 10606, 'ntest': 10606}, 'SUBJ': {'devacc': 85.3, 'acc': 84.88, 'ndev': 10000, 'ntest': 10000}, 'SST2': {'devacc': 77.52, 'acc': 75.51, 'ndev': 872, 'ntest': 1821}, 'TREC': {'devacc': 65.06, 'acc': 74.4, 'ndev': 5452, 'ntest': 500}, 'MRPC': {'devacc': 73.43, 'acc': 74.03, 'f1': 82.01, 'ndev': 4076, 'ntest': 1725}, 'SICKEntailment': {'devacc': 83.6, 'acc': 82.08, 'ndev': 500, 'ntest': 4927}, 'STS14': {'deft-forum': {'pearson': PearsonRResult(statistic=0.38487896807076205, pvalue=2.4477524638318126e-17), 'spearman': SignificanceResult(statistic=0.42218883186198103, pvalue=7.058077998467779e-21), 'nsamples': 450}, 'deft-news': {'pearson': PearsonRResult(statistic=0.5303520120681046, pvalue=3.666791957017071e-23), 'spearman': SignificanceResult(statistic=0.5069585794732682, pvalue=5.3967109019376506e-21), 'nsamples': 300}, 'headlines': {'pearson': PearsonRResult(statistic=0.4859749455608945, pvalue=1.0394339741141622e-45), 'spearman': SignificanceResult(statistic=0.4435919345599497, pvalue=1.6783750259359821e-37), 'nsamples': 750}, 'images': {'pearson': PearsonRResult(statistic=0.7984194119940993, pvalue=5.6928291866009156e-167), 'spearman': SignificanceResult(statistic=0.7542230860570033, pvalue=8.649608320732662e-139), 'nsamples': 750}, 'OnWN': {'pearson': PearsonRResult(statistic=0.6249041293808555, pvalue=1.7657169415999046e-82), 'spearman': SignificanceResult(statistic=0.6618271960418505, pvalue=1.0973314397294326e-95), 'nsamples': 750}, 'tweet-news': {'pearson': PearsonRResult(statistic=0.539928820406739, pvalue=5.661273847798274e-58), 'spearman': SignificanceResult(statistic=0.49605075231803647, pvalue=7.765177770298993e-48), 'nsamples': 750}, 'all': {'pearson': {'mean': 0.5607430479135758, 'wmean': 0.5784590986024575}, 'spearman': {'mean': 0.5474733967186816, 'wmean': 0.5623579399766672}}}}
+04/21 05:52:20 AM: Macro accuracy: 77.3250
+04/21 05:52:20 AM: Micro score: 77.7618
+
+JOB STATISTICS
+==============
+Job ID: 5993171
+Cluster: snellius
+User/Group: scur1398/scur1398
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 07:22:30 core-walltime
+Job Wall-clock time: 00:24:35
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

@@ -1,0 +1,502 @@
+04/20 08:35:11 PM: Printing arguments : Namespace(seed=42, batch_size=64, num_workers=4, lr=0.1, lr_divisor=5, num_epochs=40, encoder='bilstm-max', checkpoint=None)
+04/20 08:35:11 PM: Setting seed...
+04/20 08:35:11 PM: Building/Loading the SNLI dataset...
+04/20 08:35:11 PM: Vocab already exists. Loading from disk...
+04/20 08:35:20 PM: Total number of parameters: 56983859
+04/20 08:35:20 PM: Training the model...
+Adjusting learning rate of group 0 to 1.0000e-01.
+  0%|          | 0/40 [00:00<?, ?it/s]04/20 08:35:20 PM: Epoch: 1/40
+04/20 08:35:34 PM: Epoch: 1/40, Batch: 501/8584, Train Loss: 0.9009
+04/20 08:35:48 PM: Epoch: 1/40, Batch: 1001/8584, Train Loss: 0.7360
+04/20 08:36:01 PM: Epoch: 1/40, Batch: 1501/8584, Train Loss: 0.5235
+04/20 08:36:15 PM: Epoch: 1/40, Batch: 2001/8584, Train Loss: 0.6291
+04/20 08:36:28 PM: Epoch: 1/40, Batch: 2501/8584, Train Loss: 0.5168
+04/20 08:36:42 PM: Epoch: 1/40, Batch: 3001/8584, Train Loss: 0.5018
+04/20 08:36:55 PM: Epoch: 1/40, Batch: 3501/8584, Train Loss: 0.7121
+04/20 08:37:09 PM: Epoch: 1/40, Batch: 4001/8584, Train Loss: 0.5798
+04/20 08:37:22 PM: Epoch: 1/40, Batch: 4501/8584, Train Loss: 0.6887
+04/20 08:37:36 PM: Epoch: 1/40, Batch: 5001/8584, Train Loss: 0.5257
+04/20 08:37:49 PM: Epoch: 1/40, Batch: 5501/8584, Train Loss: 0.4832
+04/20 08:38:03 PM: Epoch: 1/40, Batch: 6001/8584, Train Loss: 0.4758
+04/20 08:38:16 PM: Epoch: 1/40, Batch: 6501/8584, Train Loss: 0.6908
+04/20 08:38:30 PM: Epoch: 1/40, Batch: 7001/8584, Train Loss: 0.6302
+04/20 08:38:43 PM: Epoch: 1/40, Batch: 7501/8584, Train Loss: 0.5098
+04/20 08:38:57 PM: Epoch: 1/40, Batch: 8001/8584, Train Loss: 0.5190
+04/20 08:39:11 PM: Epoch: 1/40, Batch: 8501/8584, Train Loss: 0.5101
+04/20 08:39:13 PM: Epoch: 1/40, Train Loss: 0.6175
+04/20 08:39:13 PM: Batch: 1/154, Loss: 0.4462, Acc: 85.9375
+04/20 08:39:13 PM: Batch: 11/154, Loss: 0.4813, Acc: 78.1250
+04/20 08:39:13 PM: Batch: 21/154, Loss: 0.4531, Acc: 82.8125
+04/20 08:39:13 PM: Batch: 31/154, Loss: 0.3860, Acc: 89.0625
+04/20 08:39:14 PM: Batch: 41/154, Loss: 0.5298, Acc: 76.5625
+04/20 08:39:14 PM: Batch: 51/154, Loss: 0.4387, Acc: 82.8125
+04/20 08:39:14 PM: Batch: 61/154, Loss: 0.4872, Acc: 78.1250
+04/20 08:39:14 PM: Batch: 71/154, Loss: 0.6376, Acc: 68.7500
+04/20 08:39:14 PM: Batch: 81/154, Loss: 0.6645, Acc: 68.7500
+04/20 08:39:14 PM: Batch: 91/154, Loss: 0.4842, Acc: 82.8125
+04/20 08:39:14 PM: Batch: 101/154, Loss: 0.4877, Acc: 81.2500
+04/20 08:39:14 PM: Batch: 111/154, Loss: 0.3511, Acc: 87.5000
+04/20 08:39:14 PM: Batch: 121/154, Loss: 0.4820, Acc: 79.6875
+04/20 08:39:14 PM: Batch: 131/154, Loss: 0.5059, Acc: 84.3750
+04/20 08:39:15 PM: Batch: 141/154, Loss: 0.4564, Acc: 81.2500
+04/20 08:39:15 PM: Batch: 151/154, Loss: 0.5091, Acc: 81.2500
+04/20 08:39:15 PM: Epoch: 1/40, Val Loss: 0.4816, Val Acc: 81.5383
+04/20 08:39:15 PM: Best model found with val acc.: 81.5383
+  2%|▎         | 1/40 [03:54<2:32:28, 234.57s/it]04/20 08:39:15 PM: Epoch: 2/40
+Adjusting learning rate of group 0 to 9.9000e-02.
+04/20 08:39:29 PM: Epoch: 2/40, Batch: 501/8584, Train Loss: 0.4861
+04/20 08:39:42 PM: Epoch: 2/40, Batch: 1001/8584, Train Loss: 0.4534
+04/20 08:39:55 PM: Epoch: 2/40, Batch: 1501/8584, Train Loss: 0.3470
+04/20 08:40:09 PM: Epoch: 2/40, Batch: 2001/8584, Train Loss: 0.3939
+04/20 08:40:22 PM: Epoch: 2/40, Batch: 2501/8584, Train Loss: 0.3981
+04/20 08:40:36 PM: Epoch: 2/40, Batch: 3001/8584, Train Loss: 0.3458
+04/20 08:40:49 PM: Epoch: 2/40, Batch: 3501/8584, Train Loss: 0.5902
+04/20 08:41:03 PM: Epoch: 2/40, Batch: 4001/8584, Train Loss: 0.5444
+04/20 08:41:17 PM: Epoch: 2/40, Batch: 4501/8584, Train Loss: 0.5657
+04/20 08:41:30 PM: Epoch: 2/40, Batch: 5001/8584, Train Loss: 0.4971
+04/20 08:41:44 PM: Epoch: 2/40, Batch: 5501/8584, Train Loss: 0.3509
+04/20 08:41:57 PM: Epoch: 2/40, Batch: 6001/8584, Train Loss: 0.4044
+04/20 08:42:11 PM: Epoch: 2/40, Batch: 6501/8584, Train Loss: 0.5872
+04/20 08:42:24 PM: Epoch: 2/40, Batch: 7001/8584, Train Loss: 0.4920
+04/20 08:42:38 PM: Epoch: 2/40, Batch: 7501/8584, Train Loss: 0.3823
+04/20 08:42:51 PM: Epoch: 2/40, Batch: 8001/8584, Train Loss: 0.5029
+04/20 08:43:05 PM: Epoch: 2/40, Batch: 8501/8584, Train Loss: 0.4572
+04/20 08:43:07 PM: Epoch: 2/40, Train Loss: 0.4824
+04/20 08:43:07 PM: Batch: 1/154, Loss: 0.4086, Acc: 87.5000
+04/20 08:43:07 PM: Batch: 11/154, Loss: 0.4898, Acc: 75.0000
+04/20 08:43:08 PM: Batch: 21/154, Loss: 0.4609, Acc: 81.2500
+04/20 08:43:08 PM: Batch: 31/154, Loss: 0.3641, Acc: 87.5000
+04/20 08:43:08 PM: Batch: 41/154, Loss: 0.5357, Acc: 79.6875
+04/20 08:43:08 PM: Batch: 51/154, Loss: 0.4105, Acc: 81.2500
+04/20 08:43:08 PM: Batch: 61/154, Loss: 0.4677, Acc: 78.1250
+04/20 08:43:08 PM: Batch: 71/154, Loss: 0.5977, Acc: 68.7500
+04/20 08:43:08 PM: Batch: 81/154, Loss: 0.6330, Acc: 73.4375
+04/20 08:43:08 PM: Batch: 91/154, Loss: 0.4304, Acc: 85.9375
+04/20 08:43:08 PM: Batch: 101/154, Loss: 0.4443, Acc: 79.6875
+04/20 08:43:08 PM: Batch: 111/154, Loss: 0.2857, Acc: 89.0625
+04/20 08:43:09 PM: Batch: 121/154, Loss: 0.4158, Acc: 84.3750
+04/20 08:43:09 PM: Batch: 131/154, Loss: 0.4322, Acc: 82.8125
+04/20 08:43:09 PM: Batch: 141/154, Loss: 0.4146, Acc: 81.2500
+04/20 08:43:09 PM: Batch: 151/154, Loss: 0.4564, Acc: 87.5000
+04/20 08:43:09 PM: Epoch: 2/40, Val Loss: 0.4501, Val Acc: 82.8185
+04/20 08:43:09 PM: Best model found with val acc.: 82.8185
+  5%|▌         | 2/40 [07:48<2:28:26, 234.39s/it]04/20 08:43:09 PM: Epoch: 3/40
+Adjusting learning rate of group 0 to 9.8010e-02.
+04/20 08:43:23 PM: Epoch: 3/40, Batch: 501/8584, Train Loss: 0.3949
+04/20 08:43:36 PM: Epoch: 3/40, Batch: 1001/8584, Train Loss: 0.3774
+04/20 08:43:50 PM: Epoch: 3/40, Batch: 1501/8584, Train Loss: 0.2940
+04/20 08:44:03 PM: Epoch: 3/40, Batch: 2001/8584, Train Loss: 0.3162
+04/20 08:44:17 PM: Epoch: 3/40, Batch: 2501/8584, Train Loss: 0.3355
+04/20 08:44:30 PM: Epoch: 3/40, Batch: 3001/8584, Train Loss: 0.2822
+04/20 08:44:44 PM: Epoch: 3/40, Batch: 3501/8584, Train Loss: 0.5146
+04/20 08:44:57 PM: Epoch: 3/40, Batch: 4001/8584, Train Loss: 0.4679
+04/20 08:45:11 PM: Epoch: 3/40, Batch: 4501/8584, Train Loss: 0.5266
+04/20 08:45:24 PM: Epoch: 3/40, Batch: 5001/8584, Train Loss: 0.4019
+04/20 08:45:38 PM: Epoch: 3/40, Batch: 5501/8584, Train Loss: 0.2827
+04/20 08:45:51 PM: Epoch: 3/40, Batch: 6001/8584, Train Loss: 0.3709
+04/20 08:46:05 PM: Epoch: 3/40, Batch: 6501/8584, Train Loss: 0.5165
+04/20 08:46:18 PM: Epoch: 3/40, Batch: 7001/8584, Train Loss: 0.4303
+04/20 08:46:32 PM: Epoch: 3/40, Batch: 7501/8584, Train Loss: 0.3201
+04/20 08:46:45 PM: Epoch: 3/40, Batch: 8001/8584, Train Loss: 0.5441
+04/20 08:46:59 PM: Epoch: 3/40, Batch: 8501/8584, Train Loss: 0.3563
+04/20 08:47:01 PM: Epoch: 3/40, Train Loss: 0.4319
+04/20 08:47:02 PM: Batch: 1/154, Loss: 0.4066, Acc: 87.5000
+04/20 08:47:02 PM: Batch: 11/154, Loss: 0.5111, Acc: 73.4375
+04/20 08:47:02 PM: Batch: 21/154, Loss: 0.4425, Acc: 79.6875
+04/20 08:47:02 PM: Batch: 31/154, Loss: 0.4261, Acc: 84.3750
+04/20 08:47:02 PM: Batch: 41/154, Loss: 0.5661, Acc: 81.2500
+04/20 08:47:02 PM: Batch: 51/154, Loss: 0.3654, Acc: 82.8125
+04/20 08:47:02 PM: Batch: 61/154, Loss: 0.4457, Acc: 79.6875
+04/20 08:47:02 PM: Batch: 71/154, Loss: 0.6581, Acc: 68.7500
+04/20 08:47:02 PM: Batch: 81/154, Loss: 0.6531, Acc: 68.7500
+04/20 08:47:03 PM: Batch: 91/154, Loss: 0.4218, Acc: 87.5000
+04/20 08:47:03 PM: Batch: 101/154, Loss: 0.4026, Acc: 81.2500
+04/20 08:47:03 PM: Batch: 111/154, Loss: 0.3049, Acc: 89.0625
+04/20 08:47:03 PM: Batch: 121/154, Loss: 0.4383, Acc: 82.8125
+04/20 08:47:03 PM: Batch: 131/154, Loss: 0.4175, Acc: 82.8125
+04/20 08:47:03 PM: Batch: 141/154, Loss: 0.4237, Acc: 82.8125
+04/20 08:47:03 PM: Batch: 151/154, Loss: 0.4436, Acc: 87.5000
+04/20 08:47:03 PM: Epoch: 3/40, Val Loss: 0.4435, Val Acc: 83.3062
+04/20 08:47:03 PM: Best model found with val acc.: 83.3062
+  8%|▊         | 3/40 [11:43<2:24:30, 234.33s/it]04/20 08:47:03 PM: Epoch: 4/40
+Adjusting learning rate of group 0 to 9.7030e-02.
+04/20 08:47:17 PM: Epoch: 4/40, Batch: 501/8584, Train Loss: 0.2990
+04/20 08:47:31 PM: Epoch: 4/40, Batch: 1001/8584, Train Loss: 0.3302
+04/20 08:47:44 PM: Epoch: 4/40, Batch: 1501/8584, Train Loss: 0.2325
+04/20 08:47:57 PM: Epoch: 4/40, Batch: 2001/8584, Train Loss: 0.2555
+04/20 08:48:11 PM: Epoch: 4/40, Batch: 2501/8584, Train Loss: 0.2874
+04/20 08:48:24 PM: Epoch: 4/40, Batch: 3001/8584, Train Loss: 0.2417
+04/20 08:48:38 PM: Epoch: 4/40, Batch: 3501/8584, Train Loss: 0.4151
+04/20 08:48:51 PM: Epoch: 4/40, Batch: 4001/8584, Train Loss: 0.4415
+04/20 08:49:05 PM: Epoch: 4/40, Batch: 4501/8584, Train Loss: 0.4530
+04/20 08:49:19 PM: Epoch: 4/40, Batch: 5001/8584, Train Loss: 0.4054
+04/20 08:49:32 PM: Epoch: 4/40, Batch: 5501/8584, Train Loss: 0.2770
+04/20 08:49:46 PM: Epoch: 4/40, Batch: 6001/8584, Train Loss: 0.3370
+04/20 08:49:59 PM: Epoch: 4/40, Batch: 6501/8584, Train Loss: 0.3964
+04/20 08:50:13 PM: Epoch: 4/40, Batch: 7001/8584, Train Loss: 0.3439
+04/20 08:50:26 PM: Epoch: 4/40, Batch: 7501/8584, Train Loss: 0.2546
+04/20 08:50:40 PM: Epoch: 4/40, Batch: 8001/8584, Train Loss: 0.5275
+04/20 08:50:53 PM: Epoch: 4/40, Batch: 8501/8584, Train Loss: 0.3623
+04/20 08:50:56 PM: Epoch: 4/40, Train Loss: 0.3904
+04/20 08:50:56 PM: Batch: 1/154, Loss: 0.4243, Acc: 81.2500
+04/20 08:50:56 PM: Batch: 11/154, Loss: 0.4938, Acc: 78.1250
+04/20 08:50:56 PM: Batch: 21/154, Loss: 0.4754, Acc: 81.2500
+04/20 08:50:56 PM: Batch: 31/154, Loss: 0.4821, Acc: 84.3750
+04/20 08:50:56 PM: Batch: 41/154, Loss: 0.6039, Acc: 84.3750
+04/20 08:50:56 PM: Batch: 51/154, Loss: 0.3586, Acc: 85.9375
+04/20 08:50:57 PM: Batch: 61/154, Loss: 0.4731, Acc: 81.2500
+04/20 08:50:57 PM: Batch: 71/154, Loss: 0.5930, Acc: 79.6875
+04/20 08:50:57 PM: Batch: 81/154, Loss: 0.6317, Acc: 79.6875
+04/20 08:50:57 PM: Batch: 91/154, Loss: 0.4446, Acc: 84.3750
+04/20 08:50:57 PM: Batch: 101/154, Loss: 0.4498, Acc: 79.6875
+04/20 08:50:57 PM: Batch: 111/154, Loss: 0.2706, Acc: 90.6250
+04/20 08:50:57 PM: Batch: 121/154, Loss: 0.4002, Acc: 87.5000
+04/20 08:50:57 PM: Batch: 131/154, Loss: 0.3898, Acc: 84.3750
+04/20 08:50:57 PM: Batch: 141/154, Loss: 0.4228, Acc: 81.2500
+04/20 08:50:57 PM: Batch: 151/154, Loss: 0.4572, Acc: 87.5000
+04/20 08:50:57 PM: Epoch: 4/40, Val Loss: 0.4499, Val Acc: 83.3469
+04/20 08:50:57 PM: Best model found with val acc.: 83.3469
+ 10%|█         | 4/40 [15:37<2:20:35, 234.31s/it]04/20 08:50:58 PM: Epoch: 5/40
+Adjusting learning rate of group 0 to 9.6060e-02.
+04/20 08:51:11 PM: Epoch: 5/40, Batch: 501/8584, Train Loss: 0.1997
+04/20 08:51:25 PM: Epoch: 5/40, Batch: 1001/8584, Train Loss: 0.3258
+04/20 08:51:38 PM: Epoch: 5/40, Batch: 1501/8584, Train Loss: 0.1947
+04/20 08:51:52 PM: Epoch: 5/40, Batch: 2001/8584, Train Loss: 0.1878
+04/20 08:52:05 PM: Epoch: 5/40, Batch: 2501/8584, Train Loss: 0.2486
+04/20 08:52:19 PM: Epoch: 5/40, Batch: 3001/8584, Train Loss: 0.2087
+04/20 08:52:32 PM: Epoch: 5/40, Batch: 3501/8584, Train Loss: 0.3894
+04/20 08:52:46 PM: Epoch: 5/40, Batch: 4001/8584, Train Loss: 0.3974
+04/20 08:52:59 PM: Epoch: 5/40, Batch: 4501/8584, Train Loss: 0.4322
+04/20 08:53:13 PM: Epoch: 5/40, Batch: 5001/8584, Train Loss: 0.3148
+04/20 08:53:26 PM: Epoch: 5/40, Batch: 5501/8584, Train Loss: 0.2479
+04/20 08:53:40 PM: Epoch: 5/40, Batch: 6001/8584, Train Loss: 0.3317
+04/20 08:53:53 PM: Epoch: 5/40, Batch: 6501/8584, Train Loss: 0.4023
+04/20 08:54:07 PM: Epoch: 5/40, Batch: 7001/8584, Train Loss: 0.2862
+04/20 08:54:20 PM: Epoch: 5/40, Batch: 7501/8584, Train Loss: 0.2447
+04/20 08:54:34 PM: Epoch: 5/40, Batch: 8001/8584, Train Loss: 0.4066
+04/20 08:54:48 PM: Epoch: 5/40, Batch: 8501/8584, Train Loss: 0.2857
+04/20 08:54:50 PM: Epoch: 5/40, Train Loss: 0.3526
+04/20 08:54:50 PM: Batch: 1/154, Loss: 0.4937, Acc: 79.6875
+04/20 08:54:50 PM: Batch: 11/154, Loss: 0.5672, Acc: 76.5625
+04/20 08:54:50 PM: Batch: 21/154, Loss: 0.5134, Acc: 82.8125
+04/20 08:54:50 PM: Batch: 31/154, Loss: 0.5242, Acc: 87.5000
+04/20 08:54:50 PM: Batch: 41/154, Loss: 0.6355, Acc: 82.8125
+04/20 08:54:51 PM: Batch: 51/154, Loss: 0.3992, Acc: 82.8125
+04/20 08:54:51 PM: Batch: 61/154, Loss: 0.4563, Acc: 79.6875
+04/20 08:54:51 PM: Batch: 71/154, Loss: 0.7074, Acc: 76.5625
+04/20 08:54:51 PM: Batch: 81/154, Loss: 0.6112, Acc: 76.5625
+04/20 08:54:51 PM: Batch: 91/154, Loss: 0.4376, Acc: 82.8125
+04/20 08:54:51 PM: Batch: 101/154, Loss: 0.4496, Acc: 82.8125
+04/20 08:54:51 PM: Batch: 111/154, Loss: 0.2408, Acc: 90.6250
+04/20 08:54:51 PM: Batch: 121/154, Loss: 0.5484, Acc: 81.2500
+04/20 08:54:51 PM: Batch: 131/154, Loss: 0.4416, Acc: 85.9375
+04/20 08:54:51 PM: Batch: 141/154, Loss: 0.4295, Acc: 84.3750
+04/20 08:54:52 PM: Batch: 151/154, Loss: 0.4675, Acc: 84.3750
+04/20 08:54:52 PM: Epoch: 5/40, Val Loss: 0.4800, Val Acc: 83.4688
+04/20 08:54:52 PM: Best model found with val acc.: 83.4688
+ 12%|█▎        | 5/40 [19:31<2:16:39, 234.26s/it]04/20 08:54:52 PM: Epoch: 6/40
+Adjusting learning rate of group 0 to 9.5099e-02.
+04/20 08:55:06 PM: Epoch: 6/40, Batch: 501/8584, Train Loss: 0.2018
+04/20 08:55:19 PM: Epoch: 6/40, Batch: 1001/8584, Train Loss: 0.2677
+04/20 08:55:32 PM: Epoch: 6/40, Batch: 1501/8584, Train Loss: 0.1658
+04/20 08:55:46 PM: Epoch: 6/40, Batch: 2001/8584, Train Loss: 0.1597
+04/20 08:55:59 PM: Epoch: 6/40, Batch: 2501/8584, Train Loss: 0.2099
+04/20 08:56:13 PM: Epoch: 6/40, Batch: 3001/8584, Train Loss: 0.2055
+04/20 08:56:26 PM: Epoch: 6/40, Batch: 3501/8584, Train Loss: 0.3332
+04/20 08:56:40 PM: Epoch: 6/40, Batch: 4001/8584, Train Loss: 0.3202
+04/20 08:56:54 PM: Epoch: 6/40, Batch: 4501/8584, Train Loss: 0.4138
+04/20 08:57:07 PM: Epoch: 6/40, Batch: 5001/8584, Train Loss: 0.2978
+04/20 08:57:21 PM: Epoch: 6/40, Batch: 5501/8584, Train Loss: 0.1990
+04/20 08:57:34 PM: Epoch: 6/40, Batch: 6001/8584, Train Loss: 0.2473
+04/20 08:57:48 PM: Epoch: 6/40, Batch: 6501/8584, Train Loss: 0.3279
+04/20 08:58:01 PM: Epoch: 6/40, Batch: 7001/8584, Train Loss: 0.2122
+04/20 08:58:15 PM: Epoch: 6/40, Batch: 7501/8584, Train Loss: 0.2221
+04/20 08:58:28 PM: Epoch: 6/40, Batch: 8001/8584, Train Loss: 0.3401
+04/20 08:58:42 PM: Epoch: 6/40, Batch: 8501/8584, Train Loss: 0.3219
+04/20 08:58:44 PM: Epoch: 6/40, Train Loss: 0.3167
+04/20 08:58:44 PM: Batch: 1/154, Loss: 0.4812, Acc: 82.8125
+04/20 08:58:44 PM: Batch: 11/154, Loss: 0.6239, Acc: 73.4375
+04/20 08:58:45 PM: Batch: 21/154, Loss: 0.5059, Acc: 84.3750
+04/20 08:58:45 PM: Batch: 31/154, Loss: 0.5344, Acc: 85.9375
+04/20 08:58:45 PM: Batch: 41/154, Loss: 0.6921, Acc: 82.8125
+04/20 08:58:45 PM: Batch: 51/154, Loss: 0.4860, Acc: 84.3750
+04/20 08:58:45 PM: Batch: 61/154, Loss: 0.5247, Acc: 82.8125
+04/20 08:58:45 PM: Batch: 71/154, Loss: 0.7923, Acc: 79.6875
+04/20 08:58:45 PM: Batch: 81/154, Loss: 0.5571, Acc: 79.6875
+04/20 08:58:45 PM: Batch: 91/154, Loss: 0.4155, Acc: 85.9375
+04/20 08:58:45 PM: Batch: 101/154, Loss: 0.4616, Acc: 82.8125
+04/20 08:58:45 PM: Batch: 111/154, Loss: 0.2907, Acc: 89.0625
+04/20 08:58:46 PM: Batch: 121/154, Loss: 0.5985, Acc: 76.5625
+04/20 08:58:46 PM: Batch: 131/154, Loss: 0.4427, Acc: 82.8125
+04/20 08:58:46 PM: Batch: 141/154, Loss: 0.5032, Acc: 76.5625
+04/20 08:58:46 PM: Batch: 151/154, Loss: 0.4547, Acc: 85.9375
+04/20 08:58:46 PM: Epoch: 6/40, Val Loss: 0.4982, Val Acc: 83.1437
+04/20 08:58:46 PM: Learning rate decreased to: 0.0188
+ 15%|█▌        | 6/40 [23:25<2:12:42, 234.19s/it]04/20 08:58:46 PM: Epoch: 7/40
+Adjusting learning rate of group 0 to 9.4148e-02.
+04/20 08:59:00 PM: Epoch: 7/40, Batch: 501/8584, Train Loss: 0.1956
+04/20 08:59:13 PM: Epoch: 7/40, Batch: 1001/8584, Train Loss: 0.2012
+04/20 08:59:26 PM: Epoch: 7/40, Batch: 1501/8584, Train Loss: 0.1718
+04/20 08:59:40 PM: Epoch: 7/40, Batch: 2001/8584, Train Loss: 0.1385
+04/20 08:59:53 PM: Epoch: 7/40, Batch: 2501/8584, Train Loss: 0.1515
+04/20 09:00:07 PM: Epoch: 7/40, Batch: 3001/8584, Train Loss: 0.1436
+04/20 09:00:20 PM: Epoch: 7/40, Batch: 3501/8584, Train Loss: 0.2579
+04/20 09:00:34 PM: Epoch: 7/40, Batch: 4001/8584, Train Loss: 0.2049
+04/20 09:00:48 PM: Epoch: 7/40, Batch: 4501/8584, Train Loss: 0.2728
+04/20 09:01:01 PM: Epoch: 7/40, Batch: 5001/8584, Train Loss: 0.1728
+04/20 09:01:15 PM: Epoch: 7/40, Batch: 5501/8584, Train Loss: 0.1806
+04/20 09:01:28 PM: Epoch: 7/40, Batch: 6001/8584, Train Loss: 0.1473
+04/20 09:01:42 PM: Epoch: 7/40, Batch: 6501/8584, Train Loss: 0.1942
+04/20 09:01:55 PM: Epoch: 7/40, Batch: 7001/8584, Train Loss: 0.1198
+04/20 09:02:09 PM: Epoch: 7/40, Batch: 7501/8584, Train Loss: 0.1171
+04/20 09:02:22 PM: Epoch: 7/40, Batch: 8001/8584, Train Loss: 0.2180
+04/20 09:02:36 PM: Epoch: 7/40, Batch: 8501/8584, Train Loss: 0.1238
+04/20 09:02:38 PM: Epoch: 7/40, Train Loss: 0.2147
+04/20 09:02:38 PM: Batch: 1/154, Loss: 0.4643, Acc: 84.3750
+04/20 09:02:39 PM: Batch: 11/154, Loss: 0.7044, Acc: 78.1250
+04/20 09:02:39 PM: Batch: 21/154, Loss: 0.5998, Acc: 82.8125
+04/20 09:02:39 PM: Batch: 31/154, Loss: 0.5117, Acc: 85.9375
+04/20 09:02:39 PM: Batch: 41/154, Loss: 0.6883, Acc: 81.2500
+04/20 09:02:39 PM: Batch: 51/154, Loss: 0.4771, Acc: 84.3750
+04/20 09:02:39 PM: Batch: 61/154, Loss: 0.5172, Acc: 81.2500
+04/20 09:02:39 PM: Batch: 71/154, Loss: 0.9078, Acc: 78.1250
+04/20 09:02:39 PM: Batch: 81/154, Loss: 0.6889, Acc: 76.5625
+04/20 09:02:39 PM: Batch: 91/154, Loss: 0.4934, Acc: 84.3750
+04/20 09:02:39 PM: Batch: 101/154, Loss: 0.4908, Acc: 81.2500
+04/20 09:02:40 PM: Batch: 111/154, Loss: 0.2800, Acc: 90.6250
+04/20 09:02:40 PM: Batch: 121/154, Loss: 0.6055, Acc: 78.1250
+04/20 09:02:40 PM: Batch: 131/154, Loss: 0.4914, Acc: 84.3750
+04/20 09:02:40 PM: Batch: 141/154, Loss: 0.4427, Acc: 81.2500
+04/20 09:02:40 PM: Batch: 151/154, Loss: 0.5798, Acc: 85.9375
+04/20 09:02:40 PM: Epoch: 7/40, Val Loss: 0.5324, Val Acc: 83.6212
+04/20 09:02:40 PM: Best model found with val acc.: 83.6212
+ 18%|█▊        | 7/40 [27:19<2:08:49, 234.23s/it]04/20 09:02:40 PM: Epoch: 8/40
+Adjusting learning rate of group 0 to 1.8641e-02.
+04/20 09:02:54 PM: Epoch: 8/40, Batch: 501/8584, Train Loss: 0.1176
+04/20 09:03:07 PM: Epoch: 8/40, Batch: 1001/8584, Train Loss: 0.1528
+04/20 09:03:21 PM: Epoch: 8/40, Batch: 1501/8584, Train Loss: 0.0997
+04/20 09:03:34 PM: Epoch: 8/40, Batch: 2001/8584, Train Loss: 0.0744
+04/20 09:03:48 PM: Epoch: 8/40, Batch: 2501/8584, Train Loss: 0.1006
+04/20 09:04:01 PM: Epoch: 8/40, Batch: 3001/8584, Train Loss: 0.1046
+04/20 09:04:15 PM: Epoch: 8/40, Batch: 3501/8584, Train Loss: 0.1661
+04/20 09:04:28 PM: Epoch: 8/40, Batch: 4001/8584, Train Loss: 0.1680
+04/20 09:04:42 PM: Epoch: 8/40, Batch: 4501/8584, Train Loss: 0.2043
+04/20 09:04:55 PM: Epoch: 8/40, Batch: 5001/8584, Train Loss: 0.1020
+04/20 09:05:09 PM: Epoch: 8/40, Batch: 5501/8584, Train Loss: 0.1460
+04/20 09:05:22 PM: Epoch: 8/40, Batch: 6001/8584, Train Loss: 0.1236
+04/20 09:05:36 PM: Epoch: 8/40, Batch: 6501/8584, Train Loss: 0.1354
+04/20 09:05:49 PM: Epoch: 8/40, Batch: 7001/8584, Train Loss: 0.0547
+04/20 09:06:03 PM: Epoch: 8/40, Batch: 7501/8584, Train Loss: 0.0963
+04/20 09:06:17 PM: Epoch: 8/40, Batch: 8001/8584, Train Loss: 0.1828
+04/20 09:06:30 PM: Epoch: 8/40, Batch: 8501/8584, Train Loss: 0.0891
+04/20 09:06:32 PM: Epoch: 8/40, Train Loss: 0.1553
+04/20 09:06:33 PM: Batch: 1/154, Loss: 0.5105, Acc: 84.3750
+04/20 09:06:33 PM: Batch: 11/154, Loss: 0.7838, Acc: 78.1250
+04/20 09:06:33 PM: Batch: 21/154, Loss: 0.6921, Acc: 78.1250
+04/20 09:06:33 PM: Batch: 31/154, Loss: 0.5289, Acc: 89.0625
+04/20 09:06:33 PM: Batch: 41/154, Loss: 0.8087, Acc: 79.6875
+04/20 09:06:33 PM: Batch: 51/154, Loss: 0.5483, Acc: 81.2500
+04/20 09:06:33 PM: Batch: 61/154, Loss: 0.5481, Acc: 82.8125
+04/20 09:06:33 PM: Batch: 71/154, Loss: 1.0234, Acc: 75.0000
+04/20 09:06:33 PM: Batch: 81/154, Loss: 0.7127, Acc: 79.6875
+04/20 09:06:34 PM: Batch: 91/154, Loss: 0.5163, Acc: 84.3750
+04/20 09:06:34 PM: Batch: 101/154, Loss: 0.5598, Acc: 81.2500
+04/20 09:06:34 PM: Batch: 111/154, Loss: 0.3195, Acc: 90.6250
+04/20 09:06:34 PM: Batch: 121/154, Loss: 0.7090, Acc: 79.6875
+04/20 09:06:34 PM: Batch: 131/154, Loss: 0.5313, Acc: 87.5000
+04/20 09:06:34 PM: Batch: 141/154, Loss: 0.5311, Acc: 79.6875
+04/20 09:06:34 PM: Batch: 151/154, Loss: 0.6434, Acc: 82.8125
+04/20 09:06:34 PM: Epoch: 8/40, Val Loss: 0.6004, Val Acc: 83.2250
+04/20 09:06:34 PM: Learning rate decreased to: 0.0037
+ 20%|██        | 8/40 [31:13<2:04:53, 234.16s/it]04/20 09:06:34 PM: Epoch: 9/40
+Adjusting learning rate of group 0 to 1.8455e-02.
+04/20 09:06:48 PM: Epoch: 9/40, Batch: 501/8584, Train Loss: 0.0598
+04/20 09:07:01 PM: Epoch: 9/40, Batch: 1001/8584, Train Loss: 0.1190
+04/20 09:07:15 PM: Epoch: 9/40, Batch: 1501/8584, Train Loss: 0.1117
+04/20 09:07:28 PM: Epoch: 9/40, Batch: 2001/8584, Train Loss: 0.0559
+04/20 09:07:42 PM: Epoch: 9/40, Batch: 2501/8584, Train Loss: 0.0697
+04/20 09:07:55 PM: Epoch: 9/40, Batch: 3001/8584, Train Loss: 0.0885
+04/20 09:08:09 PM: Epoch: 9/40, Batch: 3501/8584, Train Loss: 0.1156
+04/20 09:08:22 PM: Epoch: 9/40, Batch: 4001/8584, Train Loss: 0.1151
+04/20 09:08:36 PM: Epoch: 9/40, Batch: 4501/8584, Train Loss: 0.1737
+04/20 09:08:50 PM: Epoch: 9/40, Batch: 5001/8584, Train Loss: 0.0505
+04/20 09:09:03 PM: Epoch: 9/40, Batch: 5501/8584, Train Loss: 0.1124
+04/20 09:09:17 PM: Epoch: 9/40, Batch: 6001/8584, Train Loss: 0.0705
+04/20 09:09:30 PM: Epoch: 9/40, Batch: 6501/8584, Train Loss: 0.0745
+04/20 09:09:44 PM: Epoch: 9/40, Batch: 7001/8584, Train Loss: 0.0331
+04/20 09:09:57 PM: Epoch: 9/40, Batch: 7501/8584, Train Loss: 0.0590
+04/20 09:10:11 PM: Epoch: 9/40, Batch: 8001/8584, Train Loss: 0.1360
+04/20 09:10:24 PM: Epoch: 9/40, Batch: 8501/8584, Train Loss: 0.0617
+04/20 09:10:27 PM: Epoch: 9/40, Train Loss: 0.1074
+04/20 09:10:27 PM: Batch: 1/154, Loss: 0.5157, Acc: 84.3750
+04/20 09:10:27 PM: Batch: 11/154, Loss: 0.7752, Acc: 78.1250
+04/20 09:10:27 PM: Batch: 21/154, Loss: 0.7485, Acc: 78.1250
+04/20 09:10:27 PM: Batch: 31/154, Loss: 0.5292, Acc: 89.0625
+04/20 09:10:27 PM: Batch: 41/154, Loss: 0.8194, Acc: 79.6875
+04/20 09:10:27 PM: Batch: 51/154, Loss: 0.6041, Acc: 84.3750
+04/20 09:10:27 PM: Batch: 61/154, Loss: 0.5421, Acc: 82.8125
+04/20 09:10:28 PM: Batch: 71/154, Loss: 1.0520, Acc: 76.5625
+04/20 09:10:28 PM: Batch: 81/154, Loss: 0.7251, Acc: 78.1250
+04/20 09:10:28 PM: Batch: 91/154, Loss: 0.5294, Acc: 84.3750
+04/20 09:10:28 PM: Batch: 101/154, Loss: 0.5742, Acc: 81.2500
+04/20 09:10:28 PM: Batch: 111/154, Loss: 0.3154, Acc: 90.6250
+04/20 09:10:28 PM: Batch: 121/154, Loss: 0.7490, Acc: 75.0000
+04/20 09:10:28 PM: Batch: 131/154, Loss: 0.4957, Acc: 87.5000
+04/20 09:10:28 PM: Batch: 141/154, Loss: 0.5510, Acc: 81.2500
+04/20 09:10:28 PM: Batch: 151/154, Loss: 0.6170, Acc: 82.8125
+04/20 09:10:28 PM: Epoch: 9/40, Val Loss: 0.6070, Val Acc: 83.2351
+04/20 09:10:28 PM: Learning rate decreased to: 0.0007
+ 22%|██▎       | 9/40 [35:08<2:00:59, 234.17s/it]04/20 09:10:28 PM: Epoch: 10/40
+Adjusting learning rate of group 0 to 3.6541e-03.
+04/20 09:10:42 PM: Epoch: 10/40, Batch: 501/8584, Train Loss: 0.0394
+04/20 09:10:56 PM: Epoch: 10/40, Batch: 1001/8584, Train Loss: 0.0950
+04/20 09:11:09 PM: Epoch: 10/40, Batch: 1501/8584, Train Loss: 0.0860
+04/20 09:11:22 PM: Epoch: 10/40, Batch: 2001/8584, Train Loss: 0.0573
+04/20 09:11:36 PM: Epoch: 10/40, Batch: 2501/8584, Train Loss: 0.0611
+04/20 09:11:49 PM: Epoch: 10/40, Batch: 3001/8584, Train Loss: 0.0763
+04/20 09:12:03 PM: Epoch: 10/40, Batch: 3501/8584, Train Loss: 0.1013
+04/20 09:12:16 PM: Epoch: 10/40, Batch: 4001/8584, Train Loss: 0.1043
+04/20 09:12:30 PM: Epoch: 10/40, Batch: 4501/8584, Train Loss: 0.1430
+04/20 09:12:44 PM: Epoch: 10/40, Batch: 5001/8584, Train Loss: 0.0432
+04/20 09:12:57 PM: Epoch: 10/40, Batch: 5501/8584, Train Loss: 0.0993
+04/20 09:13:11 PM: Epoch: 10/40, Batch: 6001/8584, Train Loss: 0.0639
+04/20 09:13:24 PM: Epoch: 10/40, Batch: 6501/8584, Train Loss: 0.0638
+04/20 09:13:38 PM: Epoch: 10/40, Batch: 7001/8584, Train Loss: 0.0303
+04/20 09:13:51 PM: Epoch: 10/40, Batch: 7501/8584, Train Loss: 0.0518
+04/20 09:14:05 PM: Epoch: 10/40, Batch: 8001/8584, Train Loss: 0.1252
+04/20 09:14:18 PM: Epoch: 10/40, Batch: 8501/8584, Train Loss: 0.0534
+04/20 09:14:21 PM: Epoch: 10/40, Train Loss: 0.0931
+04/20 09:14:21 PM: Batch: 1/154, Loss: 0.5185, Acc: 85.9375
+04/20 09:14:21 PM: Batch: 11/154, Loss: 0.7660, Acc: 78.1250
+04/20 09:14:21 PM: Batch: 21/154, Loss: 0.7402, Acc: 79.6875
+04/20 09:14:21 PM: Batch: 31/154, Loss: 0.5397, Acc: 89.0625
+04/20 09:14:21 PM: Batch: 41/154, Loss: 0.8405, Acc: 81.2500
+04/20 09:14:21 PM: Batch: 51/154, Loss: 0.6205, Acc: 81.2500
+04/20 09:14:22 PM: Batch: 61/154, Loss: 0.5350, Acc: 82.8125
+04/20 09:14:22 PM: Batch: 71/154, Loss: 1.0729, Acc: 76.5625
+04/20 09:14:22 PM: Batch: 81/154, Loss: 0.7177, Acc: 79.6875
+04/20 09:14:22 PM: Batch: 91/154, Loss: 0.5224, Acc: 84.3750
+04/20 09:14:22 PM: Batch: 101/154, Loss: 0.5709, Acc: 81.2500
+04/20 09:14:22 PM: Batch: 111/154, Loss: 0.3265, Acc: 90.6250
+04/20 09:14:22 PM: Batch: 121/154, Loss: 0.7708, Acc: 75.0000
+04/20 09:14:22 PM: Batch: 131/154, Loss: 0.4727, Acc: 87.5000
+04/20 09:14:22 PM: Batch: 141/154, Loss: 0.5593, Acc: 82.8125
+04/20 09:14:22 PM: Batch: 151/154, Loss: 0.6217, Acc: 81.2500
+04/20 09:14:22 PM: Epoch: 10/40, Val Loss: 0.6103, Val Acc: 83.2656
+04/20 09:14:22 PM: Learning rate decreased to: 0.0001
+ 25%|██▌       | 10/40 [39:02<1:57:04, 234.14s/it]04/20 09:14:22 PM: Epoch: 11/40
+Adjusting learning rate of group 0 to 7.2351e-04.
+04/20 09:14:36 PM: Epoch: 11/40, Batch: 501/8584, Train Loss: 0.0382
+04/20 09:14:50 PM: Epoch: 11/40, Batch: 1001/8584, Train Loss: 0.0895
+04/20 09:15:03 PM: Epoch: 11/40, Batch: 1501/8584, Train Loss: 0.0760
+04/20 09:15:17 PM: Epoch: 11/40, Batch: 2001/8584, Train Loss: 0.0552
+04/20 09:15:30 PM: Epoch: 11/40, Batch: 2501/8584, Train Loss: 0.0617
+04/20 09:15:44 PM: Epoch: 11/40, Batch: 3001/8584, Train Loss: 0.0756
+04/20 09:15:57 PM: Epoch: 11/40, Batch: 3501/8584, Train Loss: 0.0977
+04/20 09:16:11 PM: Epoch: 11/40, Batch: 4001/8584, Train Loss: 0.1012
+04/20 09:16:24 PM: Epoch: 11/40, Batch: 4501/8584, Train Loss: 0.1422
+04/20 09:16:38 PM: Epoch: 11/40, Batch: 5001/8584, Train Loss: 0.0415
+04/20 09:16:51 PM: Epoch: 11/40, Batch: 5501/8584, Train Loss: 0.0990
+04/20 09:17:05 PM: Epoch: 11/40, Batch: 6001/8584, Train Loss: 0.0611
+04/20 09:17:18 PM: Epoch: 11/40, Batch: 6501/8584, Train Loss: 0.0615
+04/20 09:17:32 PM: Epoch: 11/40, Batch: 7001/8584, Train Loss: 0.0305
+04/20 09:17:45 PM: Epoch: 11/40, Batch: 7501/8584, Train Loss: 0.0519
+04/20 09:17:59 PM: Epoch: 11/40, Batch: 8001/8584, Train Loss: 0.1240
+04/20 09:18:13 PM: Epoch: 11/40, Batch: 8501/8584, Train Loss: 0.0515
+04/20 09:18:15 PM: Epoch: 11/40, Train Loss: 0.0899
+04/20 09:18:15 PM: Batch: 1/154, Loss: 0.5156, Acc: 85.9375
+04/20 09:18:15 PM: Batch: 11/154, Loss: 0.7682, Acc: 78.1250
+04/20 09:18:15 PM: Batch: 21/154, Loss: 0.7348, Acc: 78.1250
+04/20 09:18:15 PM: Batch: 31/154, Loss: 0.5399, Acc: 87.5000
+04/20 09:18:16 PM: Batch: 41/154, Loss: 0.8408, Acc: 81.2500
+04/20 09:18:16 PM: Batch: 51/154, Loss: 0.6206, Acc: 81.2500
+04/20 09:18:16 PM: Batch: 61/154, Loss: 0.5327, Acc: 82.8125
+04/20 09:18:16 PM: Batch: 71/154, Loss: 1.0701, Acc: 76.5625
+04/20 09:18:16 PM: Batch: 81/154, Loss: 0.7117, Acc: 79.6875
+04/20 09:18:16 PM: Batch: 91/154, Loss: 0.5239, Acc: 82.8125
+04/20 09:18:16 PM: Batch: 101/154, Loss: 0.5734, Acc: 81.2500
+04/20 09:18:16 PM: Batch: 111/154, Loss: 0.3269, Acc: 89.0625
+04/20 09:18:16 PM: Batch: 121/154, Loss: 0.7723, Acc: 75.0000
+04/20 09:18:16 PM: Batch: 131/154, Loss: 0.4704, Acc: 87.5000
+04/20 09:18:17 PM: Batch: 141/154, Loss: 0.5557, Acc: 84.3750
+04/20 09:18:17 PM: Batch: 151/154, Loss: 0.6263, Acc: 81.2500
+04/20 09:18:17 PM: Epoch: 11/40, Val Loss: 0.6105, Val Acc: 83.1945
+04/20 09:18:17 PM: Learning rate decreased to: 0.0000
+ 28%|██▊       | 11/40 [42:56<1:53:10, 234.16s/it]04/20 09:18:17 PM: Epoch: 12/40
+Adjusting learning rate of group 0 to 1.4325e-04.
+04/20 09:18:30 PM: Epoch: 12/40, Batch: 501/8584, Train Loss: 0.0377
+04/20 09:18:44 PM: Epoch: 12/40, Batch: 1001/8584, Train Loss: 0.0900
+04/20 09:18:57 PM: Epoch: 12/40, Batch: 1501/8584, Train Loss: 0.0732
+04/20 09:19:11 PM: Epoch: 12/40, Batch: 2001/8584, Train Loss: 0.0537
+04/20 09:19:24 PM: Epoch: 12/40, Batch: 2501/8584, Train Loss: 0.0612
+04/20 09:19:38 PM: Epoch: 12/40, Batch: 3001/8584, Train Loss: 0.0752
+04/20 09:19:51 PM: Epoch: 12/40, Batch: 3501/8584, Train Loss: 0.0967
+04/20 09:20:05 PM: Epoch: 12/40, Batch: 4001/8584, Train Loss: 0.1003
+04/20 09:20:18 PM: Epoch: 12/40, Batch: 4501/8584, Train Loss: 0.1442
+04/20 09:20:32 PM: Epoch: 12/40, Batch: 5001/8584, Train Loss: 0.0409
+04/20 09:20:45 PM: Epoch: 12/40, Batch: 5501/8584, Train Loss: 0.0988
+04/20 09:20:59 PM: Epoch: 12/40, Batch: 6001/8584, Train Loss: 0.0602
+04/20 09:21:12 PM: Epoch: 12/40, Batch: 6501/8584, Train Loss: 0.0610
+04/20 09:21:26 PM: Epoch: 12/40, Batch: 7001/8584, Train Loss: 0.0306
+04/20 09:21:39 PM: Epoch: 12/40, Batch: 7501/8584, Train Loss: 0.0522
+04/20 09:21:53 PM: Epoch: 12/40, Batch: 8001/8584, Train Loss: 0.1238
+04/20 09:22:07 PM: Epoch: 12/40, Batch: 8501/8584, Train Loss: 0.0516
+04/20 09:22:09 PM: Epoch: 12/40, Train Loss: 0.0893
+04/20 09:22:09 PM: Batch: 1/154, Loss: 0.5151, Acc: 85.9375
+04/20 09:22:09 PM: Batch: 11/154, Loss: 0.7699, Acc: 78.1250
+04/20 09:22:09 PM: Batch: 21/154, Loss: 0.7331, Acc: 78.1250
+04/20 09:22:10 PM: Batch: 31/154, Loss: 0.5383, Acc: 87.5000
+04/20 09:22:10 PM: Batch: 41/154, Loss: 0.8373, Acc: 79.6875
+04/20 09:22:10 PM: Batch: 51/154, Loss: 0.6189, Acc: 79.6875
+04/20 09:22:10 PM: Batch: 61/154, Loss: 0.5305, Acc: 82.8125
+04/20 09:22:10 PM: Batch: 71/154, Loss: 1.0638, Acc: 75.0000
+04/20 09:22:10 PM: Batch: 81/154, Loss: 0.7073, Acc: 79.6875
+04/20 09:22:10 PM: Batch: 91/154, Loss: 0.5235, Acc: 82.8125
+04/20 09:22:10 PM: Batch: 101/154, Loss: 0.5764, Acc: 81.2500
+04/20 09:22:10 PM: Batch: 111/154, Loss: 0.3250, Acc: 89.0625
+04/20 09:22:10 PM: Batch: 121/154, Loss: 0.7666, Acc: 75.0000
+04/20 09:22:11 PM: Batch: 131/154, Loss: 0.4708, Acc: 87.5000
+04/20 09:22:11 PM: Batch: 141/154, Loss: 0.5516, Acc: 84.3750
+04/20 09:22:11 PM: Batch: 151/154, Loss: 0.6251, Acc: 81.2500
+04/20 09:22:11 PM: Epoch: 12/40, Val Loss: 0.6101, Val Acc: 83.1538
+04/20 09:22:11 PM: Learning rate decreased to: 0.0000
+04/20 09:22:11 PM: Learning rate is smaller than 10^-5, stopping the training...
+ 28%|██▊       | 11/40 [46:50<2:03:29, 255.50s/it]
+04/20 09:22:11 PM: Best val loss: 0.4435
+04/20 09:22:11 PM: Best val acc: 83.6212
+04/20 09:22:11 PM: Best validation loss: 0.4435, Best validation accuracy: 0.8362
+04/20 09:22:11 PM: Loading the best model...
+Adjusting learning rate of group 0 to 2.8364e-05.
+04/20 09:22:11 PM: Batch: 1/154, Loss: 0.4896, Acc: 82.8125
+04/20 09:22:11 PM: Batch: 11/154, Loss: 0.6003, Acc: 84.3750
+04/20 09:22:11 PM: Batch: 21/154, Loss: 0.4064, Acc: 84.3750
+04/20 09:22:11 PM: Batch: 31/154, Loss: 0.3278, Acc: 85.9375
+04/20 09:22:12 PM: Batch: 41/154, Loss: 0.5778, Acc: 81.2500
+04/20 09:22:12 PM: Batch: 51/154, Loss: 0.7260, Acc: 82.8125
+04/20 09:22:12 PM: Batch: 61/154, Loss: 0.5421, Acc: 89.0625
+04/20 09:22:12 PM: Batch: 71/154, Loss: 0.6076, Acc: 84.3750
+04/20 09:22:12 PM: Batch: 81/154, Loss: 0.7621, Acc: 82.8125
+04/20 09:22:12 PM: Batch: 91/154, Loss: 0.5948, Acc: 81.2500
+04/20 09:22:12 PM: Batch: 101/154, Loss: 0.6499, Acc: 76.5625
+04/20 09:22:12 PM: Batch: 111/154, Loss: 0.3873, Acc: 85.9375
+04/20 09:22:12 PM: Batch: 121/154, Loss: 0.3848, Acc: 87.5000
+04/20 09:22:12 PM: Batch: 131/154, Loss: 0.4664, Acc: 82.8125
+04/20 09:22:13 PM: Batch: 141/154, Loss: 0.5477, Acc: 79.6875
+04/20 09:22:13 PM: Batch: 151/154, Loss: 0.4580, Acc: 82.8125
+04/20 09:22:13 PM: Test loss: 0.5356, Test accuracy: 84.0493
+04/20 09:22:13 PM: Done!
+
+JOB STATISTICS
+==============
+Job ID: 5990783
+Cluster: snellius
+User/Group: scur1398/scur1398
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 14:11:06 core-walltime
+Job Wall-clock time: 00:47:17
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
