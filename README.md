@@ -37,4 +37,4 @@ All tensorboard logs can be found in the relevant `*tensorboard_log_dir_*`. Wher
 
 ## Models
 
-The pre-trained models can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1qP0iZBFZ3855miHVPoVx6xKDtfmLZhtB?usp=sharing). The models should be placed in the `best_model_dir_1234/` repo where the 1234 refres to the seed used.
+The pre-trained models can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1qP0iZBFZ3855miHVPoVx6xKDtfmLZhtB?usp=sharing) and [Google Drive2](https://drive.google.com/drive/folders/1ZeBUxiXtoE-RRYdJtJxlGc2GVrpfzn3I?usp=sharing). The models should be placed in the `best_model_dir_1234/` repo where the 1234 refres to the seed used.
