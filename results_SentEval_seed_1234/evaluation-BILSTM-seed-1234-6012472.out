@@ -1,0 +1,172 @@
+04/22 04:26:31 PM: Printing arguments : Namespace(checkpoint='best_model_dir_1234/bilstm_best.pth', senteval_vocab=True, encoder='bilstm', snli=True, senteval=True, seed=1111, num_workers=4, batch_size=64, sent_eval_path='./SentEval/data', tokenize=False)
+04/22 04:26:31 PM: Setting seed...
+04/22 04:26:31 PM: Vocab already exists. Loading from disk...
+04/22 04:26:40 PM: Loading the model checkpoint from best_model_dir_1234/bilstm_best.pth
+04/22 04:26:40 PM: Loading the model checkpoint trained in SNLI dataset
+04/22 04:26:40 PM: Evaluating the model on SNLI dataset
+04/22 04:26:41 PM: Batch: 1/154, Loss: 0.6218, Acc: 78.1250
+04/22 04:26:41 PM: Batch: 11/154, Loss: 0.4447, Acc: 81.2500
+04/22 04:26:41 PM: Batch: 21/154, Loss: 1.0167, Acc: 68.7500
+04/22 04:26:41 PM: Batch: 31/154, Loss: 0.5003, Acc: 84.3750
+04/22 04:26:41 PM: Batch: 41/154, Loss: 0.7781, Acc: 81.2500
+04/22 04:26:41 PM: Batch: 51/154, Loss: 0.5718, Acc: 84.3750
+04/22 04:26:41 PM: Batch: 61/154, Loss: 0.5193, Acc: 79.6875
+04/22 04:26:42 PM: Batch: 71/154, Loss: 0.9502, Acc: 70.3125
+04/22 04:26:42 PM: Batch: 81/154, Loss: 0.7730, Acc: 71.8750
+04/22 04:26:42 PM: Batch: 91/154, Loss: 0.5954, Acc: 79.6875
+04/22 04:26:42 PM: Batch: 101/154, Loss: 0.5060, Acc: 84.3750
+04/22 04:26:42 PM: Batch: 111/154, Loss: 0.3604, Acc: 84.3750
+04/22 04:26:42 PM: Batch: 121/154, Loss: 0.6173, Acc: 78.1250
+04/22 04:26:42 PM: Batch: 131/154, Loss: 0.3776, Acc: 87.5000
+04/22 04:26:42 PM: Batch: 141/154, Loss: 0.4850, Acc: 82.8125
+04/22 04:26:42 PM: Batch: 151/154, Loss: 0.8231, Acc: 71.8750
+04/22 04:26:43 PM: Batch: 1/154, Loss: 0.4448, Acc: 82.8125
+04/22 04:26:43 PM: Batch: 11/154, Loss: 0.6836, Acc: 81.2500
+04/22 04:26:43 PM: Batch: 21/154, Loss: 0.3254, Acc: 85.9375
+04/22 04:26:43 PM: Batch: 31/154, Loss: 0.4684, Acc: 87.5000
+04/22 04:26:43 PM: Batch: 41/154, Loss: 0.5526, Acc: 84.3750
+04/22 04:26:43 PM: Batch: 51/154, Loss: 0.8088, Acc: 76.5625
+04/22 04:26:43 PM: Batch: 61/154, Loss: 0.5224, Acc: 89.0625
+04/22 04:26:43 PM: Batch: 71/154, Loss: 0.6660, Acc: 81.2500
+04/22 04:26:43 PM: Batch: 81/154, Loss: 0.8370, Acc: 71.8750
+04/22 04:26:43 PM: Batch: 91/154, Loss: 0.7738, Acc: 78.1250
+04/22 04:26:44 PM: Batch: 101/154, Loss: 0.7768, Acc: 76.5625
+04/22 04:26:44 PM: Batch: 111/154, Loss: 0.6515, Acc: 76.5625
+04/22 04:26:44 PM: Batch: 121/154, Loss: 0.4446, Acc: 90.6250
+04/22 04:26:44 PM: Batch: 131/154, Loss: 0.5746, Acc: 85.9375
+04/22 04:26:44 PM: Batch: 141/154, Loss: 0.6105, Acc: 79.6875
+04/22 04:26:44 PM: Batch: 151/154, Loss: 0.5593, Acc: 81.2500
+04/22 04:26:44 PM: Validation loss: 0.6087, Validation accuracy: 79.9431
+04/22 04:26:44 PM: Test loss: 0.6155, Test accuracy: 79.7638
+04/22 04:26:44 PM: Evaluating the model on SentEval tasks
+04/22 04:26:44 PM: Building vocabulary for task MR...
+04/22 04:26:44 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:26:46 PM: Building unique tokens of vocab based on MR..
+04/22 04:26:46 PM: Building w2i and aligned embeddings for task MR
+04/22 04:26:47 PM: Generating sentence embeddings
+04/22 04:26:47 PM: Generated sentence embeddings
+04/22 04:26:47 PM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/22 04:27:45 PM: Best param found at split 1: l2reg = 0.001                 with score 76.47
+04/22 04:28:46 PM: Best param found at split 2: l2reg = 0.0001                 with score 76.23
+04/22 04:29:46 PM: Best param found at split 3: l2reg = 1e-05                 with score 76.07
+04/22 04:30:50 PM: Best param found at split 4: l2reg = 0.001                 with score 76.11
+04/22 04:31:51 PM: Best param found at split 5: l2reg = 0.0001                 with score 75.79
+04/22 04:31:54 PM: Building vocabulary for task CR...
+04/22 04:31:54 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:31:57 PM: Building unique tokens of vocab based on CR..
+04/22 04:31:57 PM: Building w2i and aligned embeddings for task CR
+04/22 04:31:57 PM: Generating sentence embeddings
+04/22 04:31:57 PM: Generated sentence embeddings
+04/22 04:31:57 PM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/22 04:32:17 PM: Best param found at split 1: l2reg = 0.001                 with score 79.34
+04/22 04:32:40 PM: Best param found at split 2: l2reg = 0.001                 with score 79.97
+04/22 04:33:01 PM: Best param found at split 3: l2reg = 0.001                 with score 79.34
+04/22 04:33:23 PM: Best param found at split 4: l2reg = 0.0001                 with score 79.7
+04/22 04:33:46 PM: Best param found at split 5: l2reg = 1e-05                 with score 79.77
+04/22 04:33:47 PM: Building vocabulary for task MPQA...
+04/22 04:33:47 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:33:50 PM: Building unique tokens of vocab based on MPQA..
+04/22 04:33:50 PM: Building w2i and aligned embeddings for task MPQA
+04/22 04:33:50 PM: Generating sentence embeddings
+04/22 04:33:50 PM: Generated sentence embeddings
+04/22 04:33:50 PM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/22 04:34:49 PM: Best param found at split 1: l2reg = 0.001                 with score 88.17
+04/22 04:35:48 PM: Best param found at split 2: l2reg = 0.001                 with score 87.72
+04/22 04:36:50 PM: Best param found at split 3: l2reg = 0.0001                 with score 88.16
+04/22 04:37:55 PM: Best param found at split 4: l2reg = 0.0001                 with score 88.33
+04/22 04:38:58 PM: Best param found at split 5: l2reg = 1e-05                 with score 88.08
+04/22 04:39:02 PM: Building vocabulary for task SUBJ...
+04/22 04:39:02 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:39:04 PM: Building unique tokens of vocab based on SUBJ..
+04/22 04:39:04 PM: Building w2i and aligned embeddings for task SUBJ
+04/22 04:39:04 PM: Generating sentence embeddings
+04/22 04:39:05 PM: Generated sentence embeddings
+04/22 04:39:05 PM: Training pytorch-MLP-nhid0-adam-bs64 with (inner) 5-fold cross-validation
+04/22 04:40:06 PM: Best param found at split 1: l2reg = 1e-05                 with score 90.11
+04/22 04:41:12 PM: Best param found at split 2: l2reg = 1e-05                 with score 90.41
+04/22 04:42:14 PM: Best param found at split 3: l2reg = 0.0001                 with score 90.6
+04/22 04:43:24 PM: Best param found at split 4: l2reg = 1e-05                 with score 90.25
+04/22 04:44:33 PM: Best param found at split 5: l2reg = 0.0001                 with score 90.21
+04/22 04:44:36 PM: Building vocabulary for task SST2...
+04/22 04:44:36 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:44:39 PM: Building unique tokens of vocab based on SST2..
+04/22 04:44:39 PM: Building w2i and aligned embeddings for task SST2
+04/22 04:44:39 PM: Computing embedding for train
+04/22 04:44:42 PM: Computed train embeddings
+04/22 04:44:42 PM: Computing embedding for dev
+04/22 04:44:42 PM: Computed dev embeddings
+04/22 04:44:42 PM: Computing embedding for test
+04/22 04:44:42 PM: Computed test embeddings
+04/22 04:44:42 PM: Training pytorch-MLP-nhid0-adam-bs64 with standard validation..
+04/22 04:46:19 PM: [('reg:1e-05', 79.59), ('reg:0.0001', 79.47), ('reg:0.001', 79.13), ('reg:0.01', 77.52)]
+04/22 04:46:19 PM: Validation : best param found is reg = 1e-05 with score             79.59
+04/22 04:46:19 PM: Evaluating...
+04/22 04:46:42 PM: ***** Transfer task : TREC *****
+
+
+04/22 04:46:42 PM: Building vocabulary for task TREC...
+04/22 04:46:42 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:46:45 PM: Building unique tokens of vocab based on TREC..
+04/22 04:46:45 PM: Building w2i and aligned embeddings for task TREC
+04/22 04:46:45 PM: Computed train embeddings
+04/22 04:46:45 PM: Computed test embeddings
+04/22 04:46:45 PM: Training pytorch-MLP-nhid0-adam-bs64 with 5-fold cross-validation
+04/22 04:47:39 PM: [('reg:1e-05', 83.46), ('reg:0.0001', 83.14), ('reg:0.001', 81.64), ('reg:0.01', 75.75)]
+04/22 04:47:39 PM: Cross-validation : best param found is reg = 1e-05             with score 83.46
+04/22 04:47:39 PM: Evaluating...
+04/22 04:47:43 PM: ***** Transfer task : MRPC *****
+
+
+04/22 04:47:43 PM: Building vocabulary for task MRPC...
+04/22 04:47:43 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:47:45 PM: Building unique tokens of vocab based on MRPC..
+04/22 04:47:45 PM: Building w2i and aligned embeddings for task MRPC
+04/22 04:47:45 PM: Computing embedding for train
+04/22 04:47:46 PM: Computed train embeddings
+04/22 04:47:46 PM: Computing embedding for test
+04/22 04:47:46 PM: Computed test embeddings
+04/22 04:47:46 PM: Training pytorch-MLP-nhid0-adam-bs64 with 5-fold cross-validation
+04/22 04:48:20 PM: [('reg:1e-05', 73.55), ('reg:0.0001', 73.65), ('reg:0.001', 73.58), ('reg:0.01', 72.33)]
+04/22 04:48:20 PM: Cross-validation : best param found is reg = 0.0001             with score 73.65
+04/22 04:48:20 PM: Evaluating...
+04/22 04:48:22 PM: Building vocabulary for task SICKEntailment...
+04/22 04:48:22 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:48:24 PM: Building unique tokens of vocab based on SICKEntailment..
+04/22 04:48:24 PM: Building w2i and aligned embeddings for task SICKEntailment
+04/22 04:48:25 PM: Computing embedding for train
+04/22 04:48:25 PM: Computed train embeddings
+04/22 04:48:25 PM: Computing embedding for dev
+04/22 04:48:25 PM: Computed dev embeddings
+04/22 04:48:25 PM: Computing embedding for test
+04/22 04:48:25 PM: Computed test embeddings
+04/22 04:48:26 PM: Training pytorch-MLP-nhid0-adam-bs64 with standard validation..
+04/22 04:48:36 PM: [('reg:1e-05', 85.0), ('reg:0.0001', 85.2), ('reg:0.001', 85.0), ('reg:0.01', 83.8)]
+04/22 04:48:36 PM: Validation : best param found is reg = 0.0001 with score             85.2
+04/22 04:48:36 PM: Evaluating...
+04/22 04:48:39 PM: Building vocabulary for task STS14...
+04/22 04:48:39 PM: Loading vectors from .vector_cache/glove.840B.300d.txt.pt
+04/22 04:48:42 PM: Building unique tokens of vocab based on STS14..
+04/22 04:48:42 PM: Building w2i and aligned embeddings for task STS14
+04/22 04:48:42 PM: Results on SentEval tasks: {'MR': {'devacc': 76.13, 'acc': 75.9, 'ndev': 10662, 'ntest': 10662}, 'CR': {'devacc': 79.62, 'acc': 78.81, 'ndev': 3775, 'ntest': 3775}, 'MPQA': {'devacc': 88.09, 'acc': 88.07, 'ndev': 10606, 'ntest': 10606}, 'SUBJ': {'devacc': 90.32, 'acc': 89.93, 'ndev': 10000, 'ntest': 10000}, 'SST2': {'devacc': 79.59, 'acc': 79.46, 'ndev': 872, 'ntest': 1821}, 'TREC': {'devacc': 83.46, 'acc': 88.6, 'ndev': 5452, 'ntest': 500}, 'MRPC': {'devacc': 73.65, 'acc': 72.64, 'f1': 81.97, 'ndev': 4076, 'ntest': 1725}, 'SICKEntailment': {'devacc': 85.2, 'acc': 84.6, 'ndev': 500, 'ntest': 4927}, 'STS14': {'deft-forum': {'pearson': PearsonRResult(statistic=0.2382569956277626, pvalue=3.1546525111726587e-07), 'spearman': SignificanceResult(statistic=0.23091319140200162, pvalue=7.350624671083378e-07), 'nsamples': 450}, 'deft-news': {'pearson': PearsonRResult(statistic=0.645164087771194, pvalue=1.0521352493758633e-36), 'spearman': SignificanceResult(statistic=0.6013822239633109, pvalue=6.846935473416235e-31), 'nsamples': 300}, 'headlines': {'pearson': PearsonRResult(statistic=0.5860783242449943, pvalue=2.211035315638557e-70), 'spearman': SignificanceResult(statistic=0.5343473014302049, pvalue=1.33743231268047e-56), 'nsamples': 750}, 'images': {'pearson': PearsonRResult(statistic=0.8041761005349302, pvalue=3.675065265279461e-171), 'spearman': SignificanceResult(statistic=0.7604147693843359, pvalue=2.29847245116269e-142), 'nsamples': 750}, 'OnWN': {'pearson': PearsonRResult(statistic=0.6103993613757007, pvalue=9.187042911822462e-78), 'spearman': SignificanceResult(statistic=0.6585464970139139, pvalue=1.9482940692263472e-94), 'nsamples': 750}, 'tweet-news': {'pearson': PearsonRResult(statistic=0.6439635730917094, pvalue=4.547437356621035e-89), 'spearman': SignificanceResult(statistic=0.5895600001489313, pvalue=2.1192682352027328e-71), 'nsamples': 750}, 'all': {'pearson': {'mean': 0.5880064071077152, 'wmean': 0.609127438346494}, 'spearman': {'mean': 0.5625273305571165, 'wmean': 0.5843938744807822}}}}
+04/22 04:48:42 PM: --------------------------------
+04/22 04:48:42 PM: Results with tokenization: False on SenteEval
+04/22 04:48:42 PM: Results with building new Vocab. based on SentEval
+04/22 04:48:42 PM: Seed used: 1111
+04/22 04:48:42 PM: Macro accuracy: 82.0075
+04/22 04:48:42 PM: Micro score: 83.0806
+04/22 04:48:42 PM: --------------------------------
+
+JOB STATISTICS
+==============
+Job ID: 6012472
+Cluster: snellius
+User/Group: scur1398/scur1398
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 06:44:06 core-walltime
+Job Wall-clock time: 00:22:27
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
