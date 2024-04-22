@@ -4,9 +4,8 @@ This repository contains the code for the paper [Supervised Learning of Universa
 
 ## Structure
 * `best_model_dir_1234/` contains the pre-trained models on the SNLI.
-* `runs/` contains the Tensorboard logs. The logs are stored in a directory with the name of the model.
 * `analysis.ipynb` contains the Entailment prediction example, results of the experiments, and discussion (for that reason it replaces the need of an actual pdf report)
-* `environmet.yml` allow one to install all the package depedencies used in this project
+* `environment_gpu/cpu.yml` allow one to install all the package depedencies used in this project
 * `train_*` are the scripts used for training in Snellius
 
 
