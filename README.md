@@ -4,7 +4,7 @@ This repository contains the code for the paper [Supervised Learning of Universa
 
 ## Structure
 * `best_model_dir_1234/` contains the pre-trained models on the SNLI.
-* `analysis.ipynb` contains the Entailment prediction example, results of the experiments, and discussion (for that reason it replaces the need of an actual pdf report)
+* `analysis.ipynb` contains the two Entailment prediction examples, results and analysis for SNLI and SentEval, and a further research question (for that reason it replaces the need of a report (a seperate pdf), as everything is explained throughly.)
 * `environment_gpu/cpu.yml` allow one to install all the package depedencies used in this project
 * `train_*.job` are the scripts used for training in Snellius
 * `eval_*.job` are the scripts used for training in Snellius
@@ -30,7 +30,7 @@ The `--snli` flag will evaluate the model on the SNLI dataset. The `--senteval` 
 The `results_seed_` folder contain all results reported
 The `results_SenteEval_seed` folder contain all results for 
 
-## Installing Senteval 
+## Installing Senteval from source
 Follow the instruction as in [Github](https://github.com/facebookresearch/SentEval), for installation. We run git clone to build from source.
 
 Be carefull to change the following files:
