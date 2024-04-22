@@ -17,8 +17,18 @@ from model import Model
 from train_procedure import evaluate
 from data_utils_senteval import SentEvalVocabularyBuilder
 
+def token_mapping(w2i, tokens: list[str]) -> list[int]:
+        """Convert a list of tokens to a list of indices.
 
-def collate_fn(token_mapping, batch):
+        Args:
+            tokens (list[str]): A list of tokens
+
+        Returns:
+            list[int]: A list of indices
+        """
+        return torch.tensor([w2i.get(token, 0) for token in tokens])
+
+def collate_fn(w2i, batch):
         """Collate function for the SNLI dataset.
 
         Inputs:
@@ -30,8 +40,8 @@ def collate_fn(token_mapping, batch):
         premises, hypotheses, labels = zip(*[(item["premise"], item["hypothesis"], item["label"]) for item in batch])
 
         # Convert tokens to indices
-        premises = [token_mapping(premise) for premise in premises]
-        hypotheses = [token_mapping(hypothesis) for hypothesis in hypotheses]
+        premises = [token_mapping(w2i, premise) for premise in premises]
+        hypotheses = [token_mapping(w2i, hypothesis) for hypothesis in hypotheses]
 
         # Compute lengths
         premise_lengths = torch.tensor([len(premise) for premise in premises])
@@ -155,13 +165,15 @@ def main(args):
         test_loader = DataLoader(test_dataset, batch_size=args.batch_size, num_workers=args.num_workers, collate_fn=partial(collate_fn, w2i))
         logging.info(f"Running evaluation on {key} dataset")
         test_loss, test_acc = evaluate(model, criterion, test_loader, device)
-        logging.info(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
+        logging.info(f"-----------------------------------")
+        logging.info(f"Test Accuracy: {100*test_acc:.4f} on {key} dataset")
+        logging.info(f"-----------------------------------")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the model either on SNLI and/or the SentEval tasks")
     parser.add_argument("checkpoint", type=str, help="Path to the model checkpoint")
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
-    parser.add_argument("--seed", type=int, default=1111, help="Random seed")
+    parser.add_argument("--seed", type=int, default=1234, help="Random seed")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--quartile_list", type=list, default=[0.33, 0.66], help="Quartile list")
