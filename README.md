@@ -31,16 +31,23 @@ The `results_seed_` folder contain all results reported
 The `results_SenteEval_seed` folder contain all results for 
 
 ## Installing Senteval 
-Follow the instruction as in [Github](https://github.com/facebookresearch/SentEval).
+Follow the instruction as in [Github](https://github.com/facebookresearch/SentEval), for installation. We run git clone to build from source.
 
-Be carefull to change the following files to support Python > 3.10 version 
-in `senteval_utils.py`, line 90:
+Be carefull to change the following files:
+ to support Python > 3.10 version 
+in `senteval/senteval_utils.py`, line 90:
 ```
 if sys.version_info < (3, 10):
         expected_args = inspect.getargspec(optim_fn.__init__)[0]
     else:
         expected_args = list(inspect.signature(optim_fn.__init__).parameters.keys())
 ```
+and in `senteval/sts.py` in line 42:
+```
+sent1 = [s.split() for i, s in enumerate(sent1) if not_empty_idx[i]]
+sent2 = [s.split() for i, s in enumerate(sent2) if not_empty_idx[i]]
+```
+
 ## Tensorboard Logs
 
 All tensorboard logs can be found in the relevant `*tensorboard_log_dir_*`. Where each epoch/step we log the train loss, the validation loss and validation accuracy.
