@@ -124,7 +124,7 @@ def main(args):
     model = Model(encoder, classifier).to(device)
     #Load the model checkpoint
     logging.info("Loading the model checkpoint trained in SNLI dataset")
-    model.load_state_dict(torch.load(args.checkpoint), map_location=device)
+    model.load_state_dict(torch.load(args.checkpoint, map_location=device))
     model.to(device)
 
     #Defining the Loss

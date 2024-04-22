@@ -38,21 +38,21 @@ def predict_entailment(premise, hypothesis, model, w2i, device):
         premise_tokens = tokenizer_obj.tokenize(premise)
         hypothesis_tokens = tokenizer_obj.tokenize(hypothesis)
 
-        premise = token_mapping(w2i, premise_tokens)
-        hypothesis = token_mapping(w2i, hypothesis_tokens)
+        premise_indices = token_mapping(w2i, premise_tokens)
+        hypothesis_indices = token_mapping(w2i, hypothesis_tokens)
 
-        premise_lengths = torch.tensor(len(premise), dtype=torch.long)
-        hypothesis_lengths = torch.tensor([len(hypothesis)], dtype=torch.long)
+        premise_lengths = torch.tensor([len(premise_indices)])
+        hypothesis_lengths = torch.tensor([len(hypothesis_indices)])
 
-        padded_premise = pad_sequence(premise, batch_first=True, padding_value=1)
-        padded_hypothesis = pad_sequence(hypothesis, batch_first=True, padding_value=1)
+        padded_premise = pad_sequence([premise_indices], batch_first=True, padding_value=1)
+        padded_hypothesis = pad_sequence([hypothesis_indices], batch_first=True, padding_value=1)
 
-        padded_premise, premise_lengths = padded_premise.to(device), premise_lengths.to(device)
-        padded_hypothesis, hypothesis_lengths = padded_hypothesis.to(device), hypothesis_lengths.to(device)
+        padded_premise, padded_hypothesis = padded_premise.to(device), padded_hypothesis.to(device)
+        premise_lengths, hypothesis_lengths = premise_lengths.unsqueeze(0).to(device), hypothesis_lengths.unsqueeze(0).to(device)
 
         loggits = model(padded_premise, premise_lengths, padded_hypothesis, hypothesis_lengths)
         
-        label_prediction = logging.argmax(loggits, dim=-1).item()
+        label_prediction = torch.argmax(loggits, dim=-1).item()
         
         return labels_dict[label_prediction]
         
@@ -91,7 +91,7 @@ def main(args):
     model = Model(encoder, classifier).to(device)
     #Load the model checkpoint
     logging.info("Loading the model checkpoint trained in SNLI dataset")
-    model.load_state_dict(torch.load(args.checkpoint))
+    model.load_state_dict(torch.load(args.checkpoint, map_location=device))
     model.to(device)
 
     entailment = predict_entailment(args.premise, args.hypothesis, model, w2i, device)
@@ -104,9 +104,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Predict Entailment on new text, using the trained model")
     parser.add_argument("checkpoint", type=str, help="Path to the model checkpoint")
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
-    parser.add_argument("--seed", type=int, default=1111, help="Random seed")
-    parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
-    parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
+    parser.add_argument("--seed", type=int, default=1234, help="Random seed")
     parser.add_argument("--premise", type=str, default="Two men sitting in the sun", help="Premise sentence")
     parser.add_argument("--hypothesis", type=str, default="Nobody is sitting in the shade", help="Hypothesis sentence")
     args = parser.parse_args()

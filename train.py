@@ -74,7 +74,7 @@ def main(args):
     
     if args.checkpoint:
         logging.info(f"Loading the pretrained model from {args.checkpoint}")
-        model.load_state_dict(torch.load(args.checkpoint), map_location=device)
+        model.load_state_dict(torch.load(args.checkpoint, map_location=device))
         test_loss, test_acc = evaluate(model, criterion, test_loader, device)
         logging.info(f"Test loss: {test_loss:.4f}, Test accuracy: {100*test_acc:.4f}")
     else:
@@ -84,7 +84,7 @@ def main(args):
 
         #Load the best model
         logging.info("Loading the best model...")
-        model.load_state_dict(torch.load(os.path.join(best_model_dir, f"{args.encoder}_best.pth")), map_location=device)
+        model.load_state_dict(torch.load(os.path.join(best_model_dir, f"{args.encoder}_best.pth"), map_location=device))
 
         test_loss, test_acc = evaluate(model, criterion, test_loader, device)
 

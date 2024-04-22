@@ -36,13 +36,18 @@ class UniLSTM(nn.Module):
         orig_emdgs = self.embeddings(indices).transpose(0, 1) # (seq_len, batch, input_size)
 
         #sort by lengts
-        idx_sort = np.argsort(-lengths.cpu())
-        idx_unsort = np.argsort(idx_sort)
-        sent_len_sorted = -np.sort(-lengths.cpu())
+        if orig_emdgs.size(1) != 1: #batch size is not one
+            idx_sort = np.argsort(-lengths.cpu())
+            idx_unsort = np.argsort(idx_sort)
+            sent_len_sorted = -np.sort(-lengths.cpu())
 
-        emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
+            emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
+            
+            sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
         
-        sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
+        else:
+            emdgs = orig_emdgs
+            sent_len_sorted = lengths.squeeze(0).to('cpu')
 
         packed_emdgs = pack_padded_sequence(emdgs, sent_len_sorted)
 
@@ -50,8 +55,11 @@ class UniLSTM(nn.Module):
         (hidden_state, _) = self.lstm(packed_emdgs)[1]
         hidden_state = hidden_state.squeeze(0)
 
-        final = hidden_state.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
+        if lstm_out.size(0) != 1: #batch size is not one
+            final = hidden_state.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
 
+        else:
+            final = hidden_state
         #return the last hidden state as the sentence representation
         return final
     
@@ -70,13 +78,17 @@ class BiLSTM(nn.Module):
         orig_emdgs = self.embeddings(indices).transpose(0, 1) # (seq_len, batch, input_size)
 
         #sort by lengts
-        idx_sort = np.argsort(-lengths.cpu())
-        idx_unsort = np.argsort(idx_sort)
-        sent_len_sorted = -np.sort(-lengths.cpu())
+        if orig_emdgs.size(1) != 1: #batch size is not one
+            idx_sort = np.argsort(-lengths.cpu())
+            idx_unsort = np.argsort(idx_sort)
+            sent_len_sorted = -np.sort(-lengths.cpu())
 
-        emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
+            emdgs = orig_emdgs.index_select(1, Variable(idx_sort.cuda() if torch.cuda.is_available() else idx_sort))
+            sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
+        else:
+            emdgs = orig_emdgs
+            sent_len_sorted = lengths.squeeze(0).to('cpu')
         
-        sent_len_sorted = torch.tensor(sent_len_sorted).to('cpu')
 
         packed_emdgs = pack_padded_sequence(emdgs, sent_len_sorted)
 
@@ -86,8 +98,10 @@ class BiLSTM(nn.Module):
             lstm_out = pad_packed_sequence(packed_output, batch_first=True, padding_value=1)[0]
 
             #unsort by length 
-            lstm_out = lstm_out.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort)) #(batch_size, seq_len, hid_dim*2)
-
+            if lstm_out.size(0) != 1: #batch size is not one
+                lstm_out = lstm_out.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort)) #(batch_size, seq_len, hid_dim*2)
+            else:
+                lstm_out = lstm_out
      
             #remove padding for max pooling
             # tensor_unpadded = [x[:l] for x, l in zip(lstm_out, lengths)] #list of length batch_size, each element is a tensor of shape (seq_len, hid_dim*2)
@@ -101,8 +115,10 @@ class BiLSTM(nn.Module):
         else:
             concat_hidden_dir = torch.cat((hidden_states[0], hidden_states[1]), dim=1)
             #unsort by length
-            final = concat_hidden_dir.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
-            
+            if concat_hidden_dir.size(0) != 1: #batch size is not one
+                final = concat_hidden_dir.index_select(0, Variable(idx_unsort.cuda() if torch.cuda.is_available() else idx_unsort))
+            else:
+                final = concat_hidden_dir
         return final
     
 
