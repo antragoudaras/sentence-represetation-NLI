@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=Evaluation
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=04:00:00
+#SBATCH --output=evaluation-baseline-seed-1234-%A.out
+
+module purge
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate atcs-pr-gpu
+
+python eval.py best_model_dir_1234/baseline_best.pth --senteval-vocab --encoder baseline --snli --senteval
