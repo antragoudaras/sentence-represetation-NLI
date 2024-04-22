@@ -6,8 +6,8 @@ This repository contains the code for the paper [Supervised Learning of Universa
 * `best_model_dir_1234/` contains the pre-trained models on the SNLI.
 * `analysis.ipynb` contains the Entailment prediction example, results of the experiments, and discussion (for that reason it replaces the need of an actual pdf report)
 * `environment_gpu/cpu.yml` allow one to install all the package depedencies used in this project
-* `train_*` are the scripts used for training in Snellius
-
+* `train_*.job` are the scripts used for training in Snellius
+* `eval_*.job` are the scripts used for training in Snellius
 
 
 ## Usage
