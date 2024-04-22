@@ -144,7 +144,14 @@ def main(args):
     #Evaluate the model on SentEval tasks if the flag is set
     if args.senteval:
         logging.info("Evaluating the model on SentEval tasks")
-        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 'task_path': args.sent_eval_path, 'senteval_vocab': args.senteval_vocab, 'tokenize': args.tokenize}
+        params = {'args': args, 'model': model, 'w2i': w2i, 'device': device, 
+                  'task_path': args.sent_eval_path, 
+                  'senteval_vocab': args.senteval_vocab, 
+                  'tokenize': args.tokenize,
+                  'usepytorch': True,
+                  'seed': args.seed,
+                  'kfold': 5
+                  }
 
         se = senteval.engine.SE(params, batcher, prepare)
         transfer_tasks = ['MR', 'CR', 'MPQA', 'SUBJ', 'SST2', 'TREC',
@@ -160,6 +167,7 @@ def main(args):
         else:
             logging.info("Results using the Vocab of SNLI")
 
+        logging.info(f"Seed used: {args.seed}")
         logging.info(f"Macro accuracy: {macro_acc:.4f}")
         logging.info(f"Micro score: {micro_score:.4f}")
         logging.info("--------------------------------")
@@ -173,7 +181,7 @@ if __name__ == "__main__":
     parser.add_argument("--encoder", type=str, default="bilstm-max", help="Encoder type", choices=["baseline", "unilstm", "bilstm", "bilstm-max"])
     parser.add_argument("--snli", action="store_true", default=True, help="Evaluate on SNLI dataset")
     parser.add_argument("--senteval", action="store_true", default=True, help="Evaluate on SentEval tasks")
-    parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--seed", type=int, default=1111, help="Random seed")
     parser.add_argument("--num_workers", type=int, default=4, help="Number of workers for the dataloader")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--sent_eval_path", type=str, default="./SentEval/data", help="Path to the SentEval data")
