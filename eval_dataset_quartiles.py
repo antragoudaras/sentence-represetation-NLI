@@ -5,8 +5,10 @@ import numpy as np
 import logging
 import argparse
 import sys
+from functools import partial
 
 
+from torch.utils.data import DataLoader
 from torch.nn.utils.rnn import pad_sequence
 from data_utils import Tokenizer, VocabularyBuilder, DataLoaderBuilder
 from encoders import BaselineEnc, UniLSTM, BiLSTM
@@ -14,6 +16,41 @@ from classifier import Clasiifier
 from model import Model
 from train_procedure import evaluate
 from data_utils_senteval import SentEvalVocabularyBuilder
+
+
+def collate_fn(token_mapping, batch):
+        """Collate function for the SNLI dataset.
+
+        Inputs:
+            batch of data from the SNLI dataset (premise, hypothesis, label)
+        Returns:
+            tuple: padded_premises, padded_hypotheses, premise_lengths, hypothesis_lengths, labels
+        """
+        # Separate premises, hypotheses, and labels
+        premises, hypotheses, labels = zip(*[(item["premise"], item["hypothesis"], item["label"]) for item in batch])
+
+        # Convert tokens to indices
+        premises = [token_mapping(premise) for premise in premises]
+        hypotheses = [token_mapping(hypothesis) for hypothesis in hypotheses]
+
+        # Compute lengths
+        premise_lengths = torch.tensor([len(premise) for premise in premises])
+        hypothesis_lengths = torch.tensor([len(hypothesis) for hypothesis in hypotheses])
+
+        # Pad sequences in premises and hypotheses using pad_sequence
+        padded_premises = pad_sequence(premises, batch_first=True, padding_value=1)
+        padded_hypotheses = pad_sequence(hypotheses, batch_first=True, padding_value=1)
+
+        # Convert labels to tensor
+        labels = torch.tensor(labels)
+
+        return (
+            padded_premises,
+            padded_hypotheses,
+            premise_lengths,
+            hypothesis_lengths,
+            labels
+        )
 
 
 class QuartileDataloaderBuilder(DataLoaderBuilder):
@@ -109,14 +146,14 @@ def main(args):
     logging.info("average sentence length (sum of premise + hypothesis) of the dataset")
     for i, subset in enumerate(quantiled_dataset):
         avg_len = sum(len(sample["premise"]) + len(sample["hypothesis"]) for sample in subset) / len(subset)
-        logging.info(f"Quartile {quariles_list[i]}: {avg_len:.2f}")
+        logging.info(f"Quartile {i}: {avg_len:.2f}")
 
     logging.info("Evaluating the model on each quartile dataset")
     q_dataset_dict = {"small": quantiled_dataset[0], "medium": quantiled_dataset[1], "large": quantiled_dataset[2]}
     for key, value in q_dataset_dict.items():
-        test_loader = quantiled_dataset[key]
+        test_dataset = q_dataset_dict[key]
+        test_loader = DataLoader(test_dataset, batch_size=args.batch_size, num_workers=args.num_workers, collate_fn=partial(collate_fn, w2i))
         test_loss, test_acc = evaluate(model, criterion, test_loader, device)
-
     
 
 if __name__ == "__main__":
